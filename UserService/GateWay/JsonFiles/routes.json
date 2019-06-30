@@ -1,0 +1,15 @@
+﻿{
+  "routes": [
+    {
+      "endpoint": "/books",
+      "destination": {
+        "uri": "http://localhost:44365/api/books",
+        "requiresAuthentication": "false"
+      }
+    }
+  ],
+
+  "authenticationService": {
+    "uri": "http://localhost:8080/api/auth/"
+  }
+}
