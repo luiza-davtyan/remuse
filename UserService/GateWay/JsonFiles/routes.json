@@ -6,6 +6,14 @@
         "uri": "http://localhost:44365/api/books",
         "requiresAuthentication": "false"
       }
+    },
+
+    {
+      "endpoint": "/music",
+      "destination": {
+        "uri": "http://localhost:61806/api/music",
+        "requiresAuthentication": "false"
+      }
     }
   ],
 

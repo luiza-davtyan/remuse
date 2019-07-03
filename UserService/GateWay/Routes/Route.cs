@@ -8,6 +8,6 @@ namespace GateWay.Routes
     public class Route
     {
         public string EndPoint { get; set; }
-        public Destination Destination { get; set; }
+        public Destination _Destination { get; set; }
     }
 }

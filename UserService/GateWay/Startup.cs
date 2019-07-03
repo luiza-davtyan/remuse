@@ -16,6 +16,7 @@ namespace GateWay
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -26,15 +27,24 @@ namespace GateWay
                 app.UseDeveloperExceptionPage();
             }
 
-            Router router = new Router("routes.json");
-
-            app.Run(async (context) =>
+            if (env.IsDevelopment())
             {
-                var content = await router.RouteRequest(context.Request);         //----HttpContext context
-                await context.Response.WriteAsync(await content.Content.ReadAsStringAsync());
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseHsts();
+            }
 
-                //await context.Response.WriteAsync("Hello Armenia");
-            });
+            app.UseHttpsRedirection();
+            app.UseMvc();
+
+            //Router router = new Router("JsonFiles/routes.json");
+            //app.Run(async (context) =>
+            //{
+            //    var content = await router.RouteRequest(context.Request);         //----HttpContext context
+            //    await context.Response.WriteAsync(await content.Content.ReadAsStringAsync());
+            //});
         }
     }
 }

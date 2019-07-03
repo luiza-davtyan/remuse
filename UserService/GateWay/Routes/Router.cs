@@ -38,7 +38,7 @@ namespace GateWay.Routes
 
             try
             {
-                destination = Routes.First(r => r.EndPoint.Equals(basePath)).Destination;
+                destination = Routes.First(r => r.EndPoint.Equals(basePath))._Destination;
             }
             catch
             {
