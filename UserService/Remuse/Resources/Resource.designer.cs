@@ -2507,11 +2507,11 @@ namespace Remuse
 			// aapt resource value: 0x7f080020
 			public const int disableHome = 2131230752;
 			
-			// aapt resource value: 0x7f0800b7
-			public const int editText1 = 2131230903;
+			// aapt resource value: 0x7f0800b4
+			public const int editText1 = 2131230900;
 			
-			// aapt resource value: 0x7f0800be
-			public const int editText2 = 2131230910;
+			// aapt resource value: 0x7f0800bd
+			public const int editText2 = 2131230909;
 			
 			// aapt resource value: 0x7f0800c1
 			public const int editText3 = 2131230913;
@@ -2615,11 +2615,11 @@ namespace Remuse
 			// aapt resource value: 0x7f08008e
 			public const int linearLayout2 = 2131230862;
 			
-			// aapt resource value: 0x7f0800bc
-			public const int linearLayout3 = 2131230908;
+			// aapt resource value: 0x7f0800ba
+			public const int linearLayout3 = 2131230906;
 			
-			// aapt resource value: 0x7f0800bf
-			public const int linearLayout4 = 2131230911;
+			// aapt resource value: 0x7f0800be
+			public const int linearLayout4 = 2131230910;
 			
 			// aapt resource value: 0x7f0800c2
 			public const int linearLayout5 = 2131230914;
@@ -2636,8 +2636,8 @@ namespace Remuse
 			// aapt resource value: 0x7f080061
 			public const int list_item = 2131230817;
 			
-			// aapt resource value: 0x7f0800cc
-			public const int masked = 2131230924;
+			// aapt resource value: 0x7f0800cd
+			public const int masked = 2131230925;
 			
 			// aapt resource value: 0x7f0800a5
 			public const int media_actions = 2131230885;
@@ -2728,6 +2728,9 @@ namespace Remuse
 			
 			// aapt resource value: 0x7f080068
 			public const int scrollView = 2131230824;
+			
+			// aapt resource value: 0x7f0800cb
+			public const int scrollView1 = 2131230923;
 			
 			// aapt resource value: 0x7f080055
 			public const int scrollable = 2131230805;
@@ -2828,11 +2831,11 @@ namespace Remuse
 			// aapt resource value: 0x7f08001b
 			public const int text2 = 2131230747;
 			
-			// aapt resource value: 0x7f0800ba
-			public const int textInputEditText1 = 2131230906;
+			// aapt resource value: 0x7f0800b7
+			public const int textInputEditText1 = 2131230903;
 			
-			// aapt resource value: 0x7f0800b9
-			public const int textInputLayout1 = 2131230905;
+			// aapt resource value: 0x7f0800b6
+			public const int textInputLayout1 = 2131230902;
 			
 			// aapt resource value: 0x7f08006a
 			public const int textSpacerNoButtons = 2131230826;
@@ -2852,29 +2855,29 @@ namespace Remuse
 			// aapt resource value: 0x7f0800c6
 			public const int textView12 = 2131230918;
 			
-			// aapt resource value: 0x7f0800b2
-			public const int textView2 = 2131230898;
-			
-			// aapt resource value: 0x7f0800b3
-			public const int textView3 = 2131230899;
-			
-			// aapt resource value: 0x7f0800b4
-			public const int textView4 = 2131230900;
-			
-			// aapt resource value: 0x7f0800b5
-			public const int textView5 = 2131230901;
-			
-			// aapt resource value: 0x7f0800b6
-			public const int textView6 = 2131230902;
-			
-			// aapt resource value: 0x7f0800b8
-			public const int textView7 = 2131230904;
+			// aapt resource value: 0x7f0800b9
+			public const int textView2 = 2131230905;
 			
 			// aapt resource value: 0x7f0800bb
-			public const int textView8 = 2131230907;
+			public const int textView3 = 2131230907;
 			
-			// aapt resource value: 0x7f0800bd
-			public const int textView9 = 2131230909;
+			// aapt resource value: 0x7f0800bf
+			public const int textView4 = 2131230911;
+			
+			// aapt resource value: 0x7f0800b2
+			public const int textView5 = 2131230898;
+			
+			// aapt resource value: 0x7f0800b3
+			public const int textView6 = 2131230899;
+			
+			// aapt resource value: 0x7f0800b5
+			public const int textView7 = 2131230901;
+			
+			// aapt resource value: 0x7f0800b8
+			public const int textView8 = 2131230904;
+			
+			// aapt resource value: 0x7f0800bc
+			public const int textView9 = 2131230908;
 			
 			// aapt resource value: 0x7f08009e
 			public const int text_input_password_toggle = 2131230878;
@@ -2933,8 +2936,8 @@ namespace Remuse
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f0800cb
-			public const int visible = 2131230923;
+			// aapt resource value: 0x7f0800cc
+			public const int visible = 2131230924;
 			
 			// aapt resource value: 0x7f08003c
 			public const int withText = 2131230780;
@@ -3186,6 +3189,9 @@ namespace Remuse
 			
 			// aapt resource value: 0x7f04003e
 			public const int tooltip = 2130968638;
+			
+			// aapt resource value: 0x7f04003f
+			public const int Userpage = 2130968639;
 			
 			static Layout()
 			{
