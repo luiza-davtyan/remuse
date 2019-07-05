@@ -123,7 +123,8 @@
 	<EditText
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:id="@+id/editText6" />
+		android:id="@+id/editText6" 
+    	android:inputType="textPassword"/>
 	<LinearLayout
 		android:orientation="horizontal"
 		android:minWidth="25px"

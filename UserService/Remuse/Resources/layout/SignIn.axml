@@ -26,5 +26,39 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/textView4" />
+	<TextView
+		android:text="                            Sign  In"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textView5"
+		android:layout_marginTop="33.0dp"
+		android:layout_marginBottom="35.0dp" />
+	<TextView
+		android:text="Email"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textView6" />
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/editText1" />
+	<TextView
+		android:text="Password"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textView7" />
+    <android.support.design.widget.TextInputLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textInputLayout1" >
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textInputEditText1"
+			android:inputType="textPassword"/>
+    </android.support.design.widget.TextInputLayout>
 
 </LinearLayout>
