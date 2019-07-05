@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:minWidth="25px"
+	android:minHeight="25px">
+	<TextView
+		android:text="           Registration"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="match_parent"
+		android:layout_height="56.5dp"
+		android:textSize="35dp"
+		android:id="@+id/textView1" />
+	<LinearLayout
+		android:orientation="horizontal"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/linearLayout2">
+		<TextView
+			android:text="Name"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/textView2" />
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/textView8"
+			android:textColor="@android:color/holo_red_dark" />
+	</LinearLayout>
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/editText1"
+		android:layout_marginBottom="0.0dp" />
+	<LinearLayout
+		android:orientation="horizontal"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/linearLayout3">
+		<TextView
+			android:text="Last Name"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/textView3" />
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/textView9"
+			android:textColor="#ffcc0000" />
+	</LinearLayout>
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/editText2" />
+	<LinearLayout
+		android:orientation="horizontal"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/linearLayout4">
+		<TextView
+			android:text="Email"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/textView4" />
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/textView10"
+			android:textColor="#ffcc0000" />
+	</LinearLayout>
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/editText3" />
+	<LinearLayout
+		android:orientation="horizontal"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/linearLayout5">
+		<TextView
+			android:text="Username"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/textView5" />
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/textView11"
+			android:textColor="#ffcc0000" />
+	</LinearLayout>
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/editText4" />
+	<LinearLayout
+		android:orientation="horizontal"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/linearLayout6">
+		<TextView
+			android:text="Password"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/textView7" />
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/textView12"
+			android:textColor="@android:color/holo_red_dark" />
+	</LinearLayout>
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/editText6" />
+	<LinearLayout
+		android:orientation="horizontal"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/linearLayout7">
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/textView6"
+			android:text="Birthday" />
+	</LinearLayout>
+	<EditText
+		android:inputType="date"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/editText5" />
+	<LinearLayout
+		android:orientation="horizontal"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="86.5dp"
+		android:id="@+id/linearLayout1">
+		<Button
+			android:text="Confirm"
+			android:layout_width="212.5dp"
+			android:layout_height="match_parent"
+			android:id="@+id/button1"
+			android:layout_marginLeft="87.5dp"
+			android:layout_marginBottom="15.0dp"
+			android:layout_marginTop="11.0dp" />
+	</LinearLayout>
+
+</LinearLayout>
