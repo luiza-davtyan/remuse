@@ -144,7 +144,7 @@
     <AndroidResource Include="Resources\layout\list_item.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\onebookinfo.axml">
+    <AndroidResource Include="Resources\layout\bookinfo.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

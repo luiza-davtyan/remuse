@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Newtonsoft.Json;
 using Remuse.Models;
 
 namespace Remuse.Activities
@@ -35,6 +36,7 @@ namespace Remuse.Activities
             ListView.ItemClick += delegate (object sender, AdapterView.ItemClickEventArgs args)
             {
                 Intent intent = new Intent(this, typeof(OneBookInfo));
+                intent.PutExtra("book", JsonConvert.SerializeObject(usersbooks[args.Position]));
                 StartActivity(intent);
             };
         }
