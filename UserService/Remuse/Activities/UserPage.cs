@@ -1,8 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Net;
+using System.Net.Http;
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Widget;
+using Remuse.Models;
 
 namespace Remuse.Activities
 {
@@ -10,9 +15,9 @@ namespace Remuse.Activities
     public class UserPage : Activity
     {
         ImageView userimage;
-        TextView firstname, lastname, username;
+        TextView firstname, lastname, username, servergirq;
         Button books;
-
+        List<Book> usersBooks = new List<Book>();
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -25,15 +30,36 @@ namespace Remuse.Activities
             lastname = FindViewById<TextView>(Resource.Id.textView2);
             username = FindViewById<TextView>(Resource.Id.textView3);
             books = FindViewById<Button>(Resource.Id.button1);
+            servergirq = FindViewById<TextView>(Resource.Id.textView4);
             books.Click += Books_Click;
 
-            
+
             //go to UserServer to get user's date
+            //then go to BookService with token and bring info about user's books
+            //usersBooks = something from book's service
         }
 
-        private void Books_Click(object sender, EventArgs e)
+        private  void Books_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            Intent intent = new Intent(this, typeof(BookPage));
+            //intent.PutExtra();
+            StartActivity(intent);
+        }
+        public async void Client()
+        {
+            //using (var client = new HttpClient())
+            //{
+            //    var response = await client.GetAsync("http://localhost:64319/api/book");
+            //}
+
+            //WebResponse response = request.GetResponse();//Отправляем данные и получаем ответ
+            //Stream dataStream = response.GetResponseStream();//Получаем поток ответа
+            //StreamReader reader = new StreamReader(dataStream);//Новый объект для чтения потока
+            //string responseFromServer = reader.ReadToEnd();//Считываем в строку весь ответ сервера
+            //reader.Close();//закрываем "чтеца"
+            //dataStream.Close();//закрываем поток ответа
+            //response.Close();//И запрос.
+            //servergirq.Text = responseFromServer;
         }
     }
 }

@@ -55,21 +55,16 @@
 			android:layout_height="match_parent"
 			android:id="@+id/textView3"
 			android:layout_marginLeft="48.0dp" />
-		<Button
-			android:text="Books"
-			android:layout_width="wrap_content"
-			android:layout_height="35.5dp"
-			android:id="@+id/button1"
-			android:layout_marginLeft="36.0dp"
-			android:layout_marginRight="0.0dp"
-			android:accessibilityLiveRegion="none"
-			app:backgroundTintMode="multiply" />
-		<Button
-			android:text="Playlist"
-			android:layout_width="wrap_content"
-			android:layout_height="match_parent"
-			android:id="@+id/button2"
-			android:layout_marginBottom="34.5dp" />
 	</LinearLayout>
+	<Button
+		android:text="Books"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/button1" />
+	<TextView
+		android:text="Text"
+		android:layout_width="match_parent"
+		android:layout_height="81.5dp"
+		android:id="@+id/textView4" />
 
 </LinearLayout>

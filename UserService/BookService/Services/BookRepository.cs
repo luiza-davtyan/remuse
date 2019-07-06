@@ -19,8 +19,13 @@ namespace BookService.Services
             _books = database.GetCollection<Book>(settings.BooksCollectionName);
         }
 
-        public List<Book> Get() =>
-            _books.Find(book => true).ToList();
+        //public List<Book> Get() =>
+          //  _books.Find(book => true).ToList();
+
+        public string Get()
+        {
+            return "Fight Club";
+        }
 
         public Book Get(string id) =>
             _books.Find<Book>(book => book.Id == id).FirstOrDefault();
