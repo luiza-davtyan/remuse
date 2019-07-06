@@ -74,5 +74,13 @@ namespace BookService.Controllers
             return NoContent();
         }
 
+        [HttpGet("search/{param}")]
+        public ActionResult<List<Book>> SearchBook(string param)
+        {
+            var parsedParam = param.ToLower();
+            var keywords = parsedParam.Split('-');
+            var results = _bookRepository.GetByTitle(keywords);
+            return results;
+        }
     }
 }

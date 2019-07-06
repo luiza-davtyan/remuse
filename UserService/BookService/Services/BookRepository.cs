@@ -1,4 +1,5 @@
 ﻿using BookService.Models;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
@@ -39,5 +40,15 @@ namespace BookService.Services
 
         public void Remove(string id) =>
             _books.DeleteOne(book => book.Id == id);
+
+        public List<Book> GetByTitle(string[] keywords)
+        {
+            var resultsList = new List<Book>();
+            foreach (var item in keywords)
+            {
+                resultsList.AddRange(_books.Find<Book>(book => book.Title.ToLower().Contains(item)).ToList());
+            }
+            return resultsList;
+        }
     }
 }

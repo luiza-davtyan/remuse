@@ -19,11 +19,9 @@ namespace BookService.Models
 
         public string Description { get; set; }
 
-        public int AuthorId { get; set; }
+        public string AuthorId { get; set; }
 
         public int Year { get; set; }
-
-        public string Path { get; set; }
 
         public virtual List<ObjectId> GenreIds { get; set; }
     }
