@@ -60,7 +60,7 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Activities\BookNumberN.cs" />
+    <Compile Include="Activities\OneBookInfo.cs" />
     <Compile Include="Activities\BookPage.cs" />
     <Compile Include="Activities\UserPage.cs" />
     <Compile Include="MainActivity.cs" />
@@ -144,7 +144,7 @@
     <AndroidResource Include="Resources\layout\list_item.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\BookNumberN.axml">
+    <AndroidResource Include="Resources\layout\onebookinfo.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

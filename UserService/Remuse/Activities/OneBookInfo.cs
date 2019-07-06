@@ -13,12 +13,12 @@ using Android.Widget;
 namespace Remuse.Activities
 {
     [Activity(Label = "BookNumberN")]
-    public class BookNumberN : Activity
+    public class OneBookInfo : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.BookNumberN);
+            SetContentView(Resource.Layout.onebookinfo);
 
 
         }

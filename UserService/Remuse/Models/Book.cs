@@ -17,13 +17,13 @@ namespace Remuse.Models
 {
     public class Book
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public static string Id { get; set; }
+       // [BsonId]
+       // [BsonRepresentation(BsonType.ObjectId)]
+        public string Id { get; set; }
 
-        [JsonProperty("Title")]
-        [BsonRequired]
-        public  string Title { get; set; }
+        //[JsonProperty("Title")]
+        //[BsonRequired]
+        public string Title { get; set; }
 
         public string Content { get; set; }
 
@@ -35,6 +35,6 @@ namespace Remuse.Models
 
         public string Path { get; set; }
 
-        public virtual List<ObjectId> GenreIds { get; set; }
+        //public virtual List<ObjectId> GenreIds { get; set; }
     }
 }

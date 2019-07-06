@@ -42,7 +42,7 @@ namespace Remuse.Activities
         private  void Books_Click(object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(BookPage));
-            //intent.PutExtra();
+            intent.PutExtra("books", new string[] { "HIn oreri tangon","Menq enq mer sarery" });
             StartActivity(intent);
         }
         public async void Client()
