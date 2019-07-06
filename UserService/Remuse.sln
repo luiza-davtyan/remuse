@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookService", "BookService\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MusicService", "MusicService\MusicService.csproj", "{DF8A9658-AAE3-45C4-AA91-8C248AF7D0E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfileAPI", "ProfileAPI\ProfileAPI.csproj", "{D9C38CCB-3FB9-4727-BADB-A58F8C6240FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProfileAPI", "ProfileAPI\ProfileAPI.csproj", "{D9C38CCB-3FB9-4727-BADB-A58F8C6240FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminService", "AdminService\AdminService.csproj", "{2F6E364E-F48A-4B2F-A908-ED96CB3FF811}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{D9C38CCB-3FB9-4727-BADB-A58F8C6240FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9C38CCB-3FB9-4727-BADB-A58F8C6240FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9C38CCB-3FB9-4727-BADB-A58F8C6240FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F6E364E-F48A-4B2F-A908-ED96CB3FF811}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F6E364E-F48A-4B2F-A908-ED96CB3FF811}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F6E364E-F48A-4B2F-A908-ED96CB3FF811}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F6E364E-F48A-4B2F-A908-ED96CB3FF811}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
