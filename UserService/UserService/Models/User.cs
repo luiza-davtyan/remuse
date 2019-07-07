@@ -16,7 +16,7 @@ namespace UserService.Models
         public string Email { get; protected set; }
        // public string RoleId { get; protected set; }
         public string Username { get; protected set; }
-        public string Password { get; protected set; }
+        public string Password { get; set; }
         public byte[] Picture { get; protected set; }
 
 

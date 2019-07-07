@@ -33,50 +33,66 @@ namespace UserService.Controllers
         public IActionResult GetUserById(int id)
         {
             var userById = this.userRepository.GetUserByID(id);
-            //var bookDTO = Mapper.Map<BookDTO>(bookById);
+            if(userById == null)
+            {
+                return NotFound();
+            }
             return Ok(userById);
+        }
+
+        [HttpPost]
+        public ActionResult<User> AddUser(User user)
+        {
+            User currUser = this.userRepository.GetUserByUsername(user.Username);
+            if (currUser != null)
+            {
+                throw new Exception("Username must be unique");//??
+            }
+            user.Password = getHashSha256(user.Password);
+            this.userRepository.AddUser(user);
+            return CreatedAtRoute("GetUser", new { id = user.Id.ToString() }, user);
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
-            //var user = UserRepository..Where(x => x.Id == int.Parse(id)).FirstOrDefault();
+            var user = this.userRepository.GetUserByID(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
             this.userRepository.DeleteUserById(id);
+            return NoContent();
         }
 
         [HttpPut("{id}")]
-        void Update(User newUser)
+        IActionResult Update(User newUser)
         {
-            this.userRepository.Update(newUser);
+            var user = this.userRepository.GetUserByID(newUser.Id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            newUser.Password = getHashSha256(newUser.Password);
+            this.userRepository.Update(user);
+            return NoContent();
         }
 
-        [HttpPost]
-        void AddUser(string firstName, string lastName, DateTime dateOfBirth, string email,
-                    string username, string password)
+        public string getHashSha256(string text)
         {
-           // password = getHashSha256(password);
-            this.userRepository.AddUser(firstName, lastName, dateOfBirth, email, username, password);
+            byte[] bytes = Encoding.Unicode.GetBytes(text);
+            SHA256Managed hashstring = new SHA256Managed();
+            byte[] hash = hashstring.ComputeHash(bytes);
+            string hashString = string.Empty;
+            foreach (byte x in hash)
+            {
+                hashString += String.Format("{0:x2}", x);
+            }
+            return hashString;
         }
-
-        [HttpPut("{id}")]
-        public void ChangePassword(string newPassword)
-        {
-
-        }
-
-        //public string getHashSha256(string text)
-        //{
-        //    byte[] bytes = Encoding.Unicode.GetBytes(text);
-        //    SHA256Managed hashstring = new SHA256Managed();
-        //    byte[] hash = hashstring.ComputeHash(bytes);
-        //    string hashString = string.Empty;
-        //    foreach (byte x in hash)
-        //    {
-        //        hashString += String.Format("{0:x2}", x);
-        //    }
-        //    return hashString;
-        //}
 
         //public bool PasswordIsValid(string password)
         //{
@@ -115,32 +131,6 @@ namespace UserService.Controllers
         //    }
 
         //    return true;
-        //}
-
-        //// GET api/values
-        //[HttpGet]
-        //public ActionResult<IEnumerable<string>> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
-
-        //// GET api/values/5
-        //[HttpGet("{id}")]
-        //public ActionResult<string> Get(int id)
-        //{
-        //    return "value";
-        //}
-
-        //// POST api/values
-        //[HttpPost]
-        //public void Post([FromBody] string value)
-        //{
-        //}
-
-        //// PUT api/values/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody] string value)
-        //{
         //}
     }
 }

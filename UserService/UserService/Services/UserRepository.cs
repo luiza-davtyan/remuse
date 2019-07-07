@@ -24,22 +24,27 @@ namespace UserService.Services
 
         public User GetUserByID(int userId)
         {
-            return context.Users.First(s => s.Id == userId);
+            return context.Users.FirstOrDefault<User>(user => user.Id == userId);
+        }
+
+        public User GetUserByUsername(string username)
+        {
+            return context.Users.FirstOrDefault<User>(user => user.Username.Equals(username));
         }
 
         public void DeleteUserById(int userId)
         {
-            var user = context.Users.Single(x => x.Id == userId);
+            var user = GetUserByID(userId);
             if(user != null)
-            context.Users.Remove(user);
-            //context.Users.
+                context.Users.Remove(user);
         }
 
-        //ToDo
-        public void AddUser(string firstName, string lastName, DateTime dateOfBirth, string email, string username, string password)
+        public void AddUser(User newUser)
         {
-            User user = new User(firstName, lastName, dateOfBirth, email, username, password);
-            context.Users.Add(user);
+            User user = new User(newUser.Name, newUser.Surname,
+                                 newUser.DateOfBirth, newUser.Email, newUser.Username, newUser.Password);
+            this.context.Users.Add(user);
+            //this.context.SaveChanges();
         }
 
         public void Update(User newUser)
@@ -52,7 +57,7 @@ namespace UserService.Services
             context.Entry(user).CurrentValues.SetValues(newUser);
         }
 
-        //ToDo
+        //TODO
         bool IUserRepository.AddPicture(byte[] pic)
         {
             throw new NotImplementedException();
