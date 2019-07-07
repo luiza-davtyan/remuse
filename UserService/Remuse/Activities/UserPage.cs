@@ -67,15 +67,16 @@ namespace Remuse.Activities
             {
                 case 0:
                     type = typeof(General);
+                    Intent intent = new Intent(this, type);
+                    StartActivity(intent);
                     break;
                 case 1:
+                    Toast.MakeText(this, mLeftItems[e.Position], ToastLength.Long).Show();
                     break;
                 case 2:
-                    //...
+                    Toast.MakeText(this, mLeftItems[e.Position], ToastLength.Long).Show();
                     break;
             }
-            Intent intent = new Intent(this, type);
-            StartActivity(intent);
         }
 
         private  void Books_Click(object sender, EventArgs e)

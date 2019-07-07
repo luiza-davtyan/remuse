@@ -81,13 +81,16 @@ namespace Remuse
             {
                 case 0:
                     type = typeof(StartGeneral);
+                    Intent intent = new Intent(this, type);
+                    StartActivity(intent);
                     break;
                 case 1:
-                    type = typeof(UserPage);
+                    Toast.MakeText(this, mLeftItems[e.Position], ToastLength.Long).Show();
+                    break;
+                default:
+                    Toast.MakeText(this, mLeftItems[e.Position], ToastLength.Long).Show();
                     break;
             }
-            Intent intent = new Intent(this, type);
-            StartActivity(intent);
         }
 
         /// <summary>

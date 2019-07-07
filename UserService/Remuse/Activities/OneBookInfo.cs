@@ -76,16 +76,16 @@ namespace Remuse.Activities
             switch (position)
             {
                 case 0:
+                    Intent intent = new Intent(this, type);
+                    StartActivity(intent);
                     break;
                 case 1:
-                    //Network
+                    Toast.MakeText(this, mLeftItems[e.Position], ToastLength.Long).Show();
                     break;
                 case 2:
-                    //Settings
+                    Toast.MakeText(this, mLeftItems[e.Position], ToastLength.Long).Show();
                     break;
             }
-            Intent intent = new Intent(this, type);
-            StartActivity(intent);
         }
 
         private void Read_Click(object sender, EventArgs e)
