@@ -15,18 +15,17 @@ namespace Remuse
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
+        Button search;
         ImageView[] bookImages = new ImageView[8];
         TextView[] textViews = new TextView[8];
         List<string> mLeftItems = new List<string>();
+        AutoCompleteTextView userInput;
+        string[] complete = new string[] { "barev", "aca", "this", "Armenia", "Destination" };
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.general);
-
-            Task task = new Task(UpdateImagesAndTexts);
-            task.Start();
+            SetContentView(Resource.Layout.startgeneral);
 
             #region menu
             DrawerLayout mDrawerLayout;
@@ -38,7 +37,6 @@ namespace Remuse
             ListView mLeftDrawer = FindViewById<ListView>(Resource.Id.leftsideview);
 
             mLeftItems.Add("Log In");
-            mLeftItems.Add("My account");
             mLeftItems.Add("Network");
             mLeftItems.Add("Settings");
 
@@ -48,7 +46,6 @@ namespace Remuse
             #endregion
 
             mLeftDrawer.ItemClick += MLeftDrawer_ItemClick;
-
 
             #region Page's images...
             bookImages[0] = FindViewById<ImageView>(Resource.Id.imageView1);
@@ -69,6 +66,10 @@ namespace Remuse
             textViews[6] = FindViewById<TextView>(Resource.Id.textView8);
             textViews[7] = FindViewById<TextView>(Resource.Id.textView9);
             #endregion
+
+            userInput = FindViewById<AutoCompleteTextView>(Resource.Id.autoCompleteTextView1);
+            ArrayAdapter adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line,complete);
+            userInput.Adapter = adapter;
         }
 
         private void MLeftDrawer_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
@@ -83,12 +84,6 @@ namespace Remuse
                     break;
                 case 1:
                     type = typeof(UserPage);
-                    break;
-                case 2:
-                    //...
-                    break;
-                case 3:
-                    //...
                     break;
             }
             Intent intent = new Intent(this, type);

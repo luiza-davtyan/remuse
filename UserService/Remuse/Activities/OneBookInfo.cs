@@ -6,6 +6,7 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V4.Widget;
 using Android.Views;
 using Android.Widget;
 using Newtonsoft.Json;
@@ -20,6 +21,7 @@ namespace Remuse.Activities
         TextView enteredbook,author,genre,year,description;
         ScrollView scroll;
         Button read;
+        List<string> mLeftItems = new List<string>();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -45,6 +47,45 @@ namespace Remuse.Activities
             description.Text = selectedBook.Description;
 
             read.Click += Read_Click;
+
+            #region menu
+            DrawerLayout mDrawerLayout;
+
+            // Array Adaper  
+            ArrayAdapter mLeftAdapter;
+
+            mDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawerLayout1);
+            ListView mLeftDrawer = FindViewById<ListView>(Resource.Id.leftsideview);
+
+            mLeftItems.Add("My account");
+            mLeftItems.Add("Network");
+            mLeftItems.Add("Settings");
+
+            // Set ArrayAdaper with Items  
+            mLeftAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, mLeftItems);
+            mLeftDrawer.Adapter = mLeftAdapter;
+            mLeftDrawer.ItemClick += MLeftDrawer_ItemClick;
+            #endregion
+        }
+
+        private void MLeftDrawer_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            Type type = typeof(UserPage);
+
+            int position = e.Position;
+            switch (position)
+            {
+                case 0:
+                    break;
+                case 1:
+                    //Network
+                    break;
+                case 2:
+                    //Settings
+                    break;
+            }
+            Intent intent = new Intent(this, type);
+            StartActivity(intent);
         }
 
         private void Read_Click(object sender, EventArgs e)

@@ -21,10 +21,7 @@ namespace Remuse.Activities
         {
             base.OnCreate(savedInstanceState);
             // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.general);
-
-            Task task = new Task(UpdateImagesAndTexts);
-            task.Start();
+            SetContentView(Resource.Layout.startgeneral);
 
             #region menu
             DrawerLayout mDrawerLayout;
@@ -42,10 +39,8 @@ namespace Remuse.Activities
             // Set ArrayAdaper with Items  
             mLeftAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, mLeftItems);
             mLeftDrawer.Adapter = mLeftAdapter;
-            #endregion
-
             mLeftDrawer.ItemClick += MLeftDrawer_ItemClick;
-
+            #endregion
 
             #region Page's images...
             bookImages[0] = FindViewById<ImageView>(Resource.Id.imageView1);
@@ -66,6 +61,12 @@ namespace Remuse.Activities
             textViews[6] = FindViewById<TextView>(Resource.Id.textView8);
             textViews[7] = FindViewById<TextView>(Resource.Id.textView9);
             #endregion
+
+        }
+
+        private void Search_SearchClick(object sender, EventArgs e)
+        {
+            
         }
 
         private void MLeftDrawer_ItemClick(object sender, AdapterView.ItemClickEventArgs e)

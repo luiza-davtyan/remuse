@@ -161,12 +161,12 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\general.axml">
+    <AndroidResource Include="Resources\layout\startgeneral.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\startgeneral.axml">
+    <AndroidResource Include="Resources\layout\general.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
