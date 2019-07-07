@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
 using Android.Support.V4.Widget;
 using Android.Widget;
@@ -41,6 +42,7 @@ namespace Remuse.Activities
 
             mDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawerLayout1);
             ListView mLeftDrawer = FindViewById<ListView>(Resource.Id.leftsideview);
+            mLeftDrawer.SetBackgroundColor(Color.White);
 
             mLeftItems.Add("Home");
             mLeftItems.Add("Network");

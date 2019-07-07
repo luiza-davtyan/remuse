@@ -11,6 +11,7 @@ using Remuse.Activities;
 using System.Threading;
 using Remuse.Models;
 using Newtonsoft.Json;
+using Android.Graphics;
 
 namespace Remuse
 {
@@ -38,7 +39,9 @@ namespace Remuse
 
             mDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawerLayout1);
             ListView mLeftDrawer = FindViewById<ListView>(Resource.Id.leftsideview);
+            mLeftDrawer.SetBackgroundColor(Color.White);
 
+            
             mLeftItems.Add("Log In");
             mLeftItems.Add("Network");
             mLeftItems.Add("Settings");
@@ -46,6 +49,7 @@ namespace Remuse
             // Set ArrayAdaper with Items  
             mLeftAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, mLeftItems);
             mLeftDrawer.Adapter = mLeftAdapter;
+            
             #endregion
 
             mLeftDrawer.ItemClick += MLeftDrawer_ItemClick;
@@ -72,6 +76,7 @@ namespace Remuse
 
             search = FindViewById<Button>(Resource.Id.button1);
             userInput = FindViewById<AutoCompleteTextView>(Resource.Id.autoCompleteTextView1);
+            userInput.SetCursorVisible(false);
             ArrayAdapter adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line,complete);
             userInput.Adapter = adapter;
             //search.Click += Search_Click;

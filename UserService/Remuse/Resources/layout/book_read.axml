@@ -9,19 +9,27 @@
 		android:layout_height="match_parent"
 		android:minWidth="25px"
 		android:minHeight="25px">
-		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-	<TextView
-		android:text="Text"
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:minWidth="25px"
-		android:minHeight="25px"
-		android:id="@+id/textView1" />
-
-</LinearLayout>
+		<LinearLayout
+			android:orientation="vertical"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:minWidth="25px"
+			android:minHeight="25px">
+			<ScrollView
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:layout_width="match_parent"
+				android:layout_height="328.5dp"
+				android:id="@+id/scrollView1">
+				<TextView
+					android:text="Text"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:minWidth="25px"
+					android:minHeight="25px"
+					android:id="@+id/textView1" />
+			</ScrollView>
+		</LinearLayout>
 	</FrameLayout>  
     <ListView  
         android:id="@+id/leftsideview"  

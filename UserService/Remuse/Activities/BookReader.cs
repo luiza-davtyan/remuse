@@ -5,26 +5,34 @@ using System.Linq;
 using System.Text;
 using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.V4.Widget;
 using Android.Views;
 using Android.Widget;
+using Newtonsoft.Json;
+using Remuse.Models;
 
 namespace Remuse.Activities
 {
     [Activity(Label = "BookReader")]
     public class BookReader : Activity
     {
-        TextView book;
+        TextView reading;
+        ScrollView scrollView;
+        Book book;
         List<string> mLeftItems = new List<string>();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.book_read);
+            book = JsonConvert.DeserializeObject<Book>(Intent.GetStringExtra("book"));
+            reading = FindViewById<TextView>(Resource.Id.textView1);
+            scrollView = FindViewById<ScrollView>(Resource.Id.scrollView1);
 
-            book = FindViewById<TextView>(Resource.Id.textView1);
+            reading.Text = book.Content;
 
             #region menu
             DrawerLayout mDrawerLayout;
@@ -33,6 +41,7 @@ namespace Remuse.Activities
 
             mDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.mydrawer);
             ListView mLeftDrawer = FindViewById<ListView>(Resource.Id.leftsideview);
+            mLeftDrawer.SetBackgroundColor(Color.White);
 
             mLeftItems.Add("Home");
             mLeftItems.Add("Network");

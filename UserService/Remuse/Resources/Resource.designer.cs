@@ -2510,8 +2510,8 @@ namespace Remuse
 			// aapt resource value: 0x7f080020
 			public const int disableHome = 2131230752;
 			
-			// aapt resource value: 0x7f080093
-			public const int drawerLayout1 = 2131230867;
+			// aapt resource value: 0x7f080094
+			public const int drawerLayout1 = 2131230868;
 			
 			// aapt resource value: 0x7f0800d0
 			public const int editText1 = 2131230928;
@@ -2570,8 +2570,8 @@ namespace Remuse
 			// aapt resource value: 0x7f080058
 			public const int forever = 2131230808;
 			
-			// aapt resource value: 0x7f080094
-			public const int frameLayout1 = 2131230868;
+			// aapt resource value: 0x7f080095
+			public const int frameLayout1 = 2131230869;
 			
 			// aapt resource value: 0x7f08000a
 			public const int ghost_view = 2131230730;
@@ -2633,8 +2633,8 @@ namespace Remuse
 			// aapt resource value: 0x7f080049
 			public const int left = 2131230793;
 			
-			// aapt resource value: 0x7f080092
-			public const int leftsideview = 2131230866;
+			// aapt resource value: 0x7f080093
+			public const int leftsideview = 2131230867;
 			
 			// aapt resource value: 0x7f080017
 			public const int line1 = 2131230743;
@@ -2780,8 +2780,8 @@ namespace Remuse
 			// aapt resource value: 0x7f080068
 			public const int scrollView = 2131230824;
 			
-			// aapt resource value: 0x7f080099
-			public const int scrollView1 = 2131230873;
+			// aapt resource value: 0x7f080092
+			public const int scrollView1 = 2131230866;
 			
 			// aapt resource value: 0x7f080055
 			public const int scrollable = 2131230805;
@@ -2906,17 +2906,17 @@ namespace Remuse
 			// aapt resource value: 0x7f0800d8
 			public const int textView12 = 2131230936;
 			
-			// aapt resource value: 0x7f080095
-			public const int textView2 = 2131230869;
-			
 			// aapt resource value: 0x7f080096
-			public const int textView3 = 2131230870;
+			public const int textView2 = 2131230870;
 			
 			// aapt resource value: 0x7f080097
-			public const int textView4 = 2131230871;
+			public const int textView3 = 2131230871;
 			
 			// aapt resource value: 0x7f080098
-			public const int textView5 = 2131230872;
+			public const int textView4 = 2131230872;
+			
+			// aapt resource value: 0x7f080099
+			public const int textView5 = 2131230873;
 			
 			// aapt resource value: 0x7f08009a
 			public const int textView6 = 2131230874;

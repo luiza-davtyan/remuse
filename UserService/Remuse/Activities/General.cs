@@ -4,6 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
 using Android.Support.V4.Widget;
 using Android.Widget;
@@ -35,6 +36,7 @@ namespace Remuse.Activities
 
             mDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawerLayout1);
             ListView mLeftDrawer = FindViewById<ListView>(Resource.Id.leftsideview);
+            mLeftDrawer.SetBackgroundColor(Color.White);
 
             mLeftItems.Add("My account");
             mLeftItems.Add("Network");
@@ -70,6 +72,7 @@ namespace Remuse.Activities
             userInput = FindViewById<AutoCompleteTextView>(Resource.Id.autoCompleteTextView1);
             ArrayAdapter adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line);
             userInput.Adapter = adapter;
+            userInput.SetCursorVisible(false);
             //search.Click += Search_Click;
         }
 

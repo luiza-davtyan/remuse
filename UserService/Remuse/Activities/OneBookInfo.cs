@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.V4.Widget;
@@ -12,6 +13,7 @@ using Android.Widget;
 using Newtonsoft.Json;
 using Remuse.Models;
 using Xamarin.Android;
+
 namespace Remuse.Activities
 {
     [Activity(Label = "BookNumberN")]
@@ -56,6 +58,7 @@ namespace Remuse.Activities
 
             mDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawerLayout1);
             ListView mLeftDrawer = FindViewById<ListView>(Resource.Id.leftsideview);
+            mLeftDrawer.SetBackgroundColor(Color.White);
 
             mLeftItems.Add("My account");
             mLeftItems.Add("Network");
@@ -101,6 +104,7 @@ namespace Remuse.Activities
         private void Read_Click(object sender, EventArgs e)
         {
             Intent intent = new Intent(this,typeof(BookReader));
+            intent.PutExtra("book", JsonConvert.SerializeObject(selectedBook));
             StartActivity(intent);
         }
     }
