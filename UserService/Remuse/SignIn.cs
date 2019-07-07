@@ -45,7 +45,10 @@ namespace Remuse
                 correction.Text = "Please,enter password";
             }
             //write the authentication logics to go to the users page
-            Intent intent = new Intent(this, typeof(UserPage));
+            //...
+            //...
+
+            Intent intent = new Intent(this, typeof(General));
             StartActivity(intent);
         }
     }

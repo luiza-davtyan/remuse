@@ -9,8 +9,6 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
 using Newtonsoft.Json;
 
 namespace Remuse.Models
@@ -31,10 +29,12 @@ namespace Remuse.Models
 
         public int AuthorId { get; set; }
 
+        public string Author { get; set; }
+
         public int Year { get; set; }
 
         public string Path { get; set; }
 
-        //public virtual List<ObjectId> GenreIds { get; set; }
+        public string Genre { get; set; }
     }
 }

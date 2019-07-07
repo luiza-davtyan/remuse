@@ -60,6 +60,8 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activities\BookReader.cs" />
+    <Compile Include="Activities\General.cs" />
     <Compile Include="Activities\OneBookInfo.cs" />
     <Compile Include="Activities\BookPage.cs" />
     <Compile Include="Activities\UserPage.cs" />
@@ -103,19 +105,20 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher_round.png" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="MongoDB.Bson">
-      <Version>2.8.1</Version>
-    </PackageReference>
     <PackageReference Include="System.Net.Http">
       <Version>4.3.4</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.1" />
+    <PackageReference Include="Xamarin.Android.Support.v7.AppCompat">
+      <Version>28.0.0.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\style.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />
+    <Folder Include="Resources\menu\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon.png" />
@@ -145,6 +148,16 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\bookinfo.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\book_read.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\general.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
