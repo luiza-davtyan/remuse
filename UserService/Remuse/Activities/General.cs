@@ -7,15 +7,19 @@ using Android.Content;
 using Android.OS;
 using Android.Support.V4.Widget;
 using Android.Widget;
+using Newtonsoft.Json;
+using Remuse.Models;
 
 namespace Remuse.Activities
 {
     [Activity(Label = "General")]
     public class General : Activity
     {
+        Button search;
         ImageView[] bookImages = new ImageView[8];
         TextView[] textViews = new TextView[8];
         List<string> mLeftItems = new List<string>();
+        AutoCompleteTextView userInput;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -62,11 +66,25 @@ namespace Remuse.Activities
             textViews[7] = FindViewById<TextView>(Resource.Id.textView9);
             #endregion
 
+            search = FindViewById<Button>(Resource.Id.button1);
+            userInput = FindViewById<AutoCompleteTextView>(Resource.Id.autoCompleteTextView1);
+            ArrayAdapter adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line);
+            userInput.Adapter = adapter;
+            //search.Click += Search_Click;
         }
 
-        private void Search_SearchClick(object sender, EventArgs e)
+        List<Book> books = new List<Book>();
+        /// <summary>
+        /// Whene user clicks search button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Search_Click(object sender, EventArgs e)
         {
-            
+            string bookName = userInput.Text;
+            //give bookName to the Book Service,then get the Book object
+            //books = given object
+            books = JsonConvert.DeserializeObject<List<Book>>(Intent.GetStringExtra("book"));
         }
 
         /// <summary>

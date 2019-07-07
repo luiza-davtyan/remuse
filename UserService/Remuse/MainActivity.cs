@@ -9,6 +9,8 @@ using Android.Support.V4.Widget;
 using System;
 using Remuse.Activities;
 using System.Threading;
+using Remuse.Models;
+using Newtonsoft.Json;
 
 namespace Remuse
 {
@@ -68,9 +70,25 @@ namespace Remuse
             textViews[7] = FindViewById<TextView>(Resource.Id.textView9);
             #endregion
 
+            search = FindViewById<Button>(Resource.Id.button1);
             userInput = FindViewById<AutoCompleteTextView>(Resource.Id.autoCompleteTextView1);
             ArrayAdapter adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line,complete);
             userInput.Adapter = adapter;
+            //search.Click += Search_Click;
+        }
+
+        List<Book> books = new List<Book>();
+        /// <summary>
+        /// Event,whene user clicks search button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Search_Click(object sender, EventArgs e)
+        {
+            string bookName = userInput.Text;
+            //give bookName to the Book Service,then get the Book object
+            //books = given object
+            books = JsonConvert.DeserializeObject<List<Book>>(Intent.GetStringExtra("book"));
         }
 
         /// <summary>
