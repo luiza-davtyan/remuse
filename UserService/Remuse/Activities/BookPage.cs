@@ -19,7 +19,6 @@ namespace Remuse.Activities
     {
         List<Book> usersbooks = GetBooks();   //get this from BooksService or activity...
 
-        //static readonly string[] countries = new String[]{"resresr","rse","fsf","fesfse","fsefesf","fesfesf","fesfesfes","fsefes","hgydyg","rssgr","gdsgrdg0","fshyfsf","fesfes","awdwd","dwadwad","#224","543543","43242","75764","bareeeeev"};
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);

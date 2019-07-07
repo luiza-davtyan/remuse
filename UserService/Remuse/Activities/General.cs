@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Support.V4.Widget;
-using Android.Views;
 using Android.Widget;
 
 namespace Remuse.Activities
@@ -29,7 +25,8 @@ namespace Remuse.Activities
 
             Task task = new Task(UpdateImagesAndTexts);
             task.Start();
-            
+
+            #region menu
             DrawerLayout mDrawerLayout;
 
             // Array Adaper  
@@ -38,7 +35,6 @@ namespace Remuse.Activities
             mDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawerLayout1);
             ListView mLeftDrawer = FindViewById<ListView>(Resource.Id.leftsideview);
 
-            mLeftItems.Add("Log In");
             mLeftItems.Add("My account");
             mLeftItems.Add("Network");
             mLeftItems.Add("Settings");
@@ -46,10 +42,12 @@ namespace Remuse.Activities
             // Set ArrayAdaper with Items  
             mLeftAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, mLeftItems);
             mLeftDrawer.Adapter = mLeftAdapter;
+            #endregion
 
             mLeftDrawer.ItemClick += MLeftDrawer_ItemClick;
 
-            //Page's images...
+
+            #region Page's images...
             bookImages[0] = FindViewById<ImageView>(Resource.Id.imageView1);
             bookImages[1] = FindViewById<ImageView>(Resource.Id.imageView2);
             bookImages[2] = FindViewById<ImageView>(Resource.Id.imageView3);
@@ -59,7 +57,6 @@ namespace Remuse.Activities
             bookImages[6] = FindViewById<ImageView>(Resource.Id.imageView7);
             bookImages[7] = FindViewById<ImageView>(Resource.Id.imageView8);
 
-            //Page's textviews...
             textViews[0] = FindViewById<TextView>(Resource.Id.textView2);
             textViews[1] = FindViewById<TextView>(Resource.Id.textView3);
             textViews[2] = FindViewById<TextView>(Resource.Id.textView4);
@@ -68,27 +65,23 @@ namespace Remuse.Activities
             textViews[5] = FindViewById<TextView>(Resource.Id.textView7);
             textViews[6] = FindViewById<TextView>(Resource.Id.textView8);
             textViews[7] = FindViewById<TextView>(Resource.Id.textView9);
-
+            #endregion
         }
 
         private void MLeftDrawer_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            Type type = typeof(SignIn);
+            Type type = typeof(UserPage);
         
             int position = e.Position;
             switch (position)
             {
                 case 0:
-                    type = typeof(SignIn);
                     break;
                 case 1:
-                    type = typeof(UserPage);
+                    //Network
                     break;
                 case 2:
-                    //...
-                    break;
-                case 3:
-                    //...
+                    //Settings
                     break;
             }
             Intent intent = new Intent(this, type);

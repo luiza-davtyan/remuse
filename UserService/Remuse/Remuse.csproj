@@ -35,6 +35,9 @@
     <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
     <AndroidLinkMode>None</AndroidLinkMode>
     <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <BundleAssemblies>false</BundleAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
@@ -64,6 +67,7 @@
     <Compile Include="Activities\General.cs" />
     <Compile Include="Activities\OneBookInfo.cs" />
     <Compile Include="Activities\BookPage.cs" />
+    <Compile Include="Activities\StartGeneral.cs" />
     <Compile Include="Activities\UserPage.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Models\Book.cs" />
@@ -158,6 +162,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\general.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\startgeneral.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

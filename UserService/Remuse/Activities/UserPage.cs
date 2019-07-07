@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Net;
-using System.Net.Http;
 using Android.App;
 using Android.Content;
 using Android.OS;
+using Android.Support.V4.Widget;
 using Android.Widget;
 using Remuse.Models;
 
@@ -15,9 +13,11 @@ namespace Remuse.Activities
     public class UserPage : Activity
     {
         ImageView userimage;
-        TextView firstname, lastname, username, servergirq;
+        TextView firstname, lastname, username, birthday;
         Button books;
         List<Book> usersBooks = new List<Book>();
+        List<string> mLeftItems = new List<string>();
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -30,13 +30,52 @@ namespace Remuse.Activities
             lastname = FindViewById<TextView>(Resource.Id.textView2);
             username = FindViewById<TextView>(Resource.Id.textView3);
             books = FindViewById<Button>(Resource.Id.button1);
-            servergirq = FindViewById<TextView>(Resource.Id.textView4);
+            birthday = FindViewById<TextView>(Resource.Id.textView4);
             books.Click += Books_Click;
 
+            #region menu
+            DrawerLayout mDrawerLayout;
+
+            // Array Adaper  
+            ArrayAdapter mLeftAdapter;
+
+            mDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawerLayout1);
+            ListView mLeftDrawer = FindViewById<ListView>(Resource.Id.leftsideview);
+
+            mLeftItems.Add("Home");
+            mLeftItems.Add("Network");
+            mLeftItems.Add("Settings");
+
+            // Set ArrayAdaper with Items  
+            mLeftAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, mLeftItems);
+            mLeftDrawer.Adapter = mLeftAdapter;
+
+            mLeftDrawer.ItemClick += MLeftDrawer_ItemClick;
+            #endregion
 
             //go to UserServer to get user's date
             //then go to BookService with token and bring info about user's books
             //usersBooks = something from book's service
+        }
+
+        private void MLeftDrawer_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            Type type = typeof(General);
+
+            int position = e.Position;
+            switch (position)
+            {
+                case 0:
+                    type = typeof(General);
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    //...
+                    break;
+            }
+            Intent intent = new Intent(this, type);
+            StartActivity(intent);
         }
 
         private  void Books_Click(object sender, EventArgs e)

@@ -49,8 +49,8 @@ namespace Remuse.Activities
 
         private void Read_Click(object sender, EventArgs e)
         {
-            //Intent intent = new Intent(this,Resource.Id.);
-
+            Intent intent = new Intent(this,typeof(BookReader));
+            StartActivity(intent);
         }
     }
 }

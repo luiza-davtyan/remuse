@@ -19,7 +19,7 @@ namespace Remuse
         TextView correction;
         EditText email, password;
         Button signin;
-        int lalal = 9;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
