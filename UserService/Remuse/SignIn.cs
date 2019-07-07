@@ -33,6 +33,11 @@ namespace Remuse
             signin.Click += Signin_Click;
         }
 
+        /// <summary>
+        /// Event,whene user clicks on SignIn button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Signin_Click(object sender, EventArgs e)
         {
             correction = FindViewById<TextView>(Resource.Id.textView8);

@@ -50,6 +50,11 @@ namespace Remuse.Activities
             //To do...
             return books;
         }
+
+        /// <summary>
+        /// Method ,that gets Book's description
+        /// </summary>
+        /// <returns></returns>
         public static string Desc()
         {
             string description = "Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";

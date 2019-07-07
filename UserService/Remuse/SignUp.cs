@@ -36,6 +36,11 @@ namespace Remuse
             confirm.Click += Confirm_Click;
         }
 
+        /// <summary>
+        /// Event,whene user clicks Confirm button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Confirm_Click(object sender, EventArgs e)
         {
             var namefail = FindViewById<TextView>(Resource.Id.textView8);        
@@ -64,6 +69,12 @@ namespace Remuse
                 StartActivity(intent);
             }
         }
+
+        /// <summary>
+        /// This method switchs user input validation
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="output"></param>
         public static void SwitchTextValid(EditText input,ref TextView output)
         {
             if(input.Text == "")

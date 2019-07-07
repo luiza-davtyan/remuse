@@ -69,6 +69,11 @@ namespace Remuse.Activities
             
         }
 
+        /// <summary>
+        /// Event,that works when user clicks on the item of menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MLeftDrawer_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             Type type = typeof(UserPage);

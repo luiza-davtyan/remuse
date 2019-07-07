@@ -28,6 +28,11 @@ namespace Remuse.Activities
             signup.Click += Signup_Click;
         }
 
+        /// <summary>
+        /// User clicks Sign Up button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Signup_Click(object sender, System.EventArgs e)
         {
             //SetContentView(Resource.Layout.SignUp);
@@ -35,6 +40,11 @@ namespace Remuse.Activities
             StartActivity(intent);
         }
 
+        /// <summary>
+        /// User clicks Sign In button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Signin_Click(object sender, System.EventArgs e)
         {
             //SetContentView(Resource.Layout.SignIn);

@@ -20,6 +20,7 @@ namespace Remuse
         TextView[] textViews = new TextView[8];
         List<string> mLeftItems = new List<string>();
         AutoCompleteTextView userInput;
+
         string[] complete = new string[] { "barev", "aca", "this", "Armenia", "Destination" };
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -72,6 +73,11 @@ namespace Remuse
             userInput.Adapter = adapter;
         }
 
+        /// <summary>
+        /// Event,that works when user clicks on the item of menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MLeftDrawer_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             Type type = typeof(SignIn);

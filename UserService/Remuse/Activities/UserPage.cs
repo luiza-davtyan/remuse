@@ -58,6 +58,11 @@ namespace Remuse.Activities
             //usersBooks = something from book's service
         }
 
+        /// <summary>
+        /// Event,that works when user clicks on the item of menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MLeftDrawer_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             Type type = typeof(General);
@@ -79,12 +84,19 @@ namespace Remuse.Activities
             }
         }
 
+        /// <summary>
+        /// User clicks Books button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private  void Books_Click(object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(BookPage));
             intent.PutExtra("books", new string[] { "HIn oreri tangon","Menq enq mer sarery" });
             StartActivity(intent);
         }
+
+        //Delete
         public async void Client()
         {
             //using (var client = new HttpClient())

@@ -68,6 +68,11 @@ namespace Remuse.Activities
             #endregion
         }
 
+        /// <summary>
+        /// Event,that works when user clicks on the item of menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MLeftDrawer_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             Type type = typeof(UserPage);
@@ -88,6 +93,11 @@ namespace Remuse.Activities
             }
         }
 
+        /// <summary>
+        /// Event,that works when user clicks Read button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Read_Click(object sender, EventArgs e)
         {
             Intent intent = new Intent(this,typeof(BookReader));
