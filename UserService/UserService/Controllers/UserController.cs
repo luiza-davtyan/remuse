@@ -15,12 +15,28 @@ namespace UserService.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        IUserRepository userRepository;
+        /// <summary>
+        /// User repository.
+        /// </summary>
+        private readonly IUserRepository userRepository;
+        /// <summary>
+        /// A helper class object.
+        /// </summary>
+        private readonly Helper helper;
+
+        /// <summary>
+        /// Public user controller.
+        /// </summary>
+        /// <param name="userRepository"></param>
         public UserController(IUserRepository userRepository)
         {
             this.userRepository = userRepository;
         }
 
+        /// <summary>
+        /// Get all users.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult GetAllUsers()
         {
@@ -28,6 +44,11 @@ namespace UserService.Controllers
             return Ok(users);
         }
  
+        /// <summary>
+        /// Get user by Id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [Route("{id}")]
         [HttpGet]
         public IActionResult GetUserById(int id)
@@ -40,19 +61,29 @@ namespace UserService.Controllers
             return Ok(userById);
         }
 
+        /// <summary>
+        /// Add user.
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult<User> AddUser(User user)
         {
             User currUser = this.userRepository.GetUserByUsername(user.Username);
             if (currUser != null)
             {
-                throw new Exception("Username must be unique");//??
+                throw new Exception("Username must be unique");
             }
-            user.Password = getHashSha256(user.Password);
+            user.Password = helper.getHashSha256(user.Password);
             this.userRepository.AddUser(user);
-            return CreatedAtRoute("GetUser", new { id = user.Id.ToString() }, user);
+            return Ok(user);//CreatedAtRoute("GetUser", new { id = user.Id.ToString() }, user);
         }
 
+        /// <summary>
+        /// Delete book by Id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         // DELETE api/values/5
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
@@ -64,9 +95,14 @@ namespace UserService.Controllers
             }
 
             this.userRepository.DeleteUserById(id);
-            return NoContent();
+            return Ok();//NoContent();
         }
 
+        /// <summary>
+        /// Update user by Id with the given object.
+        /// </summary>
+        /// <param name="newUser"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         IActionResult Update(User newUser)
         {
@@ -76,61 +112,9 @@ namespace UserService.Controllers
                 return NotFound();
             }
 
-            newUser.Password = getHashSha256(newUser.Password);
+            newUser.Password = helper.getHashSha256(newUser.Password);
             this.userRepository.Update(user);
-            return NoContent();
+            return Ok(user);//NoContent();
         }
-
-        public string getHashSha256(string text)
-        {
-            byte[] bytes = Encoding.Unicode.GetBytes(text);
-            SHA256Managed hashstring = new SHA256Managed();
-            byte[] hash = hashstring.ComputeHash(bytes);
-            string hashString = string.Empty;
-            foreach (byte x in hash)
-            {
-                hashString += String.Format("{0:x2}", x);
-            }
-            return hashString;
-        }
-
-        //public bool PasswordIsValid(string password)
-        //{
-        //    var input = password;
-
-        //    if (string.IsNullOrWhiteSpace(input))
-        //    {
-        //        throw new Exception("Password should not be empty");
-        //    }
-
-        //    var hasNumber = new Regex(@"[0-9]+");
-        //    var hasUpperChar = new Regex(@"[A-Z]+");
-        //    var hasMiniMaxChars = new Regex(@".{8,15}");
-        //    var hasLowerChar = new Regex(@"[a-z]+");
-        //    var hasSymbols = new Regex(@"[!@#$%^&*()_+=\[{\]};:<>|./?,-]");
-
-        //    if (!hasLowerChar.IsMatch(input))
-        //    {
-        //        throw new Exception("Password should contain At least one lower case letter");
-        //    }
-        //    else if (!hasUpperChar.IsMatch(input))
-        //    {
-        //        throw new Exception("Password should contain At least one upper case letter");
-        //    }
-        //    else if (!hasMiniMaxChars.IsMatch(input))
-        //    {
-        //        throw new Exception("Password should not be less than 8 or greater than 12 characters");
-        //    }
-        //    else if (!hasNumber.IsMatch(input))
-        //    {
-        //        throw new Exception("Password should contain At least one numeric value");
-        //    }
-        //    else if (!hasSymbols.IsMatch(input))
-        //    {
-        //        throw new Exception("Password should contain At least one special case characters");
-        //    }
-
-        //    return true;
-        //}
     }
 }
