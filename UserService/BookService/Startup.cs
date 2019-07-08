@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BookService.Models;
 using BookService.Services;
+using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -29,6 +30,29 @@ namespace BookService
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
+            //services.AddMvcCore()
+            //.AddAuthorization()
+            //.AddJsonFormatters();
+
+            //services.AddAuthentication("Bearer")
+            //    .AddJwtBearer("Bearer", options =>
+            //    {
+            //        options.Authority = "http://localhost:5000";
+            //        options.RequireHttpsMetadata = false;
+
+            //        options.Audience = "BookService";
+            //    });
+
+            services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
+                    .AddIdentityServerAuthentication(options =>
+                    {
+                        options.Authority = "http://localhost:5000";
+                        options.RequireHttpsMetadata = false;
+
+                        options.ApiName = "BookService";
+                    }
+                );
+
             services.Configure<BooksDbSettings>(
             Configuration.GetSection(nameof(BooksDbSettings)));
 
@@ -38,6 +62,7 @@ namespace BookService
             services.AddSingleton<BookRepository>();
             services.AddSingleton<AuthorRepository>();
             services.AddSingleton<GenreRepository>();
+
             //services.AddScoped<IBookRepository, BookRepository>();
         }
 
@@ -48,7 +73,8 @@ namespace BookService
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseAuthentication();
+            app.UseStatusCodePages();
             app.UseMvc();
         }
     }

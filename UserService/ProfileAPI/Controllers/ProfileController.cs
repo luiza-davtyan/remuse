@@ -3,13 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using ProfileAPI.Entities;
+using ProfileAPI.Services;
 
 namespace ProfileAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class ProfileController : ControllerBase
     {
+        private IProfileRepository profileRepository;
+
+        public ProfileController(IProfileRepository profileRepository)
+        {
+            this.profileRepository = profileRepository;
+        }
+
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
@@ -26,8 +35,9 @@ namespace ProfileAPI.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Profile profile)
         {
+            this.profileRepository.Create(profile);
         }
 
         // PUT api/values/5
