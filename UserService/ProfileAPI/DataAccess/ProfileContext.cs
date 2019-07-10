@@ -17,6 +17,6 @@ namespace ProfileAPI.DataAccess
         }
 
         public DbSet<Profile> Profiles { get; set; }
-        public DbSet<Music> Music { get; set; }
+        
     }
 }
