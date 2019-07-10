@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:minWidth="25px"
+	android:minHeight="25px">
+	<TextView
+		android:text="                            Sign  In"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textView5"
+		android:layout_marginTop="33.0dp"
+		android:layout_marginBottom="35.0dp" />
+	<TextView
+		android:text="Email"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textView6" />
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/editText1" />
+	<TextView
+		android:text="Password"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textView7" />
+	<android.support.design.widget.TextInputLayout
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textInputLayout1">
+		<android.support.design.widget.TextInputEditText
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/textInputEditText1"
+			android:inputType="textPassword"/>
+	</android.support.design.widget.TextInputLayout>
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textView8"
+		android:textColor="@android:color/holo_red_light" />
+	<Button
+		android:text="Sign In"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/button1"
+		android:layout_marginTop="31.5dp"
+		android:layout_marginBottom="27.0dp"
+		android:layout_marginRight="80.5dp"
+		android:layout_marginLeft="80.0dp" />
+
+</LinearLayout>

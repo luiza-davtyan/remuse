@@ -22,6 +22,6 @@ namespace UserService.Models
 
         public string Password { get; set; }
 
-        public List<BookDTO> Books { get; set; }
+        //public List<BookDTO> Books { get; set; }
     }
 }
