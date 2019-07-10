@@ -12,10 +12,10 @@ namespace UserService.Services
     {
         private UserConnection context;
 
-        /// <summary>
-        /// A helper class object.
-        /// </summary>
-        private readonly Helper helper;
+        ///// <summary>
+        ///// A helper class object.
+        ///// </summary>
+        //private readonly Helper helper;
 
         /// <summary>
         /// Public construvtor.
