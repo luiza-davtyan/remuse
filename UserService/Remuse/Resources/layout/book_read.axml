@@ -19,7 +19,7 @@
 				android:minWidth="25px"
 				android:minHeight="25px"
 				android:layout_width="match_parent"
-				android:layout_height="328.5dp"
+				android:layout_height="409.5dp"
 				android:id="@+id/scrollView1">
 				<TextView
 					android:text="Text"
@@ -29,6 +29,34 @@
 					android:minHeight="25px"
 					android:id="@+id/textView1" />
 			</ScrollView>
+			<LinearLayout
+				android:orientation="horizontal"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:layout_width="match_parent"
+				android:layout_height="61.5dp"
+				android:id="@+id/linearLayout1"
+				android:layout_marginTop="28.0dp"
+				android:background="@android:color/black">
+				<Button
+					android:text="Play"
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:id="@+id/button1"
+					android:layout_marginLeft="47.0dp" />
+				<Button
+					android:text="Pause"
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:id="@+id/button2"
+					android:layout_marginLeft="31.5dp"
+					android:layout_marginRight="30.0dp" />
+				<Button
+					android:text="Stop"
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:id="@+id/button3" />
+			</LinearLayout>
 		</LinearLayout>
 	</FrameLayout>  
     <ListView  

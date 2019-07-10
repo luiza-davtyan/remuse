@@ -13,6 +13,7 @@ using Android.Views;
 using Android.Widget;
 using Newtonsoft.Json;
 using Remuse.Models;
+using Remuse.Resources.Music;
 
 namespace Remuse.Activities
 {
@@ -53,8 +54,24 @@ namespace Remuse.Activities
 
             mLeftDrawer.ItemClick += MLeftDrawer_ItemClick;
             #endregion
+
+            #region Music
+            //var play = FindViewById<Button>(Resource.Id.button1);
+            //var pause = FindViewById<Button>(Resource.Id.button2);
+            //var stop = FindViewById<Button>(Resource.Id.button3);
+
+            //play.Click += (sender, args) => SendAudioCommand(StreamingBackgroundService.ActionPlay);
+            //pause.Click += (sender, args) => SendAudioCommand(StreamingBackgroundService.ActionPause);
+            //stop.Click += (sender, args) => SendAudioCommand(StreamingBackgroundService.ActionStop);
+
+            #endregion
         }
 
+        private void SendAudioCommand(string action)
+        {
+            var intent = new Intent(action);
+            StartService(intent);
+        }
         /// <summary>
         ///  Event,that works when user clicks on the item of menu
         /// </summary>
