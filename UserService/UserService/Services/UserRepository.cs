@@ -13,6 +13,11 @@ namespace UserService.Services
         private UserConnection context;
 
         /// <summary>
+        /// A helper class object.
+        /// </summary>
+        private readonly Helper helper;
+
+        /// <summary>
         /// Public construvtor.
         /// </summary>
         /// <param name="context"></param>
@@ -42,6 +47,16 @@ namespace UserService.Services
         }
 
         /// <summary>
+        /// Get user_role by userID and role(default it is user).
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public User_Role GetUser_RoleByID(int userId)
+        {
+            return context.User_Role.FirstOrDefault<User_Role>(user => user.UserID == userId && user.RoleID == 2);
+        }
+
+        /// <summary>
         /// Get user by username.
         /// </summary>
         /// <param name="username"></param>
@@ -57,6 +72,10 @@ namespace UserService.Services
         /// <param name="userId"></param>
         public void DeleteUserById(int userId)
         {
+            var user_role = GetUser_RoleByID(userId);
+            if (user_role != null)
+                context.User_Role.Remove(user_role);
+            context.SaveChanges();
             var user = GetUserByID(userId);
             if(user != null)
                 context.Users.Remove(user);
@@ -74,6 +93,12 @@ namespace UserService.Services
             //newUser.Password = getHashSha256(newUser.Password);
             this.context.Users.Add(newUser);
             this.context.SaveChanges();
+
+            User_Role user_role = new User_Role();
+            user_role.RoleID = 2;
+            user_role.UserID = newUser.Id;
+            this.context.User_Role.Add(user_role);
+            this.context.SaveChanges();
         }
 
         /// <summary>
@@ -88,18 +113,36 @@ namespace UserService.Services
                 return;
             }
             context.Entry(user).CurrentValues.SetValues(newUser);
+            this.context.SaveChanges();
         }
 
         //TODO
         /// <summary>
-        /// Add picture for user.
+        /// Change user's picture.
         /// </summary>
         /// <param name="pic"></param>
         /// <param name="userId"></param>
         /// <returns></returns>
-        bool IUserRepository.AddPicture(byte[] pic, int userId)
+        void IUserRepository.ChangePicture(byte[] pic, int userId)
         {
-            throw new NotImplementedException();
+            User user = GetUserByID(userId);
+            user.Picture = pic;
+            context.SaveChanges();
         }
+
+        ///// <summary>
+        ///// Get user by username and password.
+        ///// </summary>
+        ///// <param name="username"></param>
+        ///// <param name="password"></param>
+        //public User GetUserByUsernameAndPassword(string username, string password)
+        //{
+        //    var user = context.Users.FirstOrDefault<User>(currUser => currUser.Username.Equals(username));
+        //    if (!user.Password.Equals(helper.getHashSha256(password)))
+        //    {
+        //        return null;
+        //    }
+        //    return user;
+        //}
     }
 }

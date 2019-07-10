@@ -10,14 +10,14 @@ namespace UserService.Models
     {
         // prop
         public int Id { get; set; }
-        public string Name { get; protected set; }
-        public string Surname { get; protected set; }
-        public DateTime DateOfBirth { get; protected set; }
-        public string Email { get; protected set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public string Email { get; set; }
        // public string RoleId { get; protected set; }
-        public string Username { get; protected set; }
+        public string Username { get; set; }
         public string Password { get; set; }
-        public byte[] Picture { get; protected set; }
+        public byte[] Picture { get; set; }
 
 
         public User(string name, string surname, DateTime dateOfBirth, string email,

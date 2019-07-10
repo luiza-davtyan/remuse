@@ -41,10 +41,16 @@ namespace UserService.Services
         /// <returns></returns>
         User GetUserByUsername(string username);
         /// <summary>
-        /// Add picture for user.
+        /// Change user's picture.
         /// </summary>
         /// <param name="pic"></param>
         /// <returns></returns>
-        bool AddPicture(byte[] pic, int userId);
+        void ChangePicture(byte[] pic, int userId);
+        ///// <summary>
+        ///// Get user by username and password.
+        ///// </summary>
+        ///// <param name="username"></param>
+        ///// <param name="password"></param>
+        //User GetUserByUsernameAndPassword(string username, string password);
     }
 }

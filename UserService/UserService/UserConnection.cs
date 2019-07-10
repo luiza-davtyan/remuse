@@ -15,5 +15,6 @@ namespace UserService
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<User_Role> User_Role { get; set; }
     }
 }

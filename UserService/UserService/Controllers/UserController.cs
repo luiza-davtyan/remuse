@@ -25,12 +25,13 @@ namespace UserService.Controllers
         private readonly Helper helper;
 
         /// <summary>
-        /// Public user controller.
+        /// Public user controller wich initialize .
         /// </summary>
         /// <param name="userRepository"></param>
         public UserController(IUserRepository userRepository)
         {
             this.userRepository = userRepository;
+            this.helper = new Helper();
         }
 
         /// <summary>
@@ -60,6 +61,17 @@ namespace UserService.Controllers
             }
             return Ok(userById);
         }
+
+        //[HttpGet]
+        //public IActionResult GetUserByUsernameAndPassword(string username, string password)
+        //{
+        //    User user = this.userRepository.GetUserByUsernameAndPassword(username, password);
+        //    if(user == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return Ok(user);
+        //}
 
         /// <summary>
         /// Add user.
@@ -101,20 +113,34 @@ namespace UserService.Controllers
         /// <summary>
         /// Update user by Id with the given object.
         /// </summary>
-        /// <param name="newUser"></param>
+        /// <param name="user"></param>
         /// <returns></returns>
         [HttpPut("{id}")]
-        IActionResult Update(User newUser)
+        public IActionResult Update(User user)
         {
-            var user = this.userRepository.GetUserByID(newUser.Id);
+            var updateUser = this.userRepository.GetUserByID(user.Id);
+            if (updateUser == null)
+            {
+                return NotFound();
+            }
+
+            user.Password = helper.getHashSha256(user.Password);
+            this.userRepository.Update(user);
+            return Ok(user);
+        }
+
+        //????????????????
+        [HttpPut("id")] 
+        public IActionResult ChangePhoto(byte[] pic, int userId)
+        {
+            var user = this.userRepository.GetUserByID(userId);
             if (user == null)
             {
                 return NotFound();
             }
 
-            newUser.Password = helper.getHashSha256(newUser.Password);
-            this.userRepository.Update(user);
-            return Ok(user);//NoContent();
+            this.userRepository.ChangePicture(pic, userId);
+            return Ok(user);
         }
     }
 }
