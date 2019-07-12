@@ -42,10 +42,10 @@ namespace Remuse.Activities
         {
             List<Book> books = new List<Book>()
             {
-                new Book() { Id = "1", Title = "Title 1 ",Year = 1995,Description = Desc(),Genre = "Detetctive",Author = "Shirvanzade" },
-                new Book() { Id = "2", Title = "Title 2 ",Year = 1950,Description = Desc(),Genre = "Drama",Author = "Hamo Sahyan" },
-                new Book() { Id = "3", Title = "Title 3 ",Year = 1940,Description = Desc(),Genre = "Comedy",Author = "Bakunc" },
-                new Book() { Id = "4", Title = "Title 4 " ,Year = 1352,Description = Desc(),Genre = "Horror",Author = "Teryan"}
+                new Book() { Id = "1", Title = "Title 1 ",Year = 1995,Description = Desc() },
+                new Book() { Id = "2", Title = "Title 2 ",Year = 1950,Description = Desc()},
+                new Book() { Id = "3", Title = "Title 3 ",Year = 1940,Description = Desc()},
+                new Book() { Id = "4", Title = "Title 4 " ,Year = 1352,Description = Desc()}
             };
             //To do...
             return books;

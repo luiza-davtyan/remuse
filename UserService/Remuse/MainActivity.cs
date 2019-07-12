@@ -13,6 +13,7 @@ using Remuse.Models;
 using Newtonsoft.Json;
 using Android.Graphics;
 using Remuse.Services;
+using System.Linq;
 
 namespace Remuse
 {
@@ -42,7 +43,7 @@ namespace Remuse
             ListView mLeftDrawer = FindViewById<ListView>(Resource.Id.leftsideview);
             mLeftDrawer.SetBackgroundColor(Color.White);
 
-            
+
             mLeftItems.Add("Log In");
             mLeftItems.Add("Network");
             mLeftItems.Add("Settings");
@@ -78,7 +79,7 @@ namespace Remuse
             userInput = FindViewById<AutoCompleteTextView>(Resource.Id.autoCompleteTextView1);
             userInput.SetCursorVisible(false);
 
-            ArrayAdapter adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line,complete);
+            ArrayAdapter adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line, complete);
             userInput.Adapter = adapter;
             search.Click += Search_Click;
         }
@@ -89,13 +90,13 @@ namespace Remuse
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Search_Click(object sender, EventArgs e)
+        private async void Search_Click(object sender, EventArgs e)
         {
             string bookName = userInput.Text;
 
             //give bookName to the Book Service,then get the Book object
             //books = given object
-            GetBooksAsync(bookName);           
+            await GetBooksAsync(bookName);
             Intent intent = new Intent(this, typeof(BookSearchResult));
             intent.PutExtra("book", JsonConvert.SerializeObject(books));
             StartActivity(intent);
@@ -149,10 +150,10 @@ namespace Remuse
             }
         }
 
-        public async void GetBooksAsync(string bookName)
+        public async Task GetBooksAsync(string bookName)
         {
-            BookHttpRequestService service = new BookHttpRequestService();
-            books = await service.GetBooksByName("search/" + bookName);
+            var service = new BookClient(new System.Net.Http.HttpClient());
+            books = (await service.SearchBookAsync(bookName)).ToList();
         }
     }
 }

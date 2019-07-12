@@ -60,20 +60,19 @@ namespace BookService.Services
 
         //jnjeeel
     
-        public List<Book> books = new List<Book>() { new Book() { Title = "MartinIden", Year = 1998 } };
+        public List<Book> books = new List<Book>() { new Book() { Title = "MartinIden", Year = 1998, Description="This is our very first book", Content="---",  } };
 
         public List<Book> GetByTitle(string[] keywords)
         {
             var resultsList = new List<Book>();
-            resultsList.Add(new Book() { Title = "Datark" });
-            string name = null;
+             string name = null;
             foreach (var item in keywords)
             {
                 name = name + item;
             }
             foreach(var item in books)
             {
-                if(name == item.Title)
+                if(name.ToLower() == item.Title.ToLower())
                 {
                     resultsList.Add(item);
                 }

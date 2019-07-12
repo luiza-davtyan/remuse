@@ -61,6 +61,12 @@
       <HintPath>..\..\..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\newtonsoft.json\11.0.2\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations">
+      <HintPath>..\..\..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.netcore.app\2.1.0\ref\netcoreapp2.1\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Primitives">
+      <HintPath>..\..\..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.netcore.app\2.1.0\ref\netcoreapp2.1\System.Runtime.Serialization.Primitives.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
@@ -73,13 +79,13 @@
     <Compile Include="Activities\BookPage.cs" />
     <Compile Include="Activities\StartGeneral.cs" />
     <Compile Include="Activities\UserPage.cs" />
+    <Compile Include="Attributes\EnumMemberAttribute.cs" />
     <Compile Include="MainActivity.cs" />
-    <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\Client.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Resources\Music\treamingBackgroundService.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\BookHttpRequestService.cs" />
     <Compile Include="Services\IHttpRequestService.cs" />
     <Compile Include="Services\IUserHttpRequestService.cs" />
     <Compile Include="SignIn.cs" />

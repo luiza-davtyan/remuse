@@ -39,6 +39,8 @@ namespace BookService
             services.AddSingleton<AuthorRepository>();
             services.AddSingleton<GenreRepository>();
             //services.AddScoped<IBookRepository, BookRepository>();
+
+            services.AddSwaggerDocument();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +50,9 @@ namespace BookService
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
 
             app.UseMvc();
         }

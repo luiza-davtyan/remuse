@@ -80,7 +80,7 @@ namespace BookService.Controllers
         /// <param name="param"></param>
         /// <returns></returns>
         [HttpGet("search/{param}")]
-        public ActionResult<List<Book>> SearchBook(string param)
+        public List<Book> SearchBook(string param)
         {
             var parsedParam = param.ToLower();
             var keywords = parsedParam.Split('-');

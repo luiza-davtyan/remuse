@@ -43,8 +43,6 @@ namespace Remuse.Activities
 
             //Giving info to TextViews
             enteredbook.Text = selectedBook.Title;
-            author.Text = author.Text + selectedBook.Author;
-            genre.Text = genre.Text + selectedBook.Genre;
             year.Text = year.Text + selectedBook.Year;
             description.Text = selectedBook.Description;
 
