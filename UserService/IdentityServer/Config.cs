@@ -19,7 +19,8 @@ namespace IdentityServer
             {
                 new ApiResource("BookService", "Book API"),
                 new ApiResource("UserService", "User API"),
-                new ApiResource("ProfileAPI", "Profile API")
+                new ApiResource("ProfileAPI", "Profile API"),
+                new ApiResource("TestClient", "Client API")
             };
             
         }
@@ -42,7 +43,7 @@ namespace IdentityServer
                     },
 
                     // scopes that client has access to
-                    AllowedScopes = { "BookService", "UserService", "ProfileAPI" }
+                    AllowedScopes = { "BookService", "UserService", "ProfileAPI", "TestClient" }
                 }
             };
         }
