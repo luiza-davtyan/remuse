@@ -20,10 +20,8 @@ namespace BookService.Controllers
         }
 
         [HttpGet]
-        //public ActionResult<List<Book>> Get() =>
-        //  _bookRepository.Get();
-        public ActionResult<string> Get() =>
-            _bookRepository.Get();
+        public ActionResult<List<Book>> Get() =>
+          _bookRepository.Get();
 
         [HttpGet("{id:length(24)}", Name = "GetBook")]
         public ActionResult<Book> Get(string id)
@@ -76,5 +74,18 @@ namespace BookService.Controllers
             return NoContent();
         }
 
+        /// <summary>
+        /// Search book by title.
+        /// </summary>
+        /// <param name="param"></param>
+        /// <returns></returns>
+        [HttpGet("search/{param}")]
+        public ActionResult<List<Book>> SearchBook(string param)
+        {
+            var parsedParam = param.ToLower();
+            var keywords = parsedParam.Split('-');
+            var results = _bookRepository.GetByTitle(keywords);
+            return results;
+        }
     }
 }

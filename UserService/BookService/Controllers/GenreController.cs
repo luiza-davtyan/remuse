@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace BookService.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class GenreController : ControllerBase
     {
         private readonly GenreRepository _genreRepository;

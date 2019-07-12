@@ -40,5 +40,45 @@ namespace BookService.Services
 
         public void Remove(string id) =>
             _books.DeleteOne(book => book.Id == id);
+
+        /// <summary>
+        /// Search by title. Returns list of books, which contain the given keyword(keywords) in title.
+        /// </summary>
+        /// <param name="keywords"></param>
+        /// <returns></returns>
+        //public List<Book> GetByTitle(string[] keywords)
+        //{
+        //    var resultsList = new List<Book>();
+
+        //    foreach (var item in keywords)
+        //    {
+        //        resultsList.AddRange(_books.Find<Book>(book => book.Title.ToLower().Contains(item)).ToList());
+        //    }
+        //    return resultsList;
+        //}
+
+
+        //jnjeeel
+    
+        public List<Book> books = new List<Book>() { new Book() { Title = "MartinIden", Year = 1998 } };
+
+        public List<Book> GetByTitle(string[] keywords)
+        {
+            var resultsList = new List<Book>();
+            resultsList.Add(new Book() { Title = "Datark" });
+            string name = null;
+            foreach (var item in keywords)
+            {
+                name = name + item;
+            }
+            foreach(var item in books)
+            {
+                if(name == item.Title)
+                {
+                    resultsList.Add(item);
+                }
+            }
+            return resultsList;
+        }
     }
 }

@@ -12,6 +12,7 @@ using System.Threading;
 using Remuse.Models;
 using Newtonsoft.Json;
 using Android.Graphics;
+using Remuse.Services;
 
 namespace Remuse
 {
@@ -49,10 +50,9 @@ namespace Remuse
             // Set ArrayAdaper with Items  
             mLeftAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, mLeftItems);
             mLeftDrawer.Adapter = mLeftAdapter;
-            
-            #endregion
-
             mLeftDrawer.ItemClick += MLeftDrawer_ItemClick;
+
+            #endregion
 
             #region Page's images...
             bookImages[0] = FindViewById<ImageView>(Resource.Id.imageView1);
@@ -77,9 +77,10 @@ namespace Remuse
             search = FindViewById<Button>(Resource.Id.button1);
             userInput = FindViewById<AutoCompleteTextView>(Resource.Id.autoCompleteTextView1);
             userInput.SetCursorVisible(false);
+
             ArrayAdapter adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line,complete);
             userInput.Adapter = adapter;
-            //search.Click += Search_Click;
+            search.Click += Search_Click;
         }
 
         List<Book> books = new List<Book>();
@@ -91,9 +92,13 @@ namespace Remuse
         private void Search_Click(object sender, EventArgs e)
         {
             string bookName = userInput.Text;
+
             //give bookName to the Book Service,then get the Book object
             //books = given object
-            books = JsonConvert.DeserializeObject<List<Book>>(Intent.GetStringExtra("book"));
+            GetBooksAsync(bookName);           
+            Intent intent = new Intent(this, typeof(BookSearchResult));
+            intent.PutExtra("book", JsonConvert.SerializeObject(books));
+            StartActivity(intent);
         }
 
         /// <summary>
@@ -142,6 +147,12 @@ namespace Remuse
                 i++;
                 Thread.Sleep(150);
             }
+        }
+
+        public async void GetBooksAsync(string bookName)
+        {
+            BookHttpRequestService service = new BookHttpRequestService();
+            books = await service.GetBooksByName("search/" + bookName);
         }
     }
 }

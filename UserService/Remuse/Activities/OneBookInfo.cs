@@ -42,7 +42,7 @@ namespace Remuse.Activities
             read = FindViewById<Button>(Resource.Id.button1);
 
             //Giving info to TextViews
-            enteredbook.Text = selectedBook.Title + (string)selectedBook.Id;
+            enteredbook.Text = selectedBook.Title;
             author.Text = author.Text + selectedBook.Author;
             genre.Text = genre.Text + selectedBook.Genre;
             year.Text = year.Text + selectedBook.Year;
