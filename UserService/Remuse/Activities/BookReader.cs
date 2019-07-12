@@ -1,19 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO.Pipes;
-using System.Linq;
-using System.Text;
 using Android.App;
 using Android.Content;
 using Android.Graphics;
 using Android.OS;
-using Android.Runtime;
 using Android.Support.V4.Widget;
-using Android.Views;
 using Android.Widget;
 using Newtonsoft.Json;
-using Remuse.Models;
-using Remuse.Resources.Music;
 
 namespace Remuse.Activities
 {

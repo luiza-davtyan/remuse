@@ -12,17 +12,33 @@ namespace BookService.Controllers
     [ApiController]
     public class AuthorController : ControllerBase
     {
+        /// <summary>
+        /// Author repository.
+        /// </summary>
         private readonly AuthorRepository _authorRepository;
 
+        /// <summary>
+        /// Public controller.
+        /// </summary>
+        /// <param name="authorService"></param>
         public AuthorController(AuthorRepository authorService)
         {
             _authorRepository = authorService;
         }
 
+        /// <summary>
+        /// Get all authors.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public ActionResult<List<Author>> Get() =>
             _authorRepository.Get();
 
+        /// <summary>
+        /// Get author by id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id:length(24)}", Name = "GetAuthor")]
         public ActionResult<Author> Get(string id)
         {
@@ -36,6 +52,11 @@ namespace BookService.Controllers
             return author;
         }
 
+        /// <summary>
+        /// Create author.
+        /// </summary>
+        /// <param name="author"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult<Author> Create(Author author)
         {
@@ -44,6 +65,12 @@ namespace BookService.Controllers
             return CreatedAtRoute("GetAuthor", new { id = author.Id.ToString() }, author);
         }
 
+        /// <summary>
+        /// Update author.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="authorIn"></param>
+        /// <returns></returns>
         [HttpPut("{id:length(24)}")]
         public IActionResult Update(string id, Author authorIn)
         {
@@ -59,6 +86,11 @@ namespace BookService.Controllers
             return NoContent();
         }
 
+        /// <summary>
+        /// Delete author.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id:length(24)}")]
         public IActionResult Delete(string id)
         {

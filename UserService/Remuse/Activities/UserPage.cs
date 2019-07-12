@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.Graphics;
 using Android.OS;
 using Android.Support.V4.Widget;
 using Android.Widget;
-using Remuse.Models;
+using System;
+using System.Collections.Generic;
 
 namespace Remuse.Activities
 {
@@ -91,10 +90,10 @@ namespace Remuse.Activities
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private  void Books_Click(object sender, EventArgs e)
+        private void Books_Click(object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(BookPage));
-            intent.PutExtra("books", new string[] { "HIn oreri tangon","Menq enq mer sarery" });
+            intent.PutExtra("books", new string[] { "HIn oreri tangon", "Menq enq mer sarery" });
             StartActivity(intent);
         }
 

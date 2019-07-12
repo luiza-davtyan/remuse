@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.Graphics;
 using Android.OS;
 using Android.Support.V4.Widget;
 using Android.Widget;
 using Newtonsoft.Json;
-using Remuse.Models;
+using System;
+using System.Collections.Generic;
+using System.Threading;
 
 namespace Remuse.Activities
 {
@@ -98,7 +96,7 @@ namespace Remuse.Activities
         private void MLeftDrawer_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             Type type = typeof(UserPage);
-        
+
             int position = e.Position;
             switch (position)
             {
@@ -112,7 +110,7 @@ namespace Remuse.Activities
                 case 2:
                     Toast.MakeText(this, mLeftItems[e.Position], ToastLength.Long).Show();
                     break;
-            }           
+            }
         }
 
         /// <summary>
@@ -128,7 +126,7 @@ namespace Remuse.Activities
                 //{
 
                 //}
-                foreach(TextView text in textViews)
+                foreach (TextView text in textViews)
                 {
                     text.Text = Convert.ToString(i);
                 }

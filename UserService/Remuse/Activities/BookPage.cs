@@ -47,6 +47,7 @@ namespace Remuse.Activities
                 new Book() { Id = "3", Title = "Title 3 ",Year = 1940,Description = Desc()},
                 new Book() { Id = "4", Title = "Title 4 " ,Year = 1352,Description = Desc()}
             };
+            //Connect with bookService to get user's books
             //To do...
             return books;
         }

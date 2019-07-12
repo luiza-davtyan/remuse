@@ -12,7 +12,6 @@ using System.Threading;
 using Remuse.Models;
 using Newtonsoft.Json;
 using Android.Graphics;
-using Remuse.Services;
 using System.Linq;
 
 namespace Remuse

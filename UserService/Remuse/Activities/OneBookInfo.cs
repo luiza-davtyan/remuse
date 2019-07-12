@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.Graphics;
 using Android.OS;
-using Android.Runtime;
 using Android.Support.V4.Widget;
-using Android.Views;
 using Android.Widget;
 using Newtonsoft.Json;
-using Remuse.Models;
-using Xamarin.Android;
+using System;
+using System.Collections.Generic;
 
 namespace Remuse.Activities
 {
@@ -20,7 +14,7 @@ namespace Remuse.Activities
     public class OneBookInfo : Activity
     {
         Book selectedBook;
-        TextView enteredbook,author,genre,year,description;
+        TextView enteredbook, author, genre, year, description;
         ScrollView scroll;
         Button read;
         List<string> mLeftItems = new List<string>();
@@ -101,7 +95,7 @@ namespace Remuse.Activities
         /// <param name="e"></param>
         private void Read_Click(object sender, EventArgs e)
         {
-            Intent intent = new Intent(this,typeof(BookReader));
+            Intent intent = new Intent(this, typeof(BookReader));
             intent.PutExtra("book", JsonConvert.SerializeObject(selectedBook));
             StartActivity(intent);
         }
