@@ -1,0 +1,45 @@
+﻿use remuseDB
+
+create Table Users 
+(	
+ID				INT			PRIMARY KEY IDENTITY(1, 1),
+Picture			VARBINARY, 
+Name 			NVARCHAR(20) 	NOT NULL,
+Surname 		NVARCHAR(20) 	NOT NULL,
+Username 		NVARCHAR(20) 	NOT NULL UNIQUE,
+Email 			NVARCHAR(20) 	NOT NULL,
+DateOfBirth		Datetime		NOT NULL,
+Password		NVARCHAR(100) 	NOT NULL
+);
+
+create Table Roles 
+(	
+ID				INT				PRIMARY KEY IDENTITY(1, 1),
+Permission 		NVARCHAR(20) 	NOT NULL UNIQUE,
+);
+
+create Table User_Role
+(
+ID			INT			PRIMARY KEY IDENTITY(1, 1),
+UserID 		INT			FOREIGN KEY REFERENCES Users(ID),
+RoleID		INT			FOREIGN KEY REFERENCES Roles(ID)
+)
+
+
+select *
+from Users
+
+select *
+from Roles
+
+INSERT INTO Users VALUES (null,'name', 'surname','username1', 'email', 22/11/1911, '1111');
+INSERT INTO Users VALUES (null,'name2', 'surname2','username2', 'email2', 22/11/1911, '1111');
+
+INSERT INTO Roles VALUES ( 'Admin');
+INSERT INTO Roles VALUES ( 'User');
+
+
+drop table Users
+drop table Roles
+drop table User_Role
+

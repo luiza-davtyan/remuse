@@ -9,7 +9,6 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Newtonsoft.Json;
-using Remuse.Models;
 
 namespace Remuse.Activities
 {

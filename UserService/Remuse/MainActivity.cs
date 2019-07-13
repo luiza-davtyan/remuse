@@ -9,7 +9,6 @@ using Android.Support.V4.Widget;
 using System;
 using Remuse.Activities;
 using System.Threading;
-using Remuse.Models;
 using Newtonsoft.Json;
 using Android.Graphics;
 using System.Linq;

@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using Remuse.Models;
+using MyNamespace;
 
 namespace Remuse
 {
@@ -18,6 +19,7 @@ namespace Remuse
     {
         Button confirm;
         EditText name, lastname, email, username, password, birthday;
+        User RegUser;
         
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -35,27 +37,31 @@ namespace Remuse
 
             confirm.Click += Confirm_Click;
         }
-
         /// <summary>
         /// Event,whene user clicks Confirm button
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Confirm_Click(object sender, EventArgs e)
+        private async void Confirm_Click(object sender, EventArgs e)
         {
             var namefail = FindViewById<TextView>(Resource.Id.textView8);        
             var lastnamefail = FindViewById<TextView>(Resource.Id.textView9);
             var emailfail = FindViewById<TextView>(Resource.Id.textView10);
             var usernamefail = FindViewById<TextView>(Resource.Id.textView11);
             var passwordfail = FindViewById<TextView>(Resource.Id.textView12);
+            RegUser = new User();
 
-            User.FirstName = name.Text.ToString();
-            User.LastName = lastname.Text.ToString();
-            User.Email = email.Text.ToString();
-            User.UserName = username.Text.ToString();
-            User.Password = password.Text.ToString();
+            RegUser.Name = name.Text.ToString();
+            RegUser.Surname = lastname.Text.ToString();
+            RegUser.Email = email.Text.ToString();
+            RegUser.Username = username.Text.ToString();
+            RegUser.Password = password.Text.ToString();
             //user.BirthDay = birthday.Text.ToString();
 
+            //switch if the user exists in database ,if no do this
+            var service = new UserClient(new System.Net.Http.HttpClient());
+            await service.AddUserAsync(RegUser);
+            #region validation
             List<EditText> inputs = new List<EditText>() { name, lastname, email, username, password};
             TextView[] outs = new TextView[] { namefail, lastnamefail, emailfail, usernamefail, passwordfail };
 
@@ -68,6 +74,7 @@ namespace Remuse
                 Intent intent = new Intent(this, typeof(SignIn));
                 StartActivity(intent);
             }
+            #endregion
         }
 
         /// <summary>
@@ -85,6 +92,12 @@ namespace Remuse
             {
                 output.Text = "";
             }
+        }
+
+        public async Task Registrate(User user)
+        {
+            var service = new UserClient(new System.Net.Http.HttpClient());
+            await service.AddUserAsync(user);
         }
     }
 }
