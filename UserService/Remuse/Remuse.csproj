@@ -80,6 +80,7 @@
     <Compile Include="Activities\StartGeneral.cs" />
     <Compile Include="Activities\UserPage.cs" />
     <Compile Include="Attributes\EnumMemberAttribute.cs" />
+    <Compile Include="HttpUri.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\UserClient.cs" />

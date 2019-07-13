@@ -21,7 +21,7 @@ namespace Remuse
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.0.4.0 (NJsonSchema v10.0.21.0 (Newtonsoft.Json v11.0.0.0))")]
     public partial class AuthorClient
     {
-        private string _baseUrl = "http://100.120.28.202:45455/";
+        private string _baseUrl = HttpUri.UserUri;
         private System.Net.Http.HttpClient _httpClient;
         private System.Lazy<Newtonsoft.Json.JsonSerializerSettings> _settings;
 
@@ -484,7 +484,7 @@ namespace Remuse
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.0.4.0 (NJsonSchema v10.0.21.0 (Newtonsoft.Json v11.0.0.0))")]
     public partial class BookClient
     {
-        private string _baseUrl = "http://100.120.28.202:45455/";
+        private string _baseUrl = HttpUri.UserUri;
         private System.Net.Http.HttpClient _httpClient;
         private System.Lazy<Newtonsoft.Json.JsonSerializerSettings> _settings;
 
@@ -1013,7 +1013,7 @@ namespace Remuse
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.0.4.0 (NJsonSchema v10.0.21.0 (Newtonsoft.Json v11.0.0.0))")]
     public partial class GenreClient
     {
-        private string _baseUrl = "http://100.120.28.202:45455/";
+        private string _baseUrl = HttpUri.UserUri;
         private System.Net.Http.HttpClient _httpClient;
         private System.Lazy<Newtonsoft.Json.JsonSerializerSettings> _settings;
 

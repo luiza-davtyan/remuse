@@ -41,16 +41,22 @@ namespace UserService.Services
         /// <returns></returns>
         User GetUserByUsername(string username);
         /// <summary>
+        /// Get user by email.
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns></returns>
+        User GetUserByEmail(string email);
+        /// <summary>
         /// Change user's picture.
         /// </summary>
         /// <param name="pic"></param>
         /// <returns></returns>
         void ChangePicture(byte[] pic, int userId);
-        ///// <summary>
-        ///// Get user by username and password.
-        ///// </summary>
-        ///// <param name="username"></param>
-        ///// <param name="password"></param>
-        //User GetUserByUsernameAndPassword(string username, string password);
+        /// <summary>
+        /// Get user by username and password.
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        User GetUserByUsernameAndPassword(string username, string password);
     }
 }

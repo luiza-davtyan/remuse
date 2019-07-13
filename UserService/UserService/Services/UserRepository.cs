@@ -12,10 +12,10 @@ namespace UserService.Services
     {
         private UserConnection context;
 
-        ///// <summary>
-        ///// A helper class object.
-        ///// </summary>
-        //private readonly Helper helper;
+        /// <summary>
+        /// A helper class object.
+        /// </summary>
+        private readonly Helper helper;
 
         /// <summary>
         /// Public construvtor.
@@ -24,6 +24,7 @@ namespace UserService.Services
         public UserRepository(UserConnection context)
         {
             this.context = context;
+            this.helper = new Helper();
         }
 
         /// <summary>
@@ -130,19 +131,29 @@ namespace UserService.Services
             context.SaveChanges();
         }
 
-        ///// <summary>
-        ///// Get user by username and password.
-        ///// </summary>
-        ///// <param name="username"></param>
-        ///// <param name="password"></param>
-        //public User GetUserByUsernameAndPassword(string username, string password)
-        //{
-        //    var user = context.Users.FirstOrDefault<User>(currUser => currUser.Username.Equals(username));
-        //    if (!user.Password.Equals(Helper.getHashSha256(password)))
-        //    {
-        //        return null;
-        //    }
-        //    return user;
-        //}
+        /// <summary>
+        /// Get user by username and password.
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        public User GetUserByUsernameAndPassword(string username, string password)
+        {
+            var user = context.Users.FirstOrDefault<User>(currUser => currUser.Username.Equals(username));
+            if (!user.Password.Equals(helper.getHashSha256(password)))
+            {
+                return null;
+            }
+            return user;
+        }
+
+        /// <summary>
+        /// Get user by email.
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns></returns>
+        public User GetUserByEmail(string email)
+        {
+            return context.Users.FirstOrDefault<User>(user => user.Email.Equals(email));
+        }
     }
 }

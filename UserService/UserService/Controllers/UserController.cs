@@ -62,16 +62,17 @@ namespace UserService.Controllers
             return Ok(userById);
         }
 
-        //[HttpGet]
-        //public IActionResult GetUserByUsernameAndPassword(string username, string password)
-        //{
-        //    User user = this.userRepository.GetUserByUsernameAndPassword(username, password);
-        //    if (user == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return Ok(user);
-        //}
+        //[Route("{username}")]
+        [HttpPost("get/{username}")]
+        public IActionResult GetUserByUsernameAndPassword(User user)
+        {
+            User currUser = this.userRepository.GetUserByUsernameAndPassword(user.Username, user.Password);
+            if (currUser == null)
+            {
+                return NotFound();
+            }
+            return Ok(currUser);
+        }
 
         /// <summary>
         /// Add user.
@@ -82,9 +83,11 @@ namespace UserService.Controllers
         public ActionResult<User> AddUser(User user)
         {
             User currUser = this.userRepository.GetUserByUsername(user.Username);
-            if (currUser != null)
+            User currUserEmail = this.userRepository.GetUserByEmail(user.Email);
+
+            if (currUser != null || currUserEmail != null)
             {
-                throw new Exception("Username must be unique");
+                return NoContent();
             }
             user.Password = helper.getHashSha256(user.Password);
             this.userRepository.AddUser(user);

@@ -2651,8 +2651,8 @@ namespace Remuse
 			// aapt resource value: 0x7f0800ab
 			public const int linearLayout10 = 2131230891;
 			
-			// aapt resource value: 0x7f0800dc
-			public const int linearLayout11 = 2131230940;
+			// aapt resource value: 0x7f0800dd
+			public const int linearLayout11 = 2131230941;
 			
 			// aapt resource value: 0x7f08008e
 			public const int linearLayout2 = 2131230862;
@@ -2687,14 +2687,14 @@ namespace Remuse
 			// aapt resource value: 0x7f080061
 			public const int list_item = 2131230817;
 			
-			// aapt resource value: 0x7f0800df
-			public const int masked = 2131230943;
+			// aapt resource value: 0x7f0800e0
+			public const int masked = 2131230944;
 			
 			// aapt resource value: 0x7f0800c4
 			public const int media_actions = 2131230916;
 			
-			// aapt resource value: 0x7f0800dd
-			public const int message = 2131230941;
+			// aapt resource value: 0x7f0800de
+			public const int message = 2131230942;
 			
 			// aapt resource value: 0x7f080031
 			public const int middle = 2131230769;
@@ -2909,6 +2909,9 @@ namespace Remuse
 			// aapt resource value: 0x7f0800d9
 			public const int textView12 = 2131230937;
 			
+			// aapt resource value: 0x7f0800dc
+			public const int textView13 = 2131230940;
+			
 			// aapt resource value: 0x7f080097
 			public const int textView2 = 2131230871;
 			
@@ -2990,8 +2993,8 @@ namespace Remuse
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f0800de
-			public const int visible = 2131230942;
+			// aapt resource value: 0x7f0800df
+			public const int visible = 2131230943;
 			
 			// aapt resource value: 0x7f08003c
 			public const int withText = 2131230780;
