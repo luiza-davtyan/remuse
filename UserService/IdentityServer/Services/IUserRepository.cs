@@ -1,4 +1,5 @@
 ﻿using IdentityServer.Models;
+using IdentityServer.ModelsDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,12 +19,12 @@ namespace IdentityServer.Services
         /// </summary>
         /// <param name="userId"></param>
         /// <returns></returns>
-        Task<User> GetUserByID(int userId);
+        Task<UserDTO> GetUserByID(int userId);
         /// <summary>
         /// Get user by username.
         /// </summary>
         /// <param name="username"></param>
         /// <returns></returns>
-        Task<User> GetUserByUsername(string username);
+        Task<UserDTO> GetUserByUsername(string username);
     }
 }

@@ -7,10 +7,31 @@ namespace IdentityServer
     {
         public static IEnumerable<IdentityResource> GetIdentityResources()
         {
-            return new IdentityResource[]
-            {
-                new IdentityResources.OpenId()
-            };
+            var customProfile = new IdentityResource(
+                   name: "custom.profile",
+                   displayName: "Custom profile",
+                   claimTypes: new[] { "role", "user_id"});
+
+            return new List<IdentityResource>
+           {
+           new IdentityResources.OpenId(),
+
+               new IdentityResource
+               {
+                   Name = "username",
+                   UserClaims = new List<string> { "username",  }
+               },
+               new IdentityResource
+               {
+                   Name="role",
+                   UserClaims= new List<string>{"role"}
+               },
+               new IdentityResource
+               {
+                   Name = "user_id",
+                   UserClaims = new List<string>{"user_id"}
+               }
+           };
         }
 
         public static IEnumerable<ApiResource> GetApis()

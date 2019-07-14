@@ -286,3 +286,834 @@
 2019-07-14 12:16:11.463 +04:00 [DBG] Client validation success
 2019-07-14 12:16:11.463 +04:00 [DBG] Start token request validation
 2019-07-14 12:16:11.463 +04:00 [DBG] Start resource owner password token request validation
+2019-07-14 12:30:32.477 +04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-07-14 12:30:32.529 +04:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2019-07-14 12:30:32.533 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2019-07-14 12:30:32.533 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2019-07-14 12:30:32.533 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2019-07-14 12:30:32.534 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2019-07-14 12:30:32.534 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2019-07-14 12:30:33.029 +04:00 [DBG] Login Url: /Account/Login
+2019-07-14 12:30:33.033 +04:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-07-14 12:30:33.033 +04:00 [DBG] Logout Url: /Account/Logout
+2019-07-14 12:30:33.033 +04:00 [DBG] ConsentUrl Url: /consent
+2019-07-14 12:30:33.033 +04:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-07-14 12:30:33.033 +04:00 [DBG] Error Url: /home/error
+2019-07-14 12:30:33.033 +04:00 [DBG] Error Id Parameter: errorId
+2019-07-14 12:32:38.726 +04:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-07-14 12:32:38.886 +04:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-07-14 12:32:38.887 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-07-14 12:32:38.913 +04:00 [DBG] Start token request.
+2019-07-14 12:32:38.926 +04:00 [DBG] Start client validation
+2019-07-14 12:32:38.936 +04:00 [DBG] Start parsing Basic Authentication secret
+2019-07-14 12:32:38.943 +04:00 [DBG] Start parsing for secret in post body
+2019-07-14 12:32:38.981 +04:00 [DBG] Parser found secret: PostBodySecretParser
+2019-07-14 12:32:38.981 +04:00 [DBG] Secret id found: client
+2019-07-14 12:32:39.024 +04:00 [DBG] client configuration validation for client client succeeded.
+2019-07-14 12:32:39.060 +04:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-07-14 12:32:39.060 +04:00 [DBG] Client validation success
+2019-07-14 12:32:39.098 +04:00 [DBG] Start token request validation
+2019-07-14 12:32:39.162 +04:00 [DBG] Start resource owner password token request validation
+2019-07-14 12:36:39.294 +04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-07-14 12:36:39.439 +04:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2019-07-14 12:36:39.449 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2019-07-14 12:36:39.449 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2019-07-14 12:36:39.450 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2019-07-14 12:36:39.450 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2019-07-14 12:36:39.450 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2019-07-14 12:36:40.242 +04:00 [DBG] Login Url: /Account/Login
+2019-07-14 12:36:40.250 +04:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-07-14 12:36:40.250 +04:00 [DBG] Logout Url: /Account/Logout
+2019-07-14 12:36:40.251 +04:00 [DBG] ConsentUrl Url: /consent
+2019-07-14 12:36:40.251 +04:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-07-14 12:36:40.251 +04:00 [DBG] Error Url: /home/error
+2019-07-14 12:36:40.251 +04:00 [DBG] Error Id Parameter: errorId
+2019-07-14 12:37:00.818 +04:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-07-14 12:37:00.999 +04:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-07-14 12:37:01.000 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-07-14 12:37:01.017 +04:00 [DBG] Start token request.
+2019-07-14 12:37:01.028 +04:00 [DBG] Start client validation
+2019-07-14 12:37:01.038 +04:00 [DBG] Start parsing Basic Authentication secret
+2019-07-14 12:37:01.047 +04:00 [DBG] Start parsing for secret in post body
+2019-07-14 12:37:01.079 +04:00 [DBG] Parser found secret: PostBodySecretParser
+2019-07-14 12:37:01.079 +04:00 [DBG] Secret id found: client
+2019-07-14 12:37:01.115 +04:00 [DBG] client configuration validation for client client succeeded.
+2019-07-14 12:37:01.133 +04:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-07-14 12:37:01.133 +04:00 [DBG] Client validation success
+2019-07-14 12:37:01.153 +04:00 [DBG] Start token request validation
+2019-07-14 12:37:01.179 +04:00 [DBG] Start resource owner password token request validation
+2019-07-14 13:09:19.623 +04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-07-14 13:09:19.781 +04:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2019-07-14 13:09:19.792 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2019-07-14 13:09:19.792 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2019-07-14 13:09:19.792 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2019-07-14 13:09:19.793 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2019-07-14 13:09:19.793 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2019-07-14 13:09:20.796 +04:00 [DBG] Login Url: /Account/Login
+2019-07-14 13:09:20.800 +04:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-07-14 13:09:20.800 +04:00 [DBG] Logout Url: /Account/Logout
+2019-07-14 13:09:20.801 +04:00 [DBG] ConsentUrl Url: /consent
+2019-07-14 13:09:20.801 +04:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-07-14 13:09:20.801 +04:00 [DBG] Error Url: /home/error
+2019-07-14 13:09:20.801 +04:00 [DBG] Error Id Parameter: errorId
+2019-07-14 13:11:09.374 +04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-07-14 13:11:09.487 +04:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2019-07-14 13:11:09.492 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2019-07-14 13:11:09.492 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2019-07-14 13:11:09.493 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2019-07-14 13:11:09.493 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2019-07-14 13:11:09.493 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2019-07-14 13:11:09.993 +04:00 [DBG] Login Url: /Account/Login
+2019-07-14 13:11:09.999 +04:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-07-14 13:11:09.999 +04:00 [DBG] Logout Url: /Account/Logout
+2019-07-14 13:11:09.999 +04:00 [DBG] ConsentUrl Url: /consent
+2019-07-14 13:11:10.000 +04:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-07-14 13:11:10.000 +04:00 [DBG] Error Url: /home/error
+2019-07-14 13:11:10.000 +04:00 [DBG] Error Id Parameter: errorId
+2019-07-14 13:12:30.286 +04:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-07-14 13:12:30.454 +04:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-07-14 13:12:30.454 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-07-14 13:12:30.471 +04:00 [DBG] Start token request.
+2019-07-14 13:12:30.484 +04:00 [DBG] Start client validation
+2019-07-14 13:12:30.495 +04:00 [DBG] Start parsing Basic Authentication secret
+2019-07-14 13:12:30.503 +04:00 [DBG] Start parsing for secret in post body
+2019-07-14 13:12:30.519 +04:00 [DBG] Parser found secret: PostBodySecretParser
+2019-07-14 13:12:30.519 +04:00 [DBG] Secret id found: client
+2019-07-14 13:12:30.543 +04:00 [DBG] client configuration validation for client client succeeded.
+2019-07-14 13:12:30.559 +04:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-07-14 13:12:30.559 +04:00 [DBG] Client validation success
+2019-07-14 13:12:30.580 +04:00 [DBG] Start token request validation
+2019-07-14 13:12:30.604 +04:00 [DBG] Start resource owner password token request validation
+2019-07-14 13:12:31.301 +04:00 [ERR] Failed executing DbCommand (23ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[DateOfBirth], [user].[Email], [user].[Name], [user].[Password], [user].[Picture], [user].[Role], [user].[Surname], [user].[Username]
+FROM [Users] AS [user]
+WHERE [user].[Username] = @__username_0
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Role'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+ClientConnectionId:119195d2-3fb7-41fe-9817-20a97e147559
+Error Number:207,State:1,Class:16
+2019-07-14 13:12:31.449 +04:00 [ERR] An exception occurred in the database while iterating the results of a query for context type 'IdentityServer.UserConnection'.
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Role'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+ClientConnectionId:119195d2-3fb7-41fe-9817-20a97e147559
+Error Number:207,State:1,Class:16
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Role'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+ClientConnectionId:119195d2-3fb7-41fe-9817-20a97e147559
+Error Number:207,State:1,Class:16
+2019-07-14 13:12:31.461 +04:00 [ERR] An exception occurred in the database while iterating the results of a query for context type 'IdentityServer.UserConnection'.
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Role'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass15_1`1.<CompileQueryCore>b__0(QueryContext qc)
+ClientConnectionId:119195d2-3fb7-41fe-9817-20a97e147559
+Error Number:207,State:1,Class:16
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Role'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass15_1`1.<CompileQueryCore>b__0(QueryContext qc)
+ClientConnectionId:119195d2-3fb7-41fe-9817-20a97e147559
+Error Number:207,State:1,Class:16
+2019-07-14 13:31:36.364 +04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-07-14 13:31:36.431 +04:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2019-07-14 13:31:36.434 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2019-07-14 13:31:36.434 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2019-07-14 13:31:36.435 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2019-07-14 13:31:36.435 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2019-07-14 13:31:36.435 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2019-07-14 13:31:36.914 +04:00 [DBG] Login Url: /Account/Login
+2019-07-14 13:31:36.917 +04:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-07-14 13:31:36.917 +04:00 [DBG] Logout Url: /Account/Logout
+2019-07-14 13:31:36.917 +04:00 [DBG] ConsentUrl Url: /consent
+2019-07-14 13:31:36.917 +04:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-07-14 13:31:36.918 +04:00 [DBG] Error Url: /home/error
+2019-07-14 13:31:36.918 +04:00 [DBG] Error Id Parameter: errorId
+2019-07-14 13:31:36.961 +04:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-07-14 13:31:37.041 +04:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-07-14 13:31:37.042 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-07-14 13:31:37.051 +04:00 [DBG] Start token request.
+2019-07-14 13:31:37.060 +04:00 [DBG] Start client validation
+2019-07-14 13:31:37.068 +04:00 [DBG] Start parsing Basic Authentication secret
+2019-07-14 13:31:37.074 +04:00 [DBG] Start parsing for secret in post body
+2019-07-14 13:31:37.098 +04:00 [DBG] Parser found secret: PostBodySecretParser
+2019-07-14 13:31:37.098 +04:00 [DBG] Secret id found: client
+2019-07-14 13:31:37.121 +04:00 [DBG] client configuration validation for client client succeeded.
+2019-07-14 13:31:37.137 +04:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-07-14 13:31:37.137 +04:00 [DBG] Client validation success
+2019-07-14 13:31:37.158 +04:00 [DBG] Start token request validation
+2019-07-14 13:31:37.187 +04:00 [DBG] Start resource owner password token request validation
+2019-07-14 13:31:37.848 +04:00 [ERR] Failed executing DbCommand (12ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[DateOfBirth], [user].[Email], [user].[Name], [user].[Password], [user].[Picture], [user].[Role], [user].[Surname], [user].[Username]
+FROM [Users] AS [user]
+WHERE [user].[Username] = @__username_0
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Role'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+ClientConnectionId:235b1c96-a516-4a80-ada1-88838844e873
+Error Number:207,State:1,Class:16
+2019-07-14 13:31:37.921 +04:00 [ERR] An exception occurred in the database while iterating the results of a query for context type 'IdentityServer.UserConnection'.
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Role'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+ClientConnectionId:235b1c96-a516-4a80-ada1-88838844e873
+Error Number:207,State:1,Class:16
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Role'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+ClientConnectionId:235b1c96-a516-4a80-ada1-88838844e873
+Error Number:207,State:1,Class:16
+2019-07-14 13:31:37.926 +04:00 [ERR] An exception occurred in the database while iterating the results of a query for context type 'IdentityServer.UserConnection'.
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Role'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass15_1`1.<CompileQueryCore>b__0(QueryContext qc)
+ClientConnectionId:235b1c96-a516-4a80-ada1-88838844e873
+Error Number:207,State:1,Class:16
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Role'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass15_1`1.<CompileQueryCore>b__0(QueryContext qc)
+ClientConnectionId:235b1c96-a516-4a80-ada1-88838844e873
+Error Number:207,State:1,Class:16
+2019-07-14 13:31:37.981 +04:00 [INF] User authentication failed: ["Invalid username or password"], request details: {"ClientId":"client","ClientName":null,"GrantType":"password","Scopes":"BookService","AuthorizationCode":null,"RefreshToken":null,"UserName":"username1","AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"password","scope":"BookService","client_id":"client","client_secret":"***REDACTED***","username":"username1","password":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-07-14 13:32:01.599 +04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-07-14 13:32:01.734 +04:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2019-07-14 13:32:01.746 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2019-07-14 13:32:01.746 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2019-07-14 13:32:01.747 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2019-07-14 13:32:01.747 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2019-07-14 13:32:01.747 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2019-07-14 13:32:02.371 +04:00 [DBG] Login Url: /Account/Login
+2019-07-14 13:32:02.374 +04:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-07-14 13:32:02.374 +04:00 [DBG] Logout Url: /Account/Logout
+2019-07-14 13:32:02.374 +04:00 [DBG] ConsentUrl Url: /consent
+2019-07-14 13:32:02.374 +04:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-07-14 13:32:02.374 +04:00 [DBG] Error Url: /home/error
+2019-07-14 13:32:02.374 +04:00 [DBG] Error Id Parameter: errorId
+2019-07-14 13:32:13.443 +04:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-07-14 13:32:13.725 +04:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-07-14 13:32:13.726 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-07-14 13:32:13.764 +04:00 [DBG] Start token request.
+2019-07-14 13:32:13.794 +04:00 [DBG] Start client validation
+2019-07-14 13:32:13.822 +04:00 [DBG] Start parsing Basic Authentication secret
+2019-07-14 13:32:13.844 +04:00 [DBG] Start parsing for secret in post body
+2019-07-14 13:32:13.913 +04:00 [DBG] Parser found secret: PostBodySecretParser
+2019-07-14 13:32:13.913 +04:00 [DBG] Secret id found: client
+2019-07-14 13:32:13.975 +04:00 [DBG] client configuration validation for client client succeeded.
+2019-07-14 13:32:14.021 +04:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-07-14 13:32:14.022 +04:00 [DBG] Client validation success
+2019-07-14 13:32:14.063 +04:00 [DBG] Start token request validation
+2019-07-14 13:32:14.091 +04:00 [DBG] Start resource owner password token request validation
+2019-07-14 13:32:15.195 +04:00 [ERR] Failed executing DbCommand (5ms) [Parameters=[@__userRoleObject_RoleID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [role].[Id], [role].[Permission]
+FROM [Role] AS [role]
+WHERE [role].[Id] = @__userRoleObject_RoleID_0
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Role'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+ClientConnectionId:9b4c3bc8-2785-4664-85af-54849f2c1218
+Error Number:208,State:1,Class:16
+2019-07-14 13:32:15.282 +04:00 [ERR] An exception occurred in the database while iterating the results of a query for context type 'IdentityServer.UserConnection'.
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Role'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+ClientConnectionId:9b4c3bc8-2785-4664-85af-54849f2c1218
+Error Number:208,State:1,Class:16
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Role'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+ClientConnectionId:9b4c3bc8-2785-4664-85af-54849f2c1218
+Error Number:208,State:1,Class:16
+2019-07-14 13:32:15.293 +04:00 [ERR] An exception occurred in the database while iterating the results of a query for context type 'IdentityServer.UserConnection'.
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Role'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass15_1`1.<CompileQueryCore>b__0(QueryContext qc)
+ClientConnectionId:9b4c3bc8-2785-4664-85af-54849f2c1218
+Error Number:208,State:1,Class:16
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Role'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass15_1`1.<CompileQueryCore>b__0(QueryContext qc)
+ClientConnectionId:9b4c3bc8-2785-4664-85af-54849f2c1218
+Error Number:208,State:1,Class:16
+2019-07-14 13:34:35.064 +04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-07-14 13:34:35.135 +04:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2019-07-14 13:34:35.141 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2019-07-14 13:34:35.141 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2019-07-14 13:34:35.141 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2019-07-14 13:34:35.141 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2019-07-14 13:34:35.142 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2019-07-14 13:34:35.663 +04:00 [DBG] Login Url: /Account/Login
+2019-07-14 13:34:35.671 +04:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-07-14 13:34:35.671 +04:00 [DBG] Logout Url: /Account/Logout
+2019-07-14 13:34:35.671 +04:00 [DBG] ConsentUrl Url: /consent
+2019-07-14 13:34:35.672 +04:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-07-14 13:34:35.672 +04:00 [DBG] Error Url: /home/error
+2019-07-14 13:34:35.672 +04:00 [DBG] Error Id Parameter: errorId
+2019-07-14 13:34:39.070 +04:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-07-14 13:34:39.276 +04:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-07-14 13:34:39.277 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-07-14 13:34:39.316 +04:00 [DBG] Start token request.
+2019-07-14 13:34:39.354 +04:00 [DBG] Start client validation
+2019-07-14 13:34:39.383 +04:00 [DBG] Start parsing Basic Authentication secret
+2019-07-14 13:34:39.405 +04:00 [DBG] Start parsing for secret in post body
+2019-07-14 13:34:39.444 +04:00 [DBG] Parser found secret: PostBodySecretParser
+2019-07-14 13:34:39.444 +04:00 [DBG] Secret id found: client
+2019-07-14 13:34:39.469 +04:00 [DBG] client configuration validation for client client succeeded.
+2019-07-14 13:34:39.481 +04:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-07-14 13:34:39.481 +04:00 [DBG] Client validation success
+2019-07-14 13:34:39.497 +04:00 [DBG] Start token request validation
+2019-07-14 13:34:39.516 +04:00 [DBG] Start resource owner password token request validation
+2019-07-14 13:34:40.696 +04:00 [INF] User authentication failed: ["Incorrect password"], request details: {"ClientId":"client","ClientName":null,"GrantType":"password","Scopes":"BookService","AuthorizationCode":null,"RefreshToken":null,"UserName":"username1","AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"password","scope":"BookService","client_id":"client","client_secret":"***REDACTED***","username":"username1","password":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-07-14 13:34:52.252 +04:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-07-14 13:34:52.254 +04:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-07-14 13:34:52.254 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-07-14 13:34:52.254 +04:00 [DBG] Start token request.
+2019-07-14 13:34:52.254 +04:00 [DBG] Start client validation
+2019-07-14 13:34:52.254 +04:00 [DBG] Start parsing Basic Authentication secret
+2019-07-14 13:34:52.254 +04:00 [DBG] Start parsing for secret in post body
+2019-07-14 13:34:52.255 +04:00 [DBG] Parser found secret: PostBodySecretParser
+2019-07-14 13:34:52.255 +04:00 [DBG] Secret id found: client
+2019-07-14 13:34:52.255 +04:00 [DBG] client configuration validation for client client succeeded.
+2019-07-14 13:34:52.256 +04:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-07-14 13:34:52.256 +04:00 [DBG] Client validation success
+2019-07-14 13:34:52.256 +04:00 [DBG] Start token request validation
+2019-07-14 13:34:52.256 +04:00 [DBG] Start resource owner password token request validation
+2019-07-14 13:34:52.294 +04:00 [DBG] Resource owner password token request validation success.
+2019-07-14 13:34:52.295 +04:00 [INF] Token request validation success
+{"ClientId":"client","ClientName":null,"GrantType":"password","Scopes":"BookService","AuthorizationCode":null,"RefreshToken":null,"UserName":"username1","AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"password","scope":"BookService","client_id":"client","client_secret":"***REDACTED***","username":"username1","password":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-07-14 13:34:52.330 +04:00 [DBG] Getting claims for access token for client: client
+2019-07-14 13:34:52.330 +04:00 [DBG] Getting claims for access token for subject: 0
+2019-07-14 13:34:52.676 +04:00 [DBG] Token request success.
+2019-07-14 13:41:31.581 +04:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: https://jwt.io
+2019-07-14 13:41:31.590 +04:00 [DBG] Client list checked and origin: https://jwt.io is not allowed
+2019-07-14 13:41:31.590 +04:00 [WRN] CorsPolicyService did not allow origin: https://jwt.io
+2019-07-14 13:41:31.591 +04:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-07-14 13:41:31.594 +04:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-07-14 13:41:31.595 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-07-14 13:41:31.621 +04:00 [DBG] Start discovery request
+2019-07-14 13:41:36.513 +04:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: https://jwt.io
+2019-07-14 13:41:36.514 +04:00 [DBG] Client list checked and origin: https://jwt.io is not allowed
+2019-07-14 13:41:36.514 +04:00 [WRN] CorsPolicyService did not allow origin: https://jwt.io
+2019-07-14 13:41:36.515 +04:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-07-14 13:41:36.516 +04:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-07-14 13:41:36.518 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-07-14 13:41:36.520 +04:00 [DBG] Start discovery request
+2019-07-14 13:44:23.872 +04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-07-14 13:44:24.003 +04:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2019-07-14 13:44:24.014 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2019-07-14 13:44:24.015 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2019-07-14 13:44:24.015 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2019-07-14 13:44:24.015 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2019-07-14 13:44:24.016 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2019-07-14 13:44:24.586 +04:00 [DBG] Login Url: /Account/Login
+2019-07-14 13:44:24.590 +04:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-07-14 13:44:24.590 +04:00 [DBG] Logout Url: /Account/Logout
+2019-07-14 13:44:24.590 +04:00 [DBG] ConsentUrl Url: /consent
+2019-07-14 13:44:24.590 +04:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-07-14 13:44:24.590 +04:00 [DBG] Error Url: /home/error
+2019-07-14 13:44:24.590 +04:00 [DBG] Error Id Parameter: errorId
+2019-07-14 13:44:32.080 +04:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-07-14 13:44:32.228 +04:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-07-14 13:44:32.228 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-07-14 13:44:32.242 +04:00 [DBG] Start token request.
+2019-07-14 13:44:32.251 +04:00 [DBG] Start client validation
+2019-07-14 13:44:32.262 +04:00 [DBG] Start parsing Basic Authentication secret
+2019-07-14 13:44:32.270 +04:00 [DBG] Start parsing for secret in post body
+2019-07-14 13:44:32.303 +04:00 [DBG] Parser found secret: PostBodySecretParser
+2019-07-14 13:44:32.303 +04:00 [DBG] Secret id found: client
+2019-07-14 13:44:32.332 +04:00 [DBG] client configuration validation for client client succeeded.
+2019-07-14 13:44:32.358 +04:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-07-14 13:44:32.358 +04:00 [DBG] Client validation success
+2019-07-14 13:44:32.385 +04:00 [DBG] Start token request validation
+2019-07-14 13:44:32.418 +04:00 [DBG] Start resource owner password token request validation
+2019-07-14 13:48:33.278 +04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-07-14 13:48:33.450 +04:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2019-07-14 13:48:33.456 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2019-07-14 13:48:33.456 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2019-07-14 13:48:33.457 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2019-07-14 13:48:33.457 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2019-07-14 13:48:33.457 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2019-07-14 13:48:34.175 +04:00 [DBG] Login Url: /Account/Login
+2019-07-14 13:48:34.181 +04:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-07-14 13:48:34.182 +04:00 [DBG] Logout Url: /Account/Logout
+2019-07-14 13:48:34.182 +04:00 [DBG] ConsentUrl Url: /consent
+2019-07-14 13:48:34.182 +04:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-07-14 13:48:34.182 +04:00 [DBG] Error Url: /home/error
+2019-07-14 13:48:34.183 +04:00 [DBG] Error Id Parameter: errorId
+2019-07-14 13:48:39.039 +04:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-07-14 13:48:39.187 +04:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-07-14 13:48:39.188 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-07-14 13:48:39.200 +04:00 [DBG] Start token request.
+2019-07-14 13:48:39.210 +04:00 [DBG] Start client validation
+2019-07-14 13:48:39.218 +04:00 [DBG] Start parsing Basic Authentication secret
+2019-07-14 13:48:39.224 +04:00 [DBG] Start parsing for secret in post body
+2019-07-14 13:48:39.246 +04:00 [DBG] Parser found secret: PostBodySecretParser
+2019-07-14 13:48:39.246 +04:00 [DBG] Secret id found: client
+2019-07-14 13:48:39.267 +04:00 [DBG] client configuration validation for client client succeeded.
+2019-07-14 13:48:39.281 +04:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-07-14 13:48:39.281 +04:00 [DBG] Client validation success
+2019-07-14 13:48:39.301 +04:00 [DBG] Start token request validation
+2019-07-14 13:48:39.324 +04:00 [DBG] Start resource owner password token request validation
+2019-07-14 13:49:08.472 +04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-07-14 13:49:08.532 +04:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2019-07-14 13:49:08.538 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2019-07-14 13:49:08.538 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2019-07-14 13:49:08.538 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2019-07-14 13:49:08.538 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2019-07-14 13:49:08.538 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2019-07-14 13:49:09.344 +04:00 [DBG] Login Url: /Account/Login
+2019-07-14 13:49:09.352 +04:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-07-14 13:49:09.352 +04:00 [DBG] Logout Url: /Account/Logout
+2019-07-14 13:49:09.352 +04:00 [DBG] ConsentUrl Url: /consent
+2019-07-14 13:49:09.352 +04:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-07-14 13:49:09.353 +04:00 [DBG] Error Url: /home/error
+2019-07-14 13:49:09.353 +04:00 [DBG] Error Id Parameter: errorId
+2019-07-14 13:49:30.983 +04:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-07-14 13:49:31.131 +04:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-07-14 13:49:31.131 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-07-14 13:49:31.143 +04:00 [DBG] Start token request.
+2019-07-14 13:49:31.153 +04:00 [DBG] Start client validation
+2019-07-14 13:49:31.161 +04:00 [DBG] Start parsing Basic Authentication secret
+2019-07-14 13:49:31.169 +04:00 [DBG] Start parsing for secret in post body
+2019-07-14 13:49:31.194 +04:00 [DBG] Parser found secret: PostBodySecretParser
+2019-07-14 13:49:31.194 +04:00 [DBG] Secret id found: client
+2019-07-14 13:49:31.214 +04:00 [DBG] client configuration validation for client client succeeded.
+2019-07-14 13:49:31.225 +04:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-07-14 13:49:31.225 +04:00 [DBG] Client validation success
+2019-07-14 13:49:31.241 +04:00 [DBG] Start token request validation
+2019-07-14 13:49:31.262 +04:00 [DBG] Start resource owner password token request validation
+2019-07-14 13:56:37.660 +04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-07-14 13:56:37.744 +04:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2019-07-14 13:56:37.749 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2019-07-14 13:56:37.749 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2019-07-14 13:56:37.749 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2019-07-14 13:56:37.749 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2019-07-14 13:56:37.750 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2019-07-14 13:56:38.433 +04:00 [DBG] Login Url: /Account/Login
+2019-07-14 13:56:38.437 +04:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-07-14 13:56:38.437 +04:00 [DBG] Logout Url: /Account/Logout
+2019-07-14 13:56:38.437 +04:00 [DBG] ConsentUrl Url: /consent
+2019-07-14 13:56:38.437 +04:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-07-14 13:56:38.437 +04:00 [DBG] Error Url: /home/error
+2019-07-14 13:56:38.437 +04:00 [DBG] Error Id Parameter: errorId
+2019-07-14 13:56:42.876 +04:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-07-14 13:56:43.060 +04:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-07-14 13:56:43.060 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-07-14 13:56:43.078 +04:00 [DBG] Start token request.
+2019-07-14 13:56:43.093 +04:00 [DBG] Start client validation
+2019-07-14 13:56:43.108 +04:00 [DBG] Start parsing Basic Authentication secret
+2019-07-14 13:56:43.120 +04:00 [DBG] Start parsing for secret in post body
+2019-07-14 13:56:43.147 +04:00 [DBG] Parser found secret: PostBodySecretParser
+2019-07-14 13:56:43.148 +04:00 [DBG] Secret id found: client
+2019-07-14 13:56:43.172 +04:00 [DBG] client configuration validation for client client succeeded.
+2019-07-14 13:56:43.186 +04:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-07-14 13:56:43.186 +04:00 [DBG] Client validation success
+2019-07-14 13:56:43.206 +04:00 [DBG] Start token request validation
+2019-07-14 13:56:43.228 +04:00 [DBG] Start resource owner password token request validation
+2019-07-14 13:57:09.138 +04:00 [DBG] Resource owner password token request validation success.
+2019-07-14 13:57:09.183 +04:00 [INF] Token request validation success
+{"ClientId":"client","ClientName":null,"GrantType":"password","Scopes":"BookService","AuthorizationCode":null,"RefreshToken":null,"UserName":"username1","AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"password","scope":"BookService","client_id":"client","client_secret":"***REDACTED***","username":"username1","password":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-07-14 13:57:09.319 +04:00 [DBG] Getting claims for access token for client: client
+2019-07-14 13:57:09.321 +04:00 [DBG] Getting claims for access token for subject: 0
+2019-07-14 13:57:09.694 +04:00 [DBG] Token request success.
+2019-07-14 13:57:37.234 +04:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: https://jwt.io
+2019-07-14 13:57:37.244 +04:00 [DBG] Client list checked and origin: https://jwt.io is not allowed
+2019-07-14 13:57:37.245 +04:00 [WRN] CorsPolicyService did not allow origin: https://jwt.io
+2019-07-14 13:57:37.245 +04:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-07-14 13:57:37.249 +04:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-07-14 13:57:37.249 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-07-14 13:57:37.266 +04:00 [DBG] Start discovery request
+2019-07-14 13:58:46.291 +04:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: https://jwt.io
+2019-07-14 13:58:46.292 +04:00 [DBG] Client list checked and origin: https://jwt.io is not allowed
+2019-07-14 13:58:46.292 +04:00 [WRN] CorsPolicyService did not allow origin: https://jwt.io
+2019-07-14 13:58:46.293 +04:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-07-14 13:58:46.299 +04:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-07-14 13:58:46.299 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-07-14 13:58:46.300 +04:00 [DBG] Start discovery request
+2019-07-14 14:18:35.088 +04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-07-14 14:18:35.213 +04:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2019-07-14 14:18:35.226 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2019-07-14 14:18:35.226 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2019-07-14 14:18:35.226 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2019-07-14 14:18:35.227 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2019-07-14 14:18:35.227 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2019-07-14 14:18:36.332 +04:00 [DBG] Login Url: /Account/Login
+2019-07-14 14:18:36.335 +04:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-07-14 14:18:36.335 +04:00 [DBG] Logout Url: /Account/Logout
+2019-07-14 14:18:36.335 +04:00 [DBG] ConsentUrl Url: /consent
+2019-07-14 14:18:36.335 +04:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-07-14 14:18:36.335 +04:00 [DBG] Error Url: /home/error
+2019-07-14 14:18:36.335 +04:00 [DBG] Error Id Parameter: errorId
+2019-07-14 14:19:42.523 +04:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-07-14 14:19:42.710 +04:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-07-14 14:19:42.710 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-07-14 14:19:42.727 +04:00 [DBG] Start token request.
+2019-07-14 14:19:42.740 +04:00 [DBG] Start client validation
+2019-07-14 14:19:42.756 +04:00 [DBG] Start parsing Basic Authentication secret
+2019-07-14 14:19:42.767 +04:00 [DBG] Start parsing for secret in post body
+2019-07-14 14:19:42.812 +04:00 [DBG] Parser found secret: PostBodySecretParser
+2019-07-14 14:19:42.812 +04:00 [DBG] Secret id found: client
+2019-07-14 14:19:42.845 +04:00 [DBG] client configuration validation for client client succeeded.
+2019-07-14 14:19:42.864 +04:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-07-14 14:19:42.864 +04:00 [DBG] Client validation success
+2019-07-14 14:19:42.884 +04:00 [DBG] Start token request validation
+2019-07-14 14:19:42.902 +04:00 [DBG] Start resource owner password token request validation
+2019-07-14 14:22:12.242 +04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-07-14 14:22:12.325 +04:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2019-07-14 14:22:12.336 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2019-07-14 14:22:12.337 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2019-07-14 14:22:12.337 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2019-07-14 14:22:12.337 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2019-07-14 14:22:12.337 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2019-07-14 14:22:13.306 +04:00 [DBG] Login Url: /Account/Login
+2019-07-14 14:22:13.315 +04:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-07-14 14:22:13.316 +04:00 [DBG] Logout Url: /Account/Logout
+2019-07-14 14:22:13.316 +04:00 [DBG] ConsentUrl Url: /consent
+2019-07-14 14:22:13.316 +04:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-07-14 14:22:13.316 +04:00 [DBG] Error Url: /home/error
+2019-07-14 14:22:13.317 +04:00 [DBG] Error Id Parameter: errorId
+2019-07-14 14:22:16.522 +04:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-07-14 14:22:16.688 +04:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-07-14 14:22:16.688 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-07-14 14:22:16.702 +04:00 [DBG] Start token request.
+2019-07-14 14:22:16.711 +04:00 [DBG] Start client validation
+2019-07-14 14:22:16.719 +04:00 [DBG] Start parsing Basic Authentication secret
+2019-07-14 14:22:16.724 +04:00 [DBG] Start parsing for secret in post body
+2019-07-14 14:22:16.749 +04:00 [DBG] Parser found secret: PostBodySecretParser
+2019-07-14 14:22:16.749 +04:00 [DBG] Secret id found: client
+2019-07-14 14:22:16.778 +04:00 [DBG] client configuration validation for client client succeeded.
+2019-07-14 14:22:16.794 +04:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-07-14 14:22:16.794 +04:00 [DBG] Client validation success
+2019-07-14 14:22:16.816 +04:00 [DBG] Start token request validation
+2019-07-14 14:22:16.842 +04:00 [DBG] Start resource owner password token request validation
+2019-07-14 14:28:34.152 +04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-07-14 14:28:34.259 +04:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2019-07-14 14:28:34.265 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2019-07-14 14:28:34.265 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2019-07-14 14:28:34.265 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2019-07-14 14:28:34.266 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2019-07-14 14:28:34.266 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2019-07-14 14:28:35.117 +04:00 [DBG] Login Url: /Account/Login
+2019-07-14 14:28:35.121 +04:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-07-14 14:28:35.121 +04:00 [DBG] Logout Url: /Account/Logout
+2019-07-14 14:28:35.121 +04:00 [DBG] ConsentUrl Url: /consent
+2019-07-14 14:28:35.122 +04:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-07-14 14:28:35.122 +04:00 [DBG] Error Url: /home/error
+2019-07-14 14:28:35.122 +04:00 [DBG] Error Id Parameter: errorId
+2019-07-14 14:28:41.240 +04:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-07-14 14:28:41.408 +04:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-07-14 14:28:41.409 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-07-14 14:28:41.424 +04:00 [DBG] Start token request.
+2019-07-14 14:28:41.437 +04:00 [DBG] Start client validation
+2019-07-14 14:28:41.448 +04:00 [DBG] Start parsing Basic Authentication secret
+2019-07-14 14:28:41.455 +04:00 [DBG] Start parsing for secret in post body
+2019-07-14 14:28:41.485 +04:00 [DBG] Parser found secret: PostBodySecretParser
+2019-07-14 14:28:41.486 +04:00 [DBG] Secret id found: client
+2019-07-14 14:28:41.515 +04:00 [DBG] client configuration validation for client client succeeded.
+2019-07-14 14:28:41.533 +04:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-07-14 14:28:41.533 +04:00 [DBG] Client validation success
+2019-07-14 14:28:41.557 +04:00 [DBG] Start token request validation
+2019-07-14 14:28:41.583 +04:00 [DBG] Start resource owner password token request validation
+2019-07-14 14:29:22.476 +04:00 [DBG] Resource owner password token request validation success.
+2019-07-14 14:29:22.533 +04:00 [INF] Token request validation success
+{"ClientId":"client","ClientName":null,"GrantType":"password","Scopes":"BookService","AuthorizationCode":null,"RefreshToken":null,"UserName":"username1","AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"password","scope":"BookService","client_id":"client","client_secret":"***REDACTED***","username":"username1","password":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-07-14 14:29:22.589 +04:00 [DBG] Getting claims for access token for client: client
+2019-07-14 14:29:22.590 +04:00 [DBG] Getting claims for access token for subject: 1
+2019-07-14 14:29:56.390 +04:00 [DBG] Token request success.
+2019-07-14 14:30:19.537 +04:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: https://jwt.io
+2019-07-14 14:30:19.547 +04:00 [DBG] Client list checked and origin: https://jwt.io is not allowed
+2019-07-14 14:30:19.548 +04:00 [WRN] CorsPolicyService did not allow origin: https://jwt.io
+2019-07-14 14:30:19.549 +04:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-07-14 14:30:19.554 +04:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-07-14 14:30:19.555 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-07-14 14:30:19.571 +04:00 [DBG] Start discovery request

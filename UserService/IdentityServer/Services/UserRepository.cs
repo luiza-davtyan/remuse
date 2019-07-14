@@ -1,4 +1,5 @@
 ﻿using IdentityServer.Models;
+using IdentityServer.ModelsDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,29 +35,22 @@ namespace IdentityServer.Services
         /// </summary>
         /// <param name="userId"></param>
         /// <returns></returns>
-        public Task<User> GetUserByID(int userId)
+        public Task<UserDTO> GetUserByID(int userId)
         {
-            var task = new Task<User>(() =>
+            var task = new Task<UserDTO>(() =>
             {
+                UserDTO userDTO = new UserDTO();
                 var userObject = context.Users.FirstOrDefault<User>(user => user.Id == userId);
                 var userRoleObject = context.User_Role.FirstOrDefault<User_Role>(userRole => userRole.UserID == userId);
                 if (userRoleObject != null)
                 {
-                    var roleObject = context.Role.FirstOrDefault<Role>(role => role.Id == userRoleObject.RoleID);
+                    var roleObject = context.Roles.FirstOrDefault<Role>(role => role.Id == userRoleObject.RoleID);
                     if (roleObject != null)
                     {
-                        userObject.Role = roleObject.Permission;
+                        userDTO = new UserDTO(userObject.Id, userObject.Name, userObject.Surname, userObject.DateOfBirth, userObject.Email, userObject.Username, userObject.Password, roleObject.Permission);
                     }
                 }
-                //var userObject = context.Users.Join(context.User_Role, (user => user.Id), (user_role => user_role.UserID), ((user, user_role) => new { Users = user, User_Role = user_role }))
-                //.Join(context.Role, (uur => uur.User_Role.RoleID), (r => r.Id), (uur, r) => new { uur, r })
-                //.Where(blabla => blabla.uur.User_Role.UserID == userId)
-                //.Select(u => new User {
-                    
-                //});
-
-                
-                return userObject;
+                return userDTO;
             });
 
             task.Start();
@@ -69,21 +63,22 @@ namespace IdentityServer.Services
         /// </summary>
         /// <param name="username"></param>
         /// <returns></returns>
-        public Task<User> GetUserByUsername(string username)
+        public Task<UserDTO> GetUserByUsername(string username)
         {
-            var task = new Task<User>(() =>
+            var task = new Task<UserDTO>(() =>
             {
+                UserDTO userDTO = new UserDTO();
                 var userObject = context.Users.FirstOrDefault<User>(user => user.Username.Equals(username));
                 var userRoleObject = context.User_Role.FirstOrDefault<User_Role>(userRole => userRole.UserID == userObject.Id);
                 if (userRoleObject != null)
                 {
-                    var roleObject = context.Role.FirstOrDefault<Role>(role => role.Id == userRoleObject.RoleID);
+                    var roleObject = context.Roles.FirstOrDefault<Role>(role => role.Id == userRoleObject.RoleID);
                     if (roleObject != null)
                     {
-                        userObject.Role = roleObject.Permission;
+                       userDTO = new UserDTO(userObject.Id, userObject.Name, userObject.Surname, userObject.DateOfBirth,userObject.Email, userObject.Username, userObject.Password, roleObject.Permission);
                     }
                 }
-                return userObject;
+                return userDTO;
             });
 
             task.Start();
