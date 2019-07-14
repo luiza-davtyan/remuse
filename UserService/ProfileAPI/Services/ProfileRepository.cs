@@ -15,10 +15,11 @@ namespace ProfileAPI.Services
         {
             this.context = context;
         }
-
-        public IEnumerable<Profile> GetUserBooks(int userId)
-        {
-            return this.context.Profiles.Where(x => x.UserId == userId);
+           
+        public IEnumerable<String> GetUserBooks(int userId)
+        { 
+            IEnumerable<String> p = (IEnumerable<String>)this.context.Profiles.Where(x => x.UserId == userId);
+            return p;
         }
 
         public Profile Create(Profile profile)
@@ -27,5 +28,19 @@ namespace ProfileAPI.Services
             this.context.SaveChanges();
             return profile;
         }
+
+        public Profile Update(Profile profile)
+        {
+            this.context.Profiles.Update(profile);
+            this.context.SaveChanges();
+            return profile;
+        }
+
+        public void Delete (Profile profile)
+        {
+            this.context.Profiles.Remove(profile);
+            this.context.SaveChanges();
+        }
+
     }
 }

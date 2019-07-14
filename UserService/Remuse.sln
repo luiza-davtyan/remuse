@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29021.104
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserService", "UserService\UserService.csproj", "{8C1C3A26-5386-48C4-B98B-F236901B1F9B}"
 EndProject
@@ -11,15 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProfileAPI", "ProfileAPI\Pr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{D2015A77-03B1-4AB8-AC03-81577BF97981}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MusicService", "MusicService\MusicService.csproj", "{DF8A9658-AAE3-45C4-AA91-8C248AF7D0E2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Remuse", "Remuse\Remuse.csproj", "{A9F2427B-5CD0-4246-B73D-E1D422E22CD5}"
 EndProject
-<<<<<<< HEAD
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestClient", "TestClient\TestClient.csproj", "{F92A3CDC-AD79-4870-8B03-8C235217BD20}"
-=======
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RemuseWebApplication", "AdminPanel\RemuseWebApplication.csproj", "{AE305B14-8548-497E-9338-27B49DBA4E2C}"
->>>>>>> 7246aff379b18f07d54b03f66c63192a1d4ebd9c
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,27 +37,16 @@ Global
 		{D2015A77-03B1-4AB8-AC03-81577BF97981}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2015A77-03B1-4AB8-AC03-81577BF97981}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2015A77-03B1-4AB8-AC03-81577BF97981}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DF8A9658-AAE3-45C4-AA91-8C248AF7D0E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DF8A9658-AAE3-45C4-AA91-8C248AF7D0E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DF8A9658-AAE3-45C4-AA91-8C248AF7D0E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DF8A9658-AAE3-45C4-AA91-8C248AF7D0E2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A9F2427B-5CD0-4246-B73D-E1D422E22CD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A9F2427B-5CD0-4246-B73D-E1D422E22CD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9F2427B-5CD0-4246-B73D-E1D422E22CD5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{A9F2427B-5CD0-4246-B73D-E1D422E22CD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9F2427B-5CD0-4246-B73D-E1D422E22CD5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A9F2427B-5CD0-4246-B73D-E1D422E22CD5}.Release|Any CPU.Deploy.0 = Release|Any CPU
-<<<<<<< HEAD
-		{F92A3CDC-AD79-4870-8B03-8C235217BD20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F92A3CDC-AD79-4870-8B03-8C235217BD20}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F92A3CDC-AD79-4870-8B03-8C235217BD20}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F92A3CDC-AD79-4870-8B03-8C235217BD20}.Release|Any CPU.Build.0 = Release|Any CPU
-=======
 		{AE305B14-8548-497E-9338-27B49DBA4E2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AE305B14-8548-497E-9338-27B49DBA4E2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE305B14-8548-497E-9338-27B49DBA4E2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE305B14-8548-497E-9338-27B49DBA4E2C}.Release|Any CPU.Build.0 = Release|Any CPU
->>>>>>> 7246aff379b18f07d54b03f66c63192a1d4ebd9c
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
