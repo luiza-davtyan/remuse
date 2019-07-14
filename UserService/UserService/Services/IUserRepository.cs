@@ -46,11 +46,11 @@ namespace UserService.Services
         /// <param name="pic"></param>
         /// <returns></returns>
         void ChangePicture(byte[] pic, int userId);
-        ///// <summary>
-        ///// Get user by username and password.
-        ///// </summary>
-        ///// <param name="username"></param>
-        ///// <param name="password"></param>
-        //User GetUserByUsernameAndPassword(string username, string password);
+        /// <summary>
+        /// Get user by username and password.
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        User GetUserByUsernameAndPassword(string username, string password);
     }
 }

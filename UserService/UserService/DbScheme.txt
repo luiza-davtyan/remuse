@@ -4,22 +4,23 @@ create Table Users
 (	
 ID				INT			PRIMARY KEY IDENTITY(1, 1),
 Picture			VARBINARY, 
-Name 			NVARCHAR(20) 	NOT NULL,
-Surname 		NVARCHAR(20) 	NOT NULL,
-Username 		NVARCHAR(20) 	NOT NULL UNIQUE,
-Email 			NVARCHAR(20) 	NOT NULL,
+Name 			NVARCHAR(100) 	NOT NULL,
+Surname 		NVARCHAR(100) 	NOT NULL,
+Username 		NVARCHAR(100) 	NOT NULL UNIQUE,
+Email 			NVARCHAR(100) 	NOT NULL,
 DateOfBirth		Datetime		NOT NULL,
-Password		NVARCHAR(100) 	NOT NULL
+Password		NVARCHAR(150) 	NOT NULL
 );
 
 create Table Roles 
 (	
 ID				INT				PRIMARY KEY IDENTITY(1, 1),
-Permission 		NVARCHAR(20) 	NOT NULL UNIQUE,
+Permission 		NVARCHAR(100) 	NOT NULL UNIQUE,
 );
 
 create Table User_Role
 (
+ID			INT				PRIMARY KEY IDENTITY(1, 1),
 UserID 		INT			FOREIGN KEY REFERENCES Users(ID),
 RoleID		INT			FOREIGN KEY REFERENCES Roles(ID)
 )
