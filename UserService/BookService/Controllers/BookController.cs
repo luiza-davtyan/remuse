@@ -29,6 +29,7 @@ namespace BookService.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
+        [Authorize]
         public ActionResult<List<Book>> Get() =>
             _bookRepository.Get();
 
@@ -56,7 +57,6 @@ namespace BookService.Controllers
         /// <param name="book"></param>
         /// <returns></returns>
         [HttpPost]
-        [Authorize]
         public ActionResult<Book> Create(Book book)
         {
             _bookRepository.Create(book);

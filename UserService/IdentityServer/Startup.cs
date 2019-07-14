@@ -7,6 +7,11 @@ using IdentityServer4.Stores;
 using IdentityServer4.Models;
 using IdentityServer4.Test;
 using System.Collections.Generic;
+using IdentityServer.Services;
+using Microsoft.EntityFrameworkCore;
+using IdentityServer4.Validation;
+using IdentityServer.Validator;
+using IdentityServer4.Services;
 
 namespace IdentityServer
 {
@@ -24,19 +29,23 @@ namespace IdentityServer
             // uncomment, if you wan to add an MVC-based UI
             //services.AddMvc().SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
 
-            var builder = services.AddIdentityServer()
-                .AddInMemoryIdentityResources(Config.GetIdentityResources())
-                .AddInMemoryApiResources(Config.GetApis())
-                .AddInMemoryClients(Config.GetClients());
+            //var builder = services.AddIdentityServer()
+            //    .AddInMemoryIdentityResources(Config.GetIdentityResources())
+            //    .AddInMemoryApiResources(Config.GetApis())
+            //    .AddInMemoryClients(Config.GetClients());
 
-            if (Environment.IsDevelopment())
-            {
-                builder.AddDeveloperSigningCredential();
-            }
-            else
-            {
-                throw new Exception("need to configure key material");
-            }
+            services.AddIdentityServer()
+                .AddDeveloperSigningCredential()
+                .AddInMemoryApiResources(Config.GetApis())
+                .AddInMemoryIdentityResources(Config.GetIdentityResources())
+                .AddInMemoryClients(Config.GetClients())
+                .AddProfileService<ProfileService>();
+
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddDbContext<UserConnection>(c => c.UseSqlServer("Data Source = MSSQLSERVER; Server = LUIZADAVTYA737B;Initial Catalog= remuseDB; Integrated Security = True"));
+
+            services.AddTransient<IResourceOwnerPasswordValidator, ResourceOwnerPasswordValidator>();
+            services.AddTransient<IProfileService, ProfileService>();
         }
 
         public void Configure(IApplicationBuilder app)
