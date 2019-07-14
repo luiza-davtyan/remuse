@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.489
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29021.104
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserService", "UserService\UserService.csproj", "{8C1C3A26-5386-48C4-B98B-F236901B1F9B}"
 EndProject
@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer", "IdentityS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Remuse", "Remuse\Remuse.csproj", "{A9F2427B-5CD0-4246-B73D-E1D422E22CD5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RemuseWebApplication", "AdminPanel\RemuseWebApplication.csproj", "{AE305B14-8548-497E-9338-27B49DBA4E2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminApplication", "AdminPanel\AdminApplication.csproj", "{AE305B14-8548-497E-9338-27B49DBA4E2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{31197360-B3B3-42B2-96A0-CE886BC71A82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{AE305B14-8548-497E-9338-27B49DBA4E2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE305B14-8548-497E-9338-27B49DBA4E2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE305B14-8548-497E-9338-27B49DBA4E2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31197360-B3B3-42B2-96A0-CE886BC71A82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31197360-B3B3-42B2-96A0-CE886BC71A82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31197360-B3B3-42B2-96A0-CE886BC71A82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31197360-B3B3-42B2-96A0-CE886BC71A82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

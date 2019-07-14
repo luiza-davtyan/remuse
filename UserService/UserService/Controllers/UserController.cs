@@ -24,6 +24,8 @@ namespace UserService.Controllers
         /// </summary>
         private readonly Helper helper;
 
+        private List<User> users = new List<User>() { new User("AA","S", DateTime.Now, "","" ,"") };
+
         /// <summary>
         /// Public user controller wich initialize .
         /// </summary>
@@ -54,6 +56,8 @@ namespace UserService.Controllers
         [HttpGet]
         public IActionResult GetUserById(int id)
         {
+            //return Ok(users.First());
+
             var userById = this.userRepository.GetUserByID(id);
             if(userById == null)
             {

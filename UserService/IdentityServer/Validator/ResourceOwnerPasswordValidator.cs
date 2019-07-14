@@ -1,8 +1,8 @@
 ﻿using IdentityServer.Models;
-using IdentityServer.ModelsDTO;
 using IdentityServer.Services;
 using IdentityServer4.Models;
 using IdentityServer4.Validation;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

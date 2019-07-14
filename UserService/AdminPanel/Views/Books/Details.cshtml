@@ -1,4 +1,4 @@
-﻿@model RemuseWebApplication.Entities.Book
+﻿@model Models.BookDTO
 
 @{
     ViewData["Title"] = "Details";
@@ -7,7 +7,7 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Book</h4>
+    <h4>BookDTO</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -17,16 +17,28 @@
             @Html.DisplayFor(model => model.Title)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Autor)
+            @Html.DisplayNameFor(model => model.Content)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Autor)
+            @Html.DisplayFor(model => model.Content)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Genre)
+            @Html.DisplayNameFor(model => model.Description)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Genre)
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AuthorId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AuthorId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Year)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Year)
         </dd>
     </dl>
 </div>

@@ -1,5 +1,5 @@
 ﻿using IdentityServer.Models;
-using IdentityServer.ModelsDTO;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

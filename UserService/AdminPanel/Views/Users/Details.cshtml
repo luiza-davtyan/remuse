@@ -1,4 +1,4 @@
-﻿@model RemuseWebApplication.Entities.User
+﻿@model Models.UserDTO
 
 @{
     ViewData["Title"] = "Details";
@@ -7,32 +7,32 @@
 <h2>Details</h2>
 
 <div>
-    <h4>User</h4>
+    <h4>UserDTO</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
+            @Html.DisplayNameFor(model => model.Name)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.FirstName)
+            @Html.DisplayFor(model => model.Name)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.LastName)
+            @Html.DisplayNameFor(model => model.Surname)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.LastName)
+            @Html.DisplayFor(model => model.Surname)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DateOfBirth)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Email)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.RoleId)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.RoleId)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Username)
@@ -45,6 +45,18 @@
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Password)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Picture)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Picture)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Role)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Role)
         </dd>
     </dl>
 </div>

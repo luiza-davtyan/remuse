@@ -4,9 +4,9 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Models;
 using Newtonsoft.Json;
 using ProfileAPI.Entities;
-using ProfileAPI.Models;
 using ProfileAPI.Services;
 
 namespace ProfileAPI.Controllers
