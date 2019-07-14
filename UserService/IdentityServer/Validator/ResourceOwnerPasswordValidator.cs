@@ -1,4 +1,5 @@
 ﻿using IdentityServer.Models;
+using IdentityServer.ModelsDTO;
 using IdentityServer.Services;
 using IdentityServer4.Models;
 using IdentityServer4.Validation;
@@ -23,8 +24,8 @@ namespace IdentityServer.Validator
         {
             try
             {
-                //get your user model from db (by username - in my case its email)
-                var user = await userRepository.GetUserByUsername(context.UserName);
+                //get your user model from db (by username)
+                UserDTO user = await userRepository.GetUserByUsername(context.UserName);
                 if (user != null)
                 {
                     if (user.Password == context.Password)
@@ -35,7 +36,6 @@ namespace IdentityServer.Validator
                             subject: user.Id.ToString(),
                             authenticationMethod: "custom",
                             claims: GetUserClaims(user));
-
                         return;
                     }
 
@@ -51,7 +51,7 @@ namespace IdentityServer.Validator
             }
         }
 
-        public static Claim[] GetUserClaims(User user)
+        public static Claim[] GetUserClaims(UserDTO user)
         {
             return new Claim[]
             {

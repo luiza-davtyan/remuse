@@ -74,6 +74,30 @@ namespace UserService.Controllers
             return Ok(currUser);
         }
 
+
+        //[Route("{username}")]
+        [HttpGet("get/{param}")]
+        public IActionResult GetUserByUsername(User user)
+        {
+            User currUser = this.userRepository.GetUserByUsername(user.Username);
+            if (currUser == null)
+            {
+                return NotFound();
+            }
+            return Ok(currUser);
+        }
+
+        //[HttpGet("username/{username}")]
+        //public IActionResult GetUserByUsername(User user)
+        //{
+        //    User curruser = this.userRepository.GetUserByUsername(user.Username);
+        //    if (curruser == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return Ok(curruser);
+        //}
+
         /// <summary>
         /// Add user.
         /// </summary>

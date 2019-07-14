@@ -7,7 +7,7 @@ namespace IdentityServer.Models
 {
     public class Role
     {
-        public int Id;
-        public string Permission;
+        public int Id { get; set; }
+        public string Permission { get; set; }
     }
 }

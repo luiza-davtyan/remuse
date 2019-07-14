@@ -42,7 +42,7 @@ namespace IdentityServer
                 .AddProfileService<ProfileService>();
 
             services.AddScoped<IUserRepository, UserRepository>();
-            services.AddDbContext<UserConnection>(c => c.UseSqlServer("Data Source = MSSQLSERVER; Server = LUIZADAVTYA737B;Initial Catalog= remuseDB; Integrated Security = True"));
+            services.AddDbContext<UserConnection>(c => c.UseSqlServer("Data Source = MSSQLSERVER; Server = LAPTOP-49EKNLEF;Initial Catalog= remuseDB; Integrated Security = True"));
 
             services.AddTransient<IResourceOwnerPasswordValidator, ResourceOwnerPasswordValidator>();
             services.AddTransient<IProfileService, ProfileService>();
