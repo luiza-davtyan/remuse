@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using UserService.Models;
 using UserService.Services;
 
@@ -44,7 +37,7 @@ namespace UserService.Controllers
             var users = this.userRepository.GetUsers();
             return Ok(users);
         }
- 
+
         /// <summary>
         /// Get user by Id.
         /// </summary>
@@ -55,18 +48,23 @@ namespace UserService.Controllers
         public IActionResult GetUserById(int id)
         {
             var userById = this.userRepository.GetUserByID(id);
-            if(userById == null)
+            if (userById == null)
             {
                 return NotFound();
             }
             return Ok(userById);
         }
 
-        //[Route("{username}")]
-        [HttpPost("get/{username}")]
-        public IActionResult GetUserByUsernameAndPassword(User user)
+        /// <summary>
+        /// Get user by Username
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns></returns>
+        [HttpGet("get/{username}")]
+        public IActionResult GetUserByUsername(string username)
         {
-            User currUser = this.userRepository.GetUserByUsernameAndPassword(user.Username, user.Password);
+            User currUser = this.userRepository.GetUserByUsername(username);
+
             if (currUser == null)
             {
                 return NotFound();
@@ -132,8 +130,13 @@ namespace UserService.Controllers
             return Ok(user);
         }
 
-        //????????????????
-        [HttpPut("id")] 
+        /// <summary>
+        /// Changes user photo
+        /// </summary>
+        /// <param name="pic"></param>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        [HttpPut("id")]
         public IActionResult ChangePhoto(byte[] pic, int userId)
         {
             var user = this.userRepository.GetUserByID(userId);

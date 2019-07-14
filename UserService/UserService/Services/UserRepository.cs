@@ -1,10 +1,6 @@
-﻿using System;
-using UserService.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
-using System.Data;
+using UserService.Models;
 
 namespace UserService.Services
 {
@@ -78,7 +74,7 @@ namespace UserService.Services
                 context.User_Role.Remove(user_role);
             context.SaveChanges();
             var user = GetUserByID(userId);
-            if(user != null)
+            if (user != null)
                 context.Users.Remove(user);
             context.SaveChanges();
         }
@@ -136,7 +132,7 @@ namespace UserService.Services
         /// </summary>
         /// <param name="username"></param>
         /// <param name="password"></param>
-        public User GetUserByUsernameAndPassword(string username, string password)
+        public User GetUserByUsername(string username, string password)
         {
             var user = context.Users.FirstOrDefault<User>(currUser => currUser.Username.Equals(username));
             if (!user.Password.Equals(helper.getHashSha256(password)))

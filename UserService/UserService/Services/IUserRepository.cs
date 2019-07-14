@@ -57,6 +57,6 @@ namespace UserService.Services
         /// </summary>
         /// <param name="username"></param>
         /// <param name="password"></param>
-        User GetUserByUsernameAndPassword(string username, string password);
+       // User GetUserByEmail(string username);
     }
 }

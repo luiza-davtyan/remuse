@@ -4,6 +4,8 @@ using Android.Graphics;
 using Android.OS;
 using Android.Support.V4.Widget;
 using Android.Widget;
+using MyNamespace;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
@@ -13,15 +15,17 @@ namespace Remuse.Activities
     public class UserPage : Activity
     {
         ImageView userimage;
-        TextView firstname, lastname, username, birthday;
+        TextView firstname, lastname, username;
         Button books;
         List<Book> usersBooks = new List<Book>();
         List<string> mLeftItems = new List<string>();
+        User user;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Userpage);
+            user = JsonConvert.DeserializeObject<User>(Intent.GetStringExtra("user"));
 
             userimage = FindViewById<ImageView>(Resource.Id.imageView1);
             userimage.SetImageResource(Resource.Drawable.icon);
@@ -30,8 +34,12 @@ namespace Remuse.Activities
             lastname = FindViewById<TextView>(Resource.Id.textView2);
             username = FindViewById<TextView>(Resource.Id.textView3);
             books = FindViewById<Button>(Resource.Id.button1);
-            birthday = FindViewById<TextView>(Resource.Id.textView4);
             books.Click += Books_Click;
+
+            firstname.Text = user.Name;
+            lastname.Text = user.Surname;
+            username.Text = user.Username;
+            
 
             #region menu
             DrawerLayout mDrawerLayout;

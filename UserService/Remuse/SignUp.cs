@@ -18,7 +18,7 @@ namespace Remuse
     public class SignUp : Activity
     {
         Button confirm;
-        EditText name, lastname, email, username, password, birthday;
+        EditText name, lastname, email, username, password;
         User RegUser;
         User forException;
         
@@ -34,7 +34,6 @@ namespace Remuse
             email = FindViewById<EditText>(Resource.Id.editText3);
             username = FindViewById<EditText>(Resource.Id.editText4);
             password = FindViewById<EditText>(Resource.Id.editText6);
-            //birthday = FindViewById<EditText>(Resource.Id.editText5);
 
             confirm.Click += Confirm_Click;
         }

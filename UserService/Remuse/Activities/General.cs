@@ -7,25 +7,30 @@ using Android.Widget;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
+using MyNamespace;
 
 namespace Remuse.Activities
 {
     [Activity(Label = "General")]
     public class General : Activity
     {
+        User user;
         Button search;
         ImageView[] bookImages = new ImageView[8];
         TextView[] textViews = new TextView[8];
         List<string> mLeftItems = new List<string>();
         AutoCompleteTextView userInput;
+        List<Book> books = new List<Book>();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.startgeneral);
-
+            user = JsonConvert.DeserializeObject<User>(Intent.GetStringExtra("user"));
             #region menu
             DrawerLayout mDrawerLayout;
 
@@ -74,18 +79,19 @@ namespace Remuse.Activities
             //search.Click += Search_Click;
         }
 
-        List<Book> books = new List<Book>();
         /// <summary>
         /// Whene user clicks search button
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Search_Click(object sender, EventArgs e)
+        private async void Search_Click(object sender, EventArgs e)
         {
             string bookName = userInput.Text;
             //give bookName to the Book Service,then get the Book object
-            //books = given object
-            books = JsonConvert.DeserializeObject<List<Book>>(Intent.GetStringExtra("book"));
+            await GetBooksAsync(bookName);
+            Intent intent = new Intent(this, typeof(BookSearchResult));
+            intent.PutExtra("book", JsonConvert.SerializeObject(books));
+            StartActivity(intent);
         }
 
         /// <summary>
@@ -102,6 +108,7 @@ namespace Remuse.Activities
             {
                 case 0:
                     Intent intent = new Intent(this, type);
+                    intent.PutExtra("user", JsonConvert.SerializeObject(user));
                     StartActivity(intent);
                     break;
                 case 1:
@@ -133,6 +140,17 @@ namespace Remuse.Activities
                 i++;
                 Thread.Sleep(150);
             }
+        }
+
+        /// <summary>
+        /// Method,that send request to BookService
+        /// </summary>
+        /// <param name="bookName"></param>
+        /// <returns></returns>
+        public async Task GetBooksAsync(string bookName)
+        {
+            var service = new BookClient(new System.Net.Http.HttpClient());
+            books = (await service.SearchBookAsync(bookName)).ToList();
         }
     }
 }

@@ -15,7 +15,7 @@
 		android:layout_marginTop="33.0dp"
 		android:layout_marginBottom="35.0dp" />
 	<TextView
-		android:text="Email"
+		android:text="Username"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/textView6" />

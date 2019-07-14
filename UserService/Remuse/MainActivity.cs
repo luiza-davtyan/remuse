@@ -93,7 +93,6 @@ namespace Remuse
             string bookName = userInput.Text;
 
             //give bookName to the Book Service,then get the Book object
-            //books = given object
             await GetBooksAsync(bookName);
             Intent intent = new Intent(this, typeof(BookSearchResult));
             intent.PutExtra("book", JsonConvert.SerializeObject(books));
@@ -148,6 +147,11 @@ namespace Remuse
             }
         }
 
+        /// <summary>
+        /// Method,that send request to BookService
+        /// </summary>
+        /// <param name="bookName"></param>
+        /// <returns></returns>
         public async Task GetBooksAsync(string bookName)
         {
             var service = new BookClient(new System.Net.Http.HttpClient());
