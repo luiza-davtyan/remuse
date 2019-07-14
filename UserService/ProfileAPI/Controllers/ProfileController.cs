@@ -19,18 +19,12 @@ namespace ProfileAPI.Controllers
             this.profileRepository = profileRepository;
         }
 
-        // GET api/values
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/values/5
+        // GET profile by id
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public ActionResult<IEnumerable<String>> Get(int id)
         {
-            return "value";
+            IEnumerable<String> books = (IEnumerable<String>) this.profileRepository.GetUserBooks(id);
+            return books.ToList;
         }
 
         // POST api/values
@@ -41,15 +35,17 @@ namespace ProfileAPI.Controllers
         }
 
         // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut]
+        public void Put([FromBody] Profile profile)
         {
+            this.profileRepository.Update(profile);
         }
 
         // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete]
+        public void Delete(Profile profile)
         {
+            this.profileRepository.Delete(profile);
         }
     }
 }

@@ -15,10 +15,11 @@ namespace ProfileAPI.Services
         {
             this.context = context;
         }
-
-        public IEnumerable<Profile> GetUserBooks(int userId)
-        {
-            return this.context.Profiles.Where(x => x.UserId == userId);
+           
+        public IEnumerable<String> GetUserBooks(int userId)
+        { 
+            IEnumerable<String> p = (IEnumerable<String>)this.context.Profiles.Where(x => x.UserId == userId);
+            return p;
         }
 
         public Profile Create(Profile profile)
