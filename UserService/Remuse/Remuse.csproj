@@ -82,6 +82,7 @@
     <Compile Include="Attributes\EnumMemberAttribute.cs" />
     <Compile Include="HttpUri.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Models\AuthServerResponse.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\UserClient.cs" />
     <Compile Include="Resources\Music\treamingBackgroundService.cs" />
@@ -122,6 +123,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher_round.png" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="IdentityModel">
+      <Version>3.10.10</Version>
+    </PackageReference>
     <PackageReference Include="System.Net.Http">
       <Version>4.3.4</Version>
     </PackageReference>
