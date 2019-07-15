@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 using IdentityModel.Client;
 using System.Net.Http.Headers;
 using Remuse.Models;
+using System.Text;
+using System.Security.Cryptography;
 
 namespace Remuse
 {
@@ -59,7 +61,7 @@ namespace Remuse
             }
             else
             {
-                Uri authorizationServerTokenIssuerUri = new Uri(HttpUri.IdentityUri + "connection/token");
+                Uri authorizationServerTokenIssuerUri = new Uri(HttpUri.IdentityUri + "connect/token");
 
                 string clientId = "client";
                 string clientSecret = "secret";
@@ -74,12 +76,6 @@ namespace Remuse
                 AuthServerResponse authServerToken = Newtonsoft.Json.JsonConvert.DeserializeObject<AuthServerResponse>(token);
 
                 check.Text = authServerToken.access_token;
-
-                //secured web api request
-                string response = SecureWebApiCall(authServerToken).GetAwaiter().GetResult();
-                Console.WriteLine("Response received from WebAPI:");
-                Console.WriteLine(response);
-                Console.ReadKey();
 
                 //------------------------------------------------------------------
                 //userFromBase = await Get(usernameString);
@@ -128,7 +124,7 @@ namespace Remuse
         private static async Task<string> RequestTokenToAuthorizationServer(Uri uriAuthorizationServerUri, string clientId, string scope, string clientSecret, string username, string password)
         {
             HttpResponseMessage responseMessage = new HttpResponseMessage();
-
+            
             using (HttpClient client = new HttpClient())
             {
                 // returns DiscoveryResponse 
@@ -144,7 +140,7 @@ namespace Remuse
                         new KeyValuePair<string, string>("scope", scope),
                         new KeyValuePair<string, string>("client_secret", clientSecret),
                         new KeyValuePair<string, string>("username", username),
-                        new KeyValuePair<string, string>("password", password)
+                        new KeyValuePair<string, string>("password", GetHashSha256(password))
                     });
 
                 tokenRequest.Content = httpContent;
@@ -175,6 +171,24 @@ namespace Remuse
                 //var response = await httpClient.GetAsync("uri");
             }
             return await responseMessage.Content.ReadAsStringAsync();
+        }
+
+        /// <summary>
+        /// SHA256 Hash of your string.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        public static string GetHashSha256(string text)
+        {
+            byte[] bytes = Encoding.Unicode.GetBytes(text);
+            SHA256Managed hashstring = new SHA256Managed();
+            byte[] hash = hashstring.ComputeHash(bytes);
+            string hashString = string.Empty;
+            foreach (byte x in hash)
+            {
+                hashString += String.Format("{0:x2}", x);
+            }
+            return hashString;
         }
     }
 }
