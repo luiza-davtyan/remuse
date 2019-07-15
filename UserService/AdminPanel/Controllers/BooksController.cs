@@ -1,87 +1,92 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using AdminApplication.HttpServices;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using Models;
 
 namespace AdminApplication.Controllers
 {
-    public class UsersController : Controller
+    public class BooksController : Controller
     {
-        private readonly UserService _context;
+        private readonly BookServices _context;
 
-        public UsersController(UserService context)
+        public BooksController(BookServices context)
         {
             _context = context;
         }
 
-        // GET: Users
+        // GET: Books
         public async Task<IActionResult> Index()
         {
-            return View(await _context.GetAllUsers());
+            return View(await _context.GetAllBooks());
         }
 
-        // GET: Users/Details/5
-        public async Task<IActionResult> Details(int? id)
+        // GET: Books/Details/5
+        public async Task<IActionResult> Details(string id)
         {
-            if (!id.HasValue)
+            if (id == null)
             {
                 return NotFound();
             }
 
-            var userDTO = await _context.FindUser(id.Value);
-            if (userDTO == null)
+            var bookDTO = await _context.FindBook(id);
+            if (bookDTO == null)
             {
                 return NotFound();
             }
 
-            return View(userDTO);
+            return View(bookDTO);
         }
 
-        // GET: Users/Create
+        // GET: Books/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Users/Create
+        // POST: Books/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Surname,DateOfBirth,Email,Username,Password,Picture,Role")] UserDTO userDTO)
+        public async Task<IActionResult> Create([Bind("Id,Title,Content,Description,AuthorId,Year")] BookDTO bookDTO)
         {
             if (ModelState.IsValid)
             {
-                await _context.CreateNewUser(userDTO);
+                await _context.CreateNewBooks(bookDTO);
                 return RedirectToAction(nameof(Index));
             }
-            return View(userDTO);
+            return View(bookDTO);
         }
 
-        // GET: Users/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        // GET: Books/Edit/5
+        public async Task<IActionResult> Edit(string id)
         {
-            if (!id.HasValue)
+            if (id == null)
             {
                 return NotFound();
             }
 
-            var userDTO = await _context.FindUser(id.Value);
-            if (userDTO == null)
+            var bookDTO = await _context.FindBook(id);
+            if (bookDTO == null)
             {
                 return NotFound();
             }
-            return View(userDTO);
+            return View(bookDTO);
         }
 
-        // POST: Users/Edit/5
+        // POST: Books/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Surname,DateOfBirth,Email,Username,Password,Picture,Role")] UserDTO userDTO)
+        public async Task<IActionResult> Edit(string id, [Bind("Id,Title,Content,Description,AuthorId,Year")] BookDTO bookDTO)
         {
-            if (id != userDTO.Id)
+            if (id != bookDTO.Id)
             {
                 return NotFound();
             }
@@ -90,7 +95,7 @@ namespace AdminApplication.Controllers
             {
                 try
                 {
-                    await _context.UpdateBook(userDTO);
+                    await _context.UpdateBook(bookDTO);
                 }
                 catch
                 {
@@ -98,33 +103,33 @@ namespace AdminApplication.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(userDTO);
+            return View(bookDTO);
         }
 
-        // GET: Users/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        // GET: Books/Delete/5
+        public async Task<IActionResult> Delete(string id)
         {
-            if (!id.HasValue)
+            if (id == null)
             {
                 return NotFound();
             }
 
-            var userDTO = await _context.FindUser(id.Value);
-            if (userDTO == null)
+            var bookDTO = await _context.FindBook(id);
+            if (bookDTO == null)
             {
                 return NotFound();
             }
 
-            return View(userDTO);
+            return View(bookDTO);
         }
 
-        // POST: Users/Delete/5
+        // POST: Books/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var userDTO = await _context.FindUser(id);
-            await _context.Remove(userDTO);
+            var bookDTO = await _context.FindBook(id);
+            await _context.Remove(bookDTO);
             return RedirectToAction(nameof(Index));
         }
     }

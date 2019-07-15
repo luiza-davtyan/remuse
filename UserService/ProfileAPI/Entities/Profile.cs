@@ -13,6 +13,11 @@ namespace ProfileAPI.Entities
         [Required]
         public string BookId { get; set; }
 
-        public string Song { get; set; }
+        public Profile(int userId , string bookId)
+        {
+            this.BookId = bookId;
+            this.UserId = userId;
+        }
+    
     }
 }

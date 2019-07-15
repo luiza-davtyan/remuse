@@ -7,10 +7,31 @@ namespace IdentityServer
     {
         public static IEnumerable<IdentityResource> GetIdentityResources()
         {
-            return new IdentityResource[]
-            {
-                new IdentityResources.OpenId()
-            };
+            var customProfile = new IdentityResource(
+                   name: "custom.profile",
+                   displayName: "Custom profile",
+                   claimTypes: new[] { "role", "user_id"});
+
+            return new List<IdentityResource>
+           {
+           new IdentityResources.OpenId(),
+
+               new IdentityResource
+               {
+                   Name = "username",
+                   UserClaims = new List<string> { "username",  }
+               },
+               new IdentityResource
+               {
+                   Name="role",
+                   UserClaims= new List<string>{"role"}
+               },
+               new IdentityResource
+               {
+                   Name = "user_id",
+                   UserClaims = new List<string>{"user_id"}
+               }
+           };
         }
 
         public static IEnumerable<ApiResource> GetApis()
@@ -19,9 +40,10 @@ namespace IdentityServer
             {
                 new ApiResource("BookService", "Book API"),
                 new ApiResource("UserService", "User API"),
-                new ApiResource("ProfileAPI", "Profile API")
+                new ApiResource("ProfileAPI", "Profile API"),
+                new ApiResource("Remuse", "Client API")
             };
-            
+           
         }
 
         public static IEnumerable<Client> GetClients()
@@ -33,7 +55,7 @@ namespace IdentityServer
                     ClientId = "client",
 
                     // no interactive user, use the clientid/secret for authentication
-                    AllowedGrantTypes = GrantTypes.ClientCredentials,
+                    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
 
                     // secret for authentication
                     ClientSecrets =
@@ -42,7 +64,7 @@ namespace IdentityServer
                     },
 
                     // scopes that client has access to
-                    AllowedScopes = { "BookService", "UserService", "ProfileAPI" }
+                    AllowedScopes = { "BookService", "UserService", "ProfileAPI", "Remuse" }
                 }
             };
         }

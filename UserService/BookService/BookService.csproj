@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Pdf\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 

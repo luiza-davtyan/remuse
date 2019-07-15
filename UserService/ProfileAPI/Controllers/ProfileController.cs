@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Models;
+using Newtonsoft.Json;
 using ProfileAPI.Entities;
 using ProfileAPI.Services;
 
@@ -12,6 +15,8 @@ namespace ProfileAPI.Controllers
     [ApiController]
     public class ProfileController : ControllerBase
     {
+        HttpClient httpClient = new HttpClient();
+
         private IProfileRepository profileRepository;
 
         public ProfileController(IProfileRepository profileRepository)
@@ -19,18 +24,21 @@ namespace ProfileAPI.Controllers
             this.profileRepository = profileRepository;
         }
 
-        // GET api/values
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/values/5
+        // GET profile by id
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public async Task<ActionResult<List<BookDTO>>> Get(int userId)
         {
-            return "value";
+            //var profiles = this.profileRepository.GetUserBooks(userId);
+            var books = new List<BookDTO>();
+            IEnumerable<String> booksIds = (IEnumerable<String>) this.profileRepository.GetUserBooks(userId);
+            foreach (var item in booksIds)
+            {
+                var response = await httpClient.GetAsync("http://localhost:51858/api/book/" + item);
+                var book = JsonConvert.DeserializeObject<IEnumerable<BookDTO>>(await response.Content.ReadAsStringAsync());
+                books.Add((BookDTO)book);
+            }
+
+            return books;
         }
 
         // POST api/values
@@ -41,15 +49,17 @@ namespace ProfileAPI.Controllers
         }
 
         // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut]
+        public void Put([FromBody] Profile profile)
         {
+            this.profileRepository.Update(profile);
         }
 
         // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete]
+        public void Delete(Profile profile)
         {
+            this.profileRepository.Delete(profile);
         }
     }
 }

@@ -11,7 +11,7 @@ namespace UserService.Services
         /// <summary>
         /// A helper class object.
         /// </summary>
-        private readonly Helper helper;
+        private readonly Hasher helper;
 
         /// <summary>
         /// Public construvtor.
@@ -20,7 +20,7 @@ namespace UserService.Services
         public UserRepository(UserConnection context)
         {
             this.context = context;
-            this.helper = new Helper();
+            this.helper = new Hasher();
         }
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace UserService.Services
         public User GetUserByUsername(string username, string password)
         {
             var user = context.Users.FirstOrDefault<User>(currUser => currUser.Username.Equals(username));
-            if (!user.Password.Equals(helper.getHashSha256(password)))
+            if (!user.Password.Equals(helper.GetHashSha256(password)))
             {
                 return null;
             }

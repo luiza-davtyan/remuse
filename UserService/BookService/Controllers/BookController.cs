@@ -3,6 +3,7 @@ using BookService.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BookService.Controllers
 {
@@ -14,6 +15,8 @@ namespace BookService.Controllers
         /// Book repository.
         /// </summary>
         private readonly BookRepository _bookRepository;
+
+        private List<Book> books = new List<Book>() { new Book { Title="Taron", Id = "54b7d51140c10266ffa3b04d" } };
 
         /// <summary>
         /// Public controller.
@@ -29,8 +32,12 @@ namespace BookService.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public ActionResult<List<Book>> Get() =>
-          _bookRepository.Get();
+        [Authorize]
+        public ActionResult<List<Book>> Get()
+        {
+           //return books;
+           return _bookRepository.Get();
+        }
 
         /// <summary>
         /// Get book by id.
@@ -48,6 +55,8 @@ namespace BookService.Controllers
             }
 
             return book;
+
+            //return books.First();
         }
 
         /// <summary>
@@ -56,7 +65,6 @@ namespace BookService.Controllers
         /// <param name="book"></param>
         /// <returns></returns>
         [HttpPost]
-        [Authorize]
         public ActionResult<Book> Create(Book book)
         {
             _bookRepository.Create(book);

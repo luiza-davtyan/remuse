@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
 using UserService.Models;
 using UserService.Services;
 
@@ -15,7 +17,9 @@ namespace UserService.Controllers
         /// <summary>
         /// A helper class object.
         /// </summary>
-        private readonly Helper helper;
+        private readonly Hasher helper;
+
+        private List<User> users = new List<User>() { new User("AA","S", "","" ,"") };
 
         /// <summary>
         /// Public user controller wich initialize .
@@ -24,7 +28,7 @@ namespace UserService.Controllers
         public UserController(IUserRepository userRepository)
         {
             this.userRepository = userRepository;
-            this.helper = new Helper();
+            this.helper = new Hasher();
         }
 
         /// <summary>
@@ -47,6 +51,8 @@ namespace UserService.Controllers
         [HttpGet]
         public IActionResult GetUserById(int id)
         {
+            //return Ok(users.First());
+
             var userById = this.userRepository.GetUserByID(id);
             if (userById == null)
             {
@@ -72,6 +78,30 @@ namespace UserService.Controllers
             return Ok(currUser);
         }
 
+
+        //[Route("{username}")]
+        [HttpGet("get/{param}")]
+        public IActionResult GetUserByUsername(User user)
+        {
+            User currUser = this.userRepository.GetUserByUsername(user.Username);
+            if (currUser == null)
+            {
+                return NotFound();
+            }
+            return Ok(currUser);
+        }
+
+        //[HttpGet("username/{username}")]
+        //public IActionResult GetUserByUsername(User user)
+        //{
+        //    User curruser = this.userRepository.GetUserByUsername(user.Username);
+        //    if (curruser == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return Ok(curruser);
+        //}
+
         /// <summary>
         /// Add user.
         /// </summary>
@@ -87,7 +117,7 @@ namespace UserService.Controllers
             {
                 return NoContent();
             }
-            user.Password = helper.getHashSha256(user.Password);
+            user.Password = helper.GetHashSha256(user.Password);
             this.userRepository.AddUser(user);
             return Ok(user);//CreatedAtRoute("GetUser", new { id = user.Id.ToString() }, user);
         }
@@ -125,7 +155,7 @@ namespace UserService.Controllers
                 return NotFound();
             }
 
-            user.Password = helper.getHashSha256(user.Password);
+            user.Password = helper.GetHashSha256(user.Password);
             this.userRepository.Update(user);
             return Ok(user);
         }

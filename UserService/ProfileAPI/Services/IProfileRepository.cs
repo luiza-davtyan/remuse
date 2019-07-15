@@ -8,7 +8,9 @@ namespace ProfileAPI.Services
 {
     public interface IProfileRepository
     {
-        IEnumerable<Profile> GetUserBooks(int userId);
+        IEnumerable<String> GetUserBooks(int userId);
         Profile Create(Profile profile);
+        Profile Update(Profile profile);
+        void Delete(Profile profile);
     }
 }

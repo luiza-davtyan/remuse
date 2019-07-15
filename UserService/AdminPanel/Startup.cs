@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AdminApplication.HttpServices;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using RemuseWebApplication.HttpServices;
-using RemuseWebApplication.Repositories;
 
 namespace RemuseWebApplication
 {
@@ -34,10 +27,9 @@ namespace RemuseWebApplication
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddDbContext<AppRepository>(options => options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddSingleton<BookServices>();
+            services.AddSingleton<BookServices>( x=> new BookServices(Configuration.GetValue<string>("BooksURL")));
+            services.AddSingleton<UserService>( x=> new UserService(Configuration.GetValue<string>("UsersURL")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

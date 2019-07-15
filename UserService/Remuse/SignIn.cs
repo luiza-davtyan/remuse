@@ -59,7 +59,7 @@ namespace Remuse
             }
             else
             {
-                Uri authorizationServerTokenIssuerUri = new Uri(HttpUri.IdentityUri);
+                Uri authorizationServerTokenIssuerUri = new Uri(HttpUri.IdentityUri + "connection/token");
 
                 string clientId = "client";
                 string clientSecret = "secret";
