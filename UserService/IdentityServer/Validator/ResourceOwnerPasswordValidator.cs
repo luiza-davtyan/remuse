@@ -45,7 +45,7 @@ namespace IdentityServer.Validator
                 context.Result = new GrantValidationResult(TokenRequestErrors.InvalidGrant, "User does not exist.");
                 return;
             }
-            catch (Exception ex)
+            catch
             {
                 context.Result = new GrantValidationResult(TokenRequestErrors.InvalidGrant, "Invalid username or password");
             }

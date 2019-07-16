@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace IdentityServer.Models
 {
-    public class User_Role
+    public class UserRole
     {
         public int ID { get; set; }
         public int UserID { get; set; }

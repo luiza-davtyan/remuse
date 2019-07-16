@@ -18,6 +18,7 @@ namespace Remuse.Activities
         ScrollView scroll;
         Button read;
         List<string> mLeftItems = new List<string>();
+        LogOutBroadcastReceiver _logOutBroadcastReceiver = new LogOutBroadcastReceiver();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -55,12 +56,17 @@ namespace Remuse.Activities
             mLeftItems.Add("My account");
             mLeftItems.Add("Network");
             mLeftItems.Add("Settings");
+            mLeftItems.Add("Log out");
 
             // Set ArrayAdaper with Items  
             mLeftAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, mLeftItems);
             mLeftDrawer.Adapter = mLeftAdapter;
             mLeftDrawer.ItemClick += MLeftDrawer_ItemClick;
             #endregion
+
+            var intentFilter = new IntentFilter();
+            intentFilter.AddAction("com.mypackagename.ActionLogOut");
+            RegisterReceiver(_logOutBroadcastReceiver, intentFilter);
         }
 
         /// <summary>
@@ -84,6 +90,13 @@ namespace Remuse.Activities
                     break;
                 case 2:
                     Toast.MakeText(this, mLeftItems[e.Position], ToastLength.Long).Show();
+                    break;
+                case 3:
+                    var broadcastIntent = new Intent();
+                    broadcastIntent.SetAction("com.mypackagename.ActionLogOut");
+                    SendBroadcast(broadcastIntent);
+                    Intent intent1 = new Intent(this, typeof(StartGeneral));
+                    StartActivity(intent1);
                     break;
             }
         }

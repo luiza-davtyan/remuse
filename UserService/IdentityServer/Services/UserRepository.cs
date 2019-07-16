@@ -41,7 +41,7 @@ namespace IdentityServer.Services
             {
                 UserDTO userDTO = new UserDTO();
                 var userObject = context.Users.FirstOrDefault<User>(user => user.Id == userId);
-                var userRoleObject = context.User_Role.FirstOrDefault<User_Role>(userRole => userRole.UserID == userId);
+                var userRoleObject = context.User_Role.FirstOrDefault<UserRole>(userRole => userRole.UserID == userId);
                 if (userRoleObject != null)
                 {
                     var roleObject = context.Roles.FirstOrDefault<Role>(role => role.Id == userRoleObject.RoleID);
@@ -69,13 +69,16 @@ namespace IdentityServer.Services
             {
                 UserDTO userDTO = new UserDTO();
                 var userObject = context.Users.FirstOrDefault<User>(user => user.Username.Equals(username));
-                var userRoleObject = context.User_Role.FirstOrDefault<User_Role>(userRole => userRole.UserID == userObject.Id);
-                if (userRoleObject != null)
+                if (userObject != null)
                 {
-                    var roleObject = context.Roles.FirstOrDefault<Role>(role => role.Id == userRoleObject.RoleID);
-                    if (roleObject != null)
+                    var userRoleObject = context.User_Role.FirstOrDefault<UserRole>(userRole => userRole.UserID == userObject.Id);
+                    if (userRoleObject != null)
                     {
-                       userDTO = new UserDTO(userObject.Id, userObject.Name, userObject.Surname,userObject.Email, userObject.Username, userObject.Password, roleObject.Permission);
+                        var roleObject = context.Roles.FirstOrDefault<Role>(role => role.Id == userRoleObject.RoleID);
+                        if (roleObject != null)
+                        {
+                            userDTO = new UserDTO(userObject.Id, userObject.Name, userObject.Surname, userObject.Email, userObject.Username, userObject.Password, roleObject.Permission);
+                        }
                     }
                 }
                 return userDTO;
@@ -84,6 +87,7 @@ namespace IdentityServer.Services
             task.Start();
 
             return task;
+
         }
     }
 }

@@ -1,7 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
+using Android.Support.V4.Widget;
 using Android.Widget;
 using Newtonsoft.Json;
 
@@ -11,6 +14,8 @@ namespace Remuse.Activities
     public class BookPage : ListActivity
     {
         List<Book> usersbooks = GetBooks();   //get this from BooksService or activity...
+        LogOutBroadcastReceiver _logOutBroadcastReceiver = new LogOutBroadcastReceiver();
+        List<string> mLeftItems = new List<string>();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -23,6 +28,10 @@ namespace Remuse.Activities
             }
             ListAdapter = new ArrayAdapter<string>(this, Resource.Layout.list_item, titles);
 
+            #region menu
+            
+            #endregion
+
             ListView.TextFilterEnabled = true;
 
             ListView.ItemClick += delegate (object sender, AdapterView.ItemClickEventArgs args)
@@ -31,6 +40,42 @@ namespace Remuse.Activities
                 intent.PutExtra("book", JsonConvert.SerializeObject(usersbooks[args.Position]));
                 StartActivity(intent);
             };
+
+            var intentFilter = new IntentFilter();
+            intentFilter.AddAction("com.mypackagename.ActionLogOut");
+            RegisterReceiver(_logOutBroadcastReceiver, intentFilter);
+        }
+
+        /// <summary>
+        ///  Event,that works when user clicks on the item of menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MLeftDrawer_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            Type type = typeof(UserPage);
+
+            int position = e.Position;
+            switch (position)
+            {
+                case 0:
+                    Intent intent = new Intent(this, type);
+                    StartActivity(intent);
+                    break;
+                case 1:
+                    Toast.MakeText(this, mLeftItems[e.Position], ToastLength.Long).Show();
+                    break;
+                case 2:
+                    Toast.MakeText(this, mLeftItems[e.Position], ToastLength.Long).Show();
+                    break;
+                case 3:
+                    var broadcastIntent = new Intent();
+                    broadcastIntent.SetAction("com.mypackagename.ActionLogOut");
+                    SendBroadcast(broadcastIntent);
+                    Intent intent1 = new Intent(this, typeof(StartGeneral));
+                    StartActivity(intent1);
+                    break;
+            }
         }
 
         /// <summary>

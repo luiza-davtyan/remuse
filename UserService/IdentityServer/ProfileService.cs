@@ -18,7 +18,11 @@ namespace IdentityServer
             _userRepository = userRepository;
         }
 
-        //Get user profile date in terms of claims when calling /connect/userinfo
+        /// <summary>
+        /// Get user profile date in terms of claims when calling /connect/userinfo
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public async Task GetProfileDataAsync(ProfileDataRequestContext context)
         {
             try
@@ -63,7 +67,11 @@ namespace IdentityServer
             }
         }
 
-        //check if user account is active.
+        /// <summary>
+        /// check if user account is active.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public async Task IsActiveAsync(IsActiveContext context)
         {
             try

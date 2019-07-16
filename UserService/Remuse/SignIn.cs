@@ -14,6 +14,8 @@ using System.Net.Http.Headers;
 using Remuse.Models;
 using System.Text;
 using System.Security.Cryptography;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 
 namespace Remuse
 {
@@ -26,6 +28,7 @@ namespace Remuse
         Button signin;
         List<User> users = new List<User>();
         string usernameString, passwordString;
+        //List<Claim> userClaimsFromToken;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -75,7 +78,24 @@ namespace Remuse
                 //Deserialize jwt token
                 AuthServerResponse authServerToken = Newtonsoft.Json.JsonConvert.DeserializeObject<AuthServerResponse>(token);
 
-                check.Text = authServerToken.access_token;
+                if (authServerToken.access_token == null)
+                {
+                    correction.Text = "Invalid email or password";
+                }
+                else
+                {
+                    var handler = new JwtSecurityTokenHandler();
+                    check.Text = authServerToken.access_token;
+                    //var tokenObject = handler.ReadJwtToken(authServerToken.access_token);
+                    //var userClaimsFromToken = tokenObject.Claims;
+                    //Claim[] claims = (Claim[])userClaimsFromToken;
+                    //var props = claims[0].Properties.Keys;
+                    //string id = props.ToString();
+                    //check.Text = id;
+                    Intent intent = new Intent(this, typeof(General));
+                    //intent.PutExtra("UserToken",JsonConvert.SerializeObject)
+                    StartActivity(intent);
+                }
 
                 //------------------------------------------------------------------
                 //userFromBase = await Get(usernameString);

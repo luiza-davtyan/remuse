@@ -20,12 +20,13 @@ namespace Remuse.Activities
         List<Book> usersBooks = new List<Book>();
         List<string> mLeftItems = new List<string>();
         User user;
+        LogOutBroadcastReceiver _logOutBroadcastReceiver = new LogOutBroadcastReceiver();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Userpage);
-            user = JsonConvert.DeserializeObject<User>(Intent.GetStringExtra("user"));
+            //user = JsonConvert.DeserializeObject<User>(Intent.GetStringExtra("user"));
 
             userimage = FindViewById<ImageView>(Resource.Id.imageView1);
             userimage.SetImageResource(Resource.Drawable.icon);
@@ -36,9 +37,9 @@ namespace Remuse.Activities
             books = FindViewById<Button>(Resource.Id.button1);
             books.Click += Books_Click;
 
-            firstname.Text = user.Name;
-            lastname.Text = user.Surname;
-            username.Text = user.Username;
+            //firstname.Text = user.Name;
+            //lastname.Text = user.Surname;
+            //username.Text = user.Username;
             
 
             #region menu
@@ -54,6 +55,7 @@ namespace Remuse.Activities
             mLeftItems.Add("Home");
             mLeftItems.Add("Network");
             mLeftItems.Add("Settings");
+            mLeftItems.Add("Log out");
 
             // Set ArrayAdaper with Items  
             mLeftAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, mLeftItems);
@@ -65,6 +67,10 @@ namespace Remuse.Activities
             //go to UserServer to get user's date
             //then go to BookService with token and bring info about user's books
             //usersBooks = something from book's service
+
+            var intentFilter = new IntentFilter();
+            intentFilter.AddAction("com.mypackagename.ActionLogOut");
+            RegisterReceiver(_logOutBroadcastReceiver, intentFilter);
         }
 
         /// <summary>
@@ -89,6 +95,13 @@ namespace Remuse.Activities
                     break;
                 case 2:
                     Toast.MakeText(this, mLeftItems[e.Position], ToastLength.Long).Show();
+                    break;
+                case 3:
+                    var broadcastIntent = new Intent();
+                    broadcastIntent.SetAction("com.mypackagename.ActionLogOut");
+                    SendBroadcast(broadcastIntent);
+                    Intent intent1 = new Intent(this, typeof(StartGeneral));
+                    StartActivity(intent1);
                     break;
             }
         }

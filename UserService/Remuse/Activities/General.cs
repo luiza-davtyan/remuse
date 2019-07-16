@@ -24,13 +24,14 @@ namespace Remuse.Activities
         List<string> mLeftItems = new List<string>();
         AutoCompleteTextView userInput;
         List<Book> books = new List<Book>();
+        LogOutBroadcastReceiver _logOutBroadcastReceiver = new LogOutBroadcastReceiver();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.startgeneral);
-            user = JsonConvert.DeserializeObject<User>(Intent.GetStringExtra("user"));
+            // user = JsonConvert.DeserializeObject<User>(Intent.GetStringExtra("user"));
             #region menu
             DrawerLayout mDrawerLayout;
 
@@ -44,6 +45,7 @@ namespace Remuse.Activities
             mLeftItems.Add("My account");
             mLeftItems.Add("Network");
             mLeftItems.Add("Settings");
+            mLeftItems.Add("Log out");
 
             // Set ArrayAdaper with Items  
             mLeftAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, mLeftItems);
@@ -77,6 +79,11 @@ namespace Remuse.Activities
             userInput.Adapter = adapter;
             userInput.SetCursorVisible(false);
             //search.Click += Search_Click;
+
+            //this block used for clearing data when user log out
+            var intentFilter = new IntentFilter();
+            intentFilter.AddAction("com.mypackagename.ActionLogOut");
+            RegisterReceiver(_logOutBroadcastReceiver, intentFilter);
         }
 
         /// <summary>
@@ -108,7 +115,7 @@ namespace Remuse.Activities
             {
                 case 0:
                     Intent intent = new Intent(this, type);
-                    intent.PutExtra("user", JsonConvert.SerializeObject(user));
+                    //intent.PutExtra("user", JsonConvert.SerializeObject(user));
                     StartActivity(intent);
                     break;
                 case 1:
@@ -116,6 +123,13 @@ namespace Remuse.Activities
                     break;
                 case 2:
                     Toast.MakeText(this, mLeftItems[e.Position], ToastLength.Long).Show();
+                    break;
+                case 3:
+                    var broadcastIntent = new Intent();
+                    broadcastIntent.SetAction("com.mypackagename.ActionLogOut");
+                    SendBroadcast(broadcastIntent);
+                    Intent intent1 = new Intent(this, typeof(StartGeneral));
+                    StartActivity(intent1);
                     break;
             }
         }
@@ -151,6 +165,12 @@ namespace Remuse.Activities
         {
             var service = new BookClient(new System.Net.Http.HttpClient());
             books = (await service.SearchBookAsync(bookName)).ToList();
+        }
+
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+            UnregisterReceiver(_logOutBroadcastReceiver);
         }
     }
 }

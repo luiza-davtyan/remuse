@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookService", "BookService\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProfileAPI", "ProfileAPI\ProfileAPI.csproj", "{D9C38CCB-3FB9-4727-BADB-A58F8C6240FB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{D2015A77-03B1-4AB8-AC03-81577BF97981}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthorizationService", "IdentityServer\AuthorizationService.csproj", "{D2015A77-03B1-4AB8-AC03-81577BF97981}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Remuse", "Remuse\Remuse.csproj", "{A9F2427B-5CD0-4246-B73D-E1D422E22CD5}"
 EndProject

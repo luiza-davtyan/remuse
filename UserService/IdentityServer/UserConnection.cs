@@ -16,7 +16,7 @@ namespace IdentityServer
         }
 
         public DbSet<User> Users { get; set; }
-        public DbSet<User_Role> User_Role { get; set; }
+        public DbSet<UserRole> User_Role { get; set; }
         public DbSet<Role> Roles { get; set; }
     }
 }
