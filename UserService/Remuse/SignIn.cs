@@ -23,7 +23,7 @@ namespace Remuse
     public class SignIn : Activity
     {
         User userFromBase = new User();
-        TextView correction, check;
+        TextView warning, check;
         EditText username, password;
         Button signin;
         List<User> users = new List<User>();
@@ -53,14 +53,14 @@ namespace Remuse
             usernameString = username.Text;
             passwordString = password.Text;
 
-            correction = FindViewById<TextView>(Resource.Id.textView8);
+            warning = FindViewById<TextView>(Resource.Id.textView8);
             if (username.Text == "")
             {
-                correction.Text = "Please,enter username";
+                warning.Text = "Please,enter username";
             }
             else if (password.Text == "")
             {
-                correction.Text = "Please,enter password";
+                warning.Text = "Please,enter password";
             }
             else
             {
@@ -80,36 +80,18 @@ namespace Remuse
 
                 if (authServerToken.access_token == null)
                 {
-                    correction.Text = "Invalid email or password";
+                    warning.Text = "Invalid email or password";
                 }
                 else
                 {
                     var handler = new JwtSecurityTokenHandler();
                     check.Text = authServerToken.access_token;
-                    //var tokenObject = handler.ReadJwtToken(authServerToken.access_token);
-                    //var userClaimsFromToken = tokenObject.Claims;
-                    //Claim[] claims = (Claim[])userClaimsFromToken;
-                    //var props = claims[0].Properties.Keys;
-                    //string id = props.ToString();
-                    //check.Text = id;
+
+                    userFromBase = await Get(username);
                     Intent intent = new Intent(this, typeof(General));
-                    //intent.PutExtra("UserToken",JsonConvert.SerializeObject)
+                    intent.PutExtra("user", JsonConvert.SerializeObject(userFromBase));
                     StartActivity(intent);
                 }
-
-                //------------------------------------------------------------------
-                //userFromBase = await Get(usernameString);
-
-                //if (userFromBase.Password == passwordString)
-                //{
-                //    Intent intent = new Intent(this, typeof(General));
-                //    intent.PutExtra("user", JsonConvert.SerializeObject(userFromBase));
-                //    StartActivity(intent);
-                //}
-                //else
-                //{
-                //    correction.Text = "Invalid email or password";
-                //}
             }
         }
 

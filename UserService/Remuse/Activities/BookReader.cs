@@ -103,5 +103,14 @@ namespace Remuse.Activities
                     break;
             }
         }
+
+        /// <summary>
+        /// Destroys activiy
+        /// </summary>
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+            UnregisterReceiver(_logOutBroadcastReceiver);
+        }
     }
 }

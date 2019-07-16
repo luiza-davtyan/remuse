@@ -26,7 +26,7 @@ namespace Remuse.Activities
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Userpage);
-            //user = JsonConvert.DeserializeObject<User>(Intent.GetStringExtra("user"));
+            user = JsonConvert.DeserializeObject<User>(Intent.GetStringExtra("user"));
 
             userimage = FindViewById<ImageView>(Resource.Id.imageView1);
             userimage.SetImageResource(Resource.Drawable.icon);
@@ -37,10 +37,10 @@ namespace Remuse.Activities
             books = FindViewById<Button>(Resource.Id.button1);
             books.Click += Books_Click;
 
-            //firstname.Text = user.Name;
-            //lastname.Text = user.Surname;
-            //username.Text = user.Username;
-            
+            firstname.Text = user.Name;
+            lastname.Text = user.Surname;
+            username.Text = user.Username;
+
 
             #region menu
             DrawerLayout mDrawerLayout;
@@ -118,22 +118,13 @@ namespace Remuse.Activities
             StartActivity(intent);
         }
 
-        //Delete
-        public async void Client()
+        /// <summary>
+        /// Destroys activiy
+        /// </summary>
+        protected override void OnDestroy()
         {
-            //using (var client = new HttpClient())
-            //{
-            //    var response = await client.GetAsync("http://localhost:64319/api/book");
-            //}
-
-            //WebResponse response = request.GetResponse();//Отправляем данные и получаем ответ
-            //Stream dataStream = response.GetResponseStream();//Получаем поток ответа
-            //StreamReader reader = new StreamReader(dataStream);//Новый объект для чтения потока
-            //string responseFromServer = reader.ReadToEnd();//Считываем в строку весь ответ сервера
-            //reader.Close();//закрываем "чтеца"
-            //dataStream.Close();//закрываем поток ответа
-            //response.Close();//И запрос.
-            //servergirq.Text = responseFromServer;
+            base.OnDestroy();
+            UnregisterReceiver(_logOutBroadcastReceiver);
         }
     }
 }

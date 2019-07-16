@@ -66,7 +66,8 @@ namespace UserService.Controllers
         /// </summary>
         /// <param name="username"></param>
         /// <returns></returns>
-        [HttpGet("get/{username}")]
+        [HttpGet]
+        [Route("get/{username}")]
         public IActionResult GetUserByUsername(string username)
         {
             User currUser = this.userRepository.GetUserByUsername(username);
@@ -80,16 +81,16 @@ namespace UserService.Controllers
 
 
         //[Route("{username}")]
-        [HttpGet("get/{param}")]
-        public IActionResult GetUserByUsername(User user)
-        {
-            User currUser = this.userRepository.GetUserByUsername(user.Username);
-            if (currUser == null)
-            {
-                return NotFound();
-            }
-            return Ok(currUser);
-        }
+        //[HttpGet("get/{param}")]
+        //public IActionResult GetUserByUsername(User user)
+        //{
+        //    User currUser = this.userRepository.GetUserByUsername(user.Username);
+        //    if (currUser == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return Ok(currUser);
+        //}
 
         //[HttpGet("username/{username}")]
         //public IActionResult GetUserByUsername(User user)

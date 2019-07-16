@@ -112,5 +112,14 @@ namespace Remuse.Activities
             intent.PutExtra("book", JsonConvert.SerializeObject(selectedBook));
             StartActivity(intent);
         }
+
+        /// <summary>
+        /// Destroys activiy
+        /// </summary>
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+            UnregisterReceiver(_logOutBroadcastReceiver);
+        }
     }
 }

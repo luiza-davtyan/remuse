@@ -31,7 +31,7 @@ namespace Remuse.Activities
             base.OnCreate(savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.startgeneral);
-            // user = JsonConvert.DeserializeObject<User>(Intent.GetStringExtra("user"));
+            user = JsonConvert.DeserializeObject<User>(Intent.GetStringExtra("user"));
             #region menu
             DrawerLayout mDrawerLayout;
 
@@ -115,7 +115,7 @@ namespace Remuse.Activities
             {
                 case 0:
                     Intent intent = new Intent(this, type);
-                    //intent.PutExtra("user", JsonConvert.SerializeObject(user));
+                    intent.PutExtra("user", JsonConvert.SerializeObject(user));
                     StartActivity(intent);
                     break;
                 case 1:
@@ -167,6 +167,9 @@ namespace Remuse.Activities
             books = (await service.SearchBookAsync(bookName)).ToList();
         }
 
+        /// <summary>
+        /// Destroys activiy
+        /// </summary>
         protected override void OnDestroy()
         {
             base.OnDestroy();
