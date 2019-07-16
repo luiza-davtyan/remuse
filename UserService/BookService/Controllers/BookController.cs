@@ -16,8 +16,6 @@ namespace BookService.Controllers
         /// </summary>
         private readonly BookRepository _bookRepository;
 
-        private List<Book> books = new List<Book>() { new Book { Title="Taron", Id = "54b7d51140c10266ffa3b04d" } };
-
         /// <summary>
         /// Public controller.
         /// </summary>
@@ -32,7 +30,7 @@ namespace BookService.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [Authorize]
+       // [Authorize]
         public ActionResult<List<Book>> Get()
         {
            //return books;
@@ -79,7 +77,7 @@ namespace BookService.Controllers
         /// <param name="bookIn"></param>
         /// <returns></returns>
         [HttpPut("{id:length(24)}")]
-        [Authorize]
+        //[Authorize]
         public IActionResult Update(string id, Book bookIn)
         {
             var book = _bookRepository.Get(id);

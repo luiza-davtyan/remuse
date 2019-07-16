@@ -42,6 +42,8 @@ namespace BookService.Models
         /// </summary>
         public int Year { get; set; }
 
+        public string Path { get; set; }
+
         /// <summary>
         /// List of genre id's of the book.
         /// </summary>

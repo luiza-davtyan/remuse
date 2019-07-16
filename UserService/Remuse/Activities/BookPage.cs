@@ -13,25 +13,23 @@ namespace Remuse.Activities
     [Activity(Label = "BookPage")]
     public class BookPage : ListActivity
     {
-        List<Book> usersbooks = GetBooks();   //get this from BooksService or activity...
+        List<Book> usersbooks; //get this from BooksService or activity...
         LogOutBroadcastReceiver _logOutBroadcastReceiver = new LogOutBroadcastReceiver();
         List<string> mLeftItems = new List<string>();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            //to do ...
+
+            usersbooks = GetBooks();
             List<string> titles = new List<string>();
+
             foreach (Book book in usersbooks)
             {
                 titles.Add(book.Title);
             }
+
             ListAdapter = new ArrayAdapter<string>(this, Resource.Layout.list_item, titles);
-
-            #region menu
-            
-            #endregion
-
             ListView.TextFilterEnabled = true;
 
             ListView.ItemClick += delegate (object sender, AdapterView.ItemClickEventArgs args)
@@ -82,17 +80,9 @@ namespace Remuse.Activities
         /// Gets data from BooksService
         /// </summary>
         /// <returns></returns>
-        public static List<Book> GetBooks()
+        public List<Book> GetBooks()
         {
-            List<Book> books = new List<Book>()
-            {
-                new Book() { Id = "1", Title = "Title 1 ",Year = 1995,Description = Desc() },
-                new Book() { Id = "2", Title = "Title 2 ",Year = 1950,Description = Desc()},
-                new Book() { Id = "3", Title = "Title 3 ",Year = 1940,Description = Desc()},
-                new Book() { Id = "4", Title = "Title 4 " ,Year = 1352,Description = Desc()}
-            };
-            //Connect with bookService to get user's books
-            //To do...
+            List<Book> books = JsonConvert.DeserializeObject<List<Book>>(Intent.GetStringExtra("books"));
             return books;
         }
 

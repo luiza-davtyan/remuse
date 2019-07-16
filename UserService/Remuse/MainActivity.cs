@@ -12,6 +12,7 @@ using System.Threading;
 using Newtonsoft.Json;
 using Android.Graphics;
 using System.Linq;
+using System.Net.Http;
 
 namespace Remuse
 {
@@ -23,6 +24,7 @@ namespace Remuse
         TextView[] textViews = new TextView[8];
         List<string> mLeftItems = new List<string>();
         AutoCompleteTextView userInput;
+        List<Book> books = new List<Book>();
 
         string[] complete = new string[] { "barev", "aca", "this", "Armenia", "Destination" };
 
@@ -77,12 +79,13 @@ namespace Remuse
             userInput = FindViewById<AutoCompleteTextView>(Resource.Id.autoCompleteTextView1);
             userInput.SetCursorVisible(false);
 
+            UpdateImagesAndTexts();
+
             ArrayAdapter adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line, complete);
             userInput.Adapter = adapter;
             search.Click += Search_Click;
         }
 
-        List<Book> books = new List<Book>();
         /// <summary>
         /// Event,whene user clicks search button
         /// </summary>
@@ -91,9 +94,8 @@ namespace Remuse
         private async void Search_Click(object sender, EventArgs e)
         {
             string bookName = userInput.Text;
+            await GetBookAsync(bookName);
 
-            //give bookName to the Book Service,then get the Book object
-            await GetBooksAsync(bookName);
             Intent intent = new Intent(this, typeof(BookSearchResult));
             intent.PutExtra("book", JsonConvert.SerializeObject(books));
             StartActivity(intent);
@@ -128,22 +130,14 @@ namespace Remuse
         /// <summary>
         /// Images and texts update methods
         /// </summary>
-        public void UpdateImagesAndTexts()
+        public async void UpdateImagesAndTexts()
         {
-            int i = 0;
-            while (true)
-            {
-                //go to service
-                //foreach(ImageView image in bookImages)
-                //{
+            var service = new BookClient(new System.Net.Http.HttpClient());
+            books = (await service.GetAllBooksAsync()).ToList();
 
-                //}
-                foreach (TextView text in textViews)
-                {
-                    text.Text = Convert.ToString(i);
-                }
-                i++;
-                Thread.Sleep(150);
+            for(int i = 0;i < books.Count; ++i)
+            {
+                textViews[i].Text = books[i].Title;
             }
         }
 
@@ -152,7 +146,7 @@ namespace Remuse
         /// </summary>
         /// <param name="bookName"></param>
         /// <returns></returns>
-        public async Task GetBooksAsync(string bookName)
+        public async Task GetBookAsync(string bookName)
         {
             var service = new BookClient(new System.Net.Http.HttpClient());
             books = (await service.SearchBookAsync(bookName)).ToList();

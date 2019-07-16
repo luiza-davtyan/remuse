@@ -94,8 +94,8 @@ namespace Remuse.Activities
         private async void Search_Click(object sender, EventArgs e)
         {
             string bookName = userInput.Text;
-            //give bookName to the Book Service,then get the Book object
             await GetBooksAsync(bookName);
+
             Intent intent = new Intent(this, typeof(BookSearchResult));
             intent.PutExtra("book", JsonConvert.SerializeObject(books));
             StartActivity(intent);

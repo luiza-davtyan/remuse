@@ -21,7 +21,7 @@ namespace Remuse
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.0.4.0 (NJsonSchema v10.0.21.0 (Newtonsoft.Json v11.0.0.0))")]
     public partial class AuthorClient
     {
-        private string _baseUrl = HttpUri.UserUri;
+        private string _baseUrl = HttpUri.BookUri;
         private System.Net.Http.HttpClient _httpClient;
         private System.Lazy<Newtonsoft.Json.JsonSerializerSettings> _settings;
 
@@ -484,7 +484,7 @@ namespace Remuse
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.0.4.0 (NJsonSchema v10.0.21.0 (Newtonsoft.Json v11.0.0.0))")]
     public partial class BookClient
     {
-        private string _baseUrl = HttpUri.UserUri;
+        private string _baseUrl = HttpUri.BookUri;
         private System.Net.Http.HttpClient _httpClient;
         private System.Lazy<Newtonsoft.Json.JsonSerializerSettings> _settings;
 
@@ -513,17 +513,17 @@ namespace Remuse
         partial void ProcessResponse(System.Net.Http.HttpClient client, System.Net.Http.HttpResponseMessage response);
 
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Book>> GetAllAsync()
+        public System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Book>> GetAllBooksAsync()
         {
-            return GetAllAsync(System.Threading.CancellationToken.None);
+            return GetAllBooksAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Book>> GetAllAsync(System.Threading.CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Book>> GetAllBooksAsync(System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Book");
+            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/book");
 
             var client_ = _httpClient;
             try
@@ -861,7 +861,7 @@ namespace Remuse
         public async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Book>> SearchBookAsync(string param, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Book/search/{param}");
+            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/book/search/{param}");
             urlBuilder_.Replace("{param}", System.Uri.EscapeDataString(ConvertToString(param, System.Globalization.CultureInfo.InvariantCulture)));
 
             var client_ = _httpClient;
@@ -1013,7 +1013,7 @@ namespace Remuse
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.0.4.0 (NJsonSchema v10.0.21.0 (Newtonsoft.Json v11.0.0.0))")]
     public partial class GenreClient
     {
-        private string _baseUrl = HttpUri.UserUri;
+        private string _baseUrl = HttpUri.BookUri;
         private System.Net.Http.HttpClient _httpClient;
         private System.Lazy<Newtonsoft.Json.JsonSerializerSettings> _settings;
 
@@ -1507,7 +1507,7 @@ namespace Remuse
         public string Description { get; set; }
 
         [Newtonsoft.Json.JsonProperty("authorId", Required = Newtonsoft.Json.Required.Always)]
-        public int AuthorId { get; set; }
+        public string AuthorId { get; set; }
 
         [Newtonsoft.Json.JsonProperty("year", Required = Newtonsoft.Json.Required.Always)]
         public int Year { get; set; }

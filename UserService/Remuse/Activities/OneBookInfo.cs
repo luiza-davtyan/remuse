@@ -38,6 +38,8 @@ namespace Remuse.Activities
 
             //Giving info to TextViews
             enteredbook.Text = selectedBook.Title;
+            author.Text = selectedBook.AuthorId;
+            genre.Text = "Novel";
             year.Text = year.Text + selectedBook.Year;
             description.Text = selectedBook.Description;
 

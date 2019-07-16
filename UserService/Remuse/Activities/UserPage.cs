@@ -8,6 +8,9 @@ using MyNamespace;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace Remuse.Activities
 {
@@ -111,10 +114,14 @@ namespace Remuse.Activities
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Books_Click(object sender, EventArgs e)
+        private async void Books_Click(object sender, EventArgs e)
         {
+            var service = new BookClient(new System.Net.Http.HttpClient());
+            usersBooks = (await service.GetAllBooksAsync()).ToList();
+            // usersBooks = await Get();
+
             Intent intent = new Intent(this, typeof(BookPage));
-            intent.PutExtra("books", new string[] { "HIn oreri tangon", "Menq enq mer sarery" });
+            intent.PutExtra("books", JsonConvert.SerializeObject(usersBooks));
             StartActivity(intent);
         }
 
@@ -125,6 +132,29 @@ namespace Remuse.Activities
         {
             base.OnDestroy();
             UnregisterReceiver(_logOutBroadcastReceiver);
+        }
+
+        /// <summary>
+        /// Gets the books
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns></returns>
+        public async Task<List<Book>> Get(string booktitle)
+        {
+
+            HttpClient client = new HttpClient();
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync(HttpUri.BookUri + "api/book/search/" + booktitle);
+                response.EnsureSuccessStatusCode();
+                var responseBody = await response.Content.ReadAsStringAsync();
+                List<Book> book = JsonConvert.DeserializeObject<List<Book>>(responseBody.ToString());
+                return book;
+            }
+            catch (HttpRequestException e)
+            {
+                throw new Exception();
+            }
         }
     }
 }
