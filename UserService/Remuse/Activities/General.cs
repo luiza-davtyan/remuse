@@ -77,8 +77,10 @@ namespace Remuse.Activities
             userInput = FindViewById<AutoCompleteTextView>(Resource.Id.autoCompleteTextView1);
             ArrayAdapter adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line);
             userInput.Adapter = adapter;
-            userInput.SetCursorVisible(false);
-            //search.Click += Search_Click;
+            //userInput.SetCursorVisible(false);
+            search.Click += Search_Click;
+
+            UpdateImagesAndTexts();
 
             //this block used for clearing data when user log out
             var intentFilter = new IntentFilter();
@@ -133,26 +135,17 @@ namespace Remuse.Activities
                     break;
             }
         }
-
         /// <summary>
         /// Images and texts update methods
         /// </summary>
-        public void UpdateImagesAndTexts()
+        public async void UpdateImagesAndTexts()
         {
-            int i = 0;
-            while (true)
-            {
-                //go to service
-                //foreach(ImageView image in bookImages)
-                //{
+            var service = new BookClient(new System.Net.Http.HttpClient());
+            books = (await service.GetAllBooksAsync()).ToList();
 
-                //}
-                foreach (TextView text in textViews)
-                {
-                    text.Text = Convert.ToString(i);
-                }
-                i++;
-                Thread.Sleep(150);
+            for (int i = 0; i < books.Count; ++i)
+            {
+                textViews[i].Text = books[i].Title;
             }
         }
 

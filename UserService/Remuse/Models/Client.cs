@@ -1518,7 +1518,7 @@ namespace Remuse
         [Newtonsoft.Json.JsonProperty("genreIds", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ObjectId> GenreIds { get; set; }
 
-
+        public Author Author = new Author();
     }
 
     /// <summary>Represents an ObjectId (see also BsonObjectId).</summary>

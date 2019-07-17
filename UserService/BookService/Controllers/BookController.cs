@@ -98,7 +98,7 @@ namespace BookService.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpDelete("{id:length(24)}")]
-        [Authorize]
+       // [Authorize]
         public IActionResult Delete(string id)
         {
             var book = _bookRepository.Get(id);

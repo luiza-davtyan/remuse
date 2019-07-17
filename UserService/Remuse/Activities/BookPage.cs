@@ -16,6 +16,7 @@ namespace Remuse.Activities
         List<Book> usersbooks; //get this from BooksService or activity...
         LogOutBroadcastReceiver _logOutBroadcastReceiver = new LogOutBroadcastReceiver();
         List<string> mLeftItems = new List<string>();
+        Author authorFromBase;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -32,10 +33,15 @@ namespace Remuse.Activities
             ListAdapter = new ArrayAdapter<string>(this, Resource.Layout.list_item, titles);
             ListView.TextFilterEnabled = true;
 
-            ListView.ItemClick += delegate (object sender, AdapterView.ItemClickEventArgs args)
+            ListView.ItemClick += async delegate (object sender, AdapterView.ItemClickEventArgs args)
             {
+                var server = new AuthorClient(new System.Net.Http.HttpClient());
+                authorFromBase = await server.GetAsync(usersbooks[args.Position].AuthorId);
+                usersbooks[args.Position].Author = authorFromBase;
+
                 Intent intent = new Intent(this, typeof(OneBookInfo));
                 intent.PutExtra("book", JsonConvert.SerializeObject(usersbooks[args.Position]));
+
                 StartActivity(intent);
             };
 

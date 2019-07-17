@@ -77,7 +77,7 @@ namespace Remuse
 
             search = FindViewById<Button>(Resource.Id.button1);
             userInput = FindViewById<AutoCompleteTextView>(Resource.Id.autoCompleteTextView1);
-            userInput.SetCursorVisible(false);
+            //userInput.SetCursorVisible(false);
 
             UpdateImagesAndTexts();
 

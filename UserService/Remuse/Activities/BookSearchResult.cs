@@ -16,6 +16,7 @@ namespace Remuse.Activities
     public class BookSearchResult : ListActivity
     {
         List<Book> searchBooksResult = new List<Book>();  //get this from BooksService or activity...
+        Author authorFromBase;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -32,8 +33,12 @@ namespace Remuse.Activities
 
             ListView.TextFilterEnabled = true;
 
-            ListView.ItemClick += delegate (object sender, AdapterView.ItemClickEventArgs args)
+            ListView.ItemClick += async delegate (object sender, AdapterView.ItemClickEventArgs args)
             {
+                var server = new AuthorClient(new System.Net.Http.HttpClient());
+                authorFromBase = await server.GetAsync(searchBooksResult[args.Position].AuthorId);
+                searchBooksResult[args.Position].Author = authorFromBase;
+
                 Intent intent = new Intent(this, typeof(OneBookInfo));
                 intent.PutExtra("book", JsonConvert.SerializeObject(searchBooksResult[args.Position]));
                 StartActivity(intent);

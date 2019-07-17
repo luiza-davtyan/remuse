@@ -7,6 +7,7 @@ using Android.Widget;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Remuse.Activities
 {
@@ -36,10 +37,11 @@ namespace Remuse.Activities
             description = FindViewById<TextView>(Resource.Id.textView6);
             read = FindViewById<Button>(Resource.Id.button1);
 
+
             //Giving info to TextViews
             enteredbook.Text = selectedBook.Title;
-            author.Text = selectedBook.AuthorId;
-            genre.Text = "Novel";
+            author.Text = author.Text + selectedBook.Author.FirstName + " " + selectedBook.Author.LastName;
+            genre.Text = genre.Text + "Novel";
             year.Text = year.Text + selectedBook.Year;
             description.Text = selectedBook.Description;
 
@@ -122,6 +124,13 @@ namespace Remuse.Activities
         {
             base.OnDestroy();
             UnregisterReceiver(_logOutBroadcastReceiver);
+        }
+
+        async Task<Author> GetAuthorByIdAsync(string id)
+        {
+            var server = new AuthorClient(new System.Net.Http.HttpClient());
+            Author author = await server.GetAsync(id);
+            return author;
         }
     }
 }
