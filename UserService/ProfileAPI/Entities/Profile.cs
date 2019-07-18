@@ -9,6 +9,8 @@ namespace ProfileAPI.Entities
     public class Profile
     {
         [Required]
+        public int ID { get; set; }
+        [Required]
         public int UserId { get; set; }
         [Required]
         public string BookId { get; set; }

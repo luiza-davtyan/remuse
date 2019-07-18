@@ -89,9 +89,10 @@
     <Compile Include="LogOutBroadcastReceiver.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Models\AuthServerResponse.cs" />
-    <Compile Include="Models\Client.cs" />
+    <Compile Include="Models\HttpClientSideRequests\Client.cs" />
+    <Compile Include="Models\HttpClientSideRequests\ProfileClient.cs" />
     <Compile Include="Models\Profile.cs" />
-    <Compile Include="Models\UserClient.cs" />
+    <Compile Include="Models\HttpClientSideRequests\UserClient.cs" />
     <Compile Include="Models\UserInfo.cs" />
     <Compile Include="Resources\Music\treamingBackgroundService.cs" />
     <Compile Include="Resources\Resource.designer.cs" />

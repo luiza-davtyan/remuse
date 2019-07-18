@@ -33,7 +33,7 @@ namespace ProfileAPI.Controllers
             IEnumerable<String> booksIds = (IEnumerable<String>) this.profileRepository.GetUserBooks(userId);
             foreach (var item in booksIds)
             {
-                var response = await httpClient.GetAsync("http://localhost:51858/api/book/" + item);
+                var response = await httpClient.GetAsync("http://localhost:53085/api/book/" + item);
                 var book = JsonConvert.DeserializeObject<IEnumerable<BookDTO>>(await response.Content.ReadAsStringAsync());
                 books.Add((BookDTO)book);
             }

@@ -14,7 +14,7 @@ namespace Remuse.Models
 {
     public class Profile
     {
-
+        public int ID { get; set; }
         public int UserId { get; set; }
         public string BookId { get; set; }
 

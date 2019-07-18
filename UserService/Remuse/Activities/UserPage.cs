@@ -69,10 +69,6 @@ namespace Remuse.Activities
             mLeftDrawer.ItemClick += MLeftDrawer_ItemClick;
             #endregion
 
-            //go to UserServer to get user's date
-            //then go to BookService with token and bring info about user's books
-            //usersBooks = something from book's service
-
             var intentFilter = new IntentFilter();
             intentFilter.AddAction("com.mypackagename.ActionLogOut");
             RegisterReceiver(_logOutBroadcastReceiver, intentFilter);
@@ -112,18 +108,29 @@ namespace Remuse.Activities
         }
 
         /// <summary>
-        /// User clicks Books button
+        /// Ebent,when user clicks Books button
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private async void Books_Click(object sender, EventArgs e)
         {
             var service = new BookClient(new System.Net.Http.HttpClient());
-            usersBooks = (await service.GetAllBooksAsync()).ToList();
 
-            Intent intent = new Intent(this, typeof(UserBooks));
-            intent.PutExtra("books", JsonConvert.SerializeObject(usersBooks));
-            StartActivity(intent);
+            if (UserInfo.BookId.Count == 0)
+            {
+                Toast.MakeText(this, "Your book's list is empty", ToastLength.Long).Show();
+            }
+            else
+            {
+                foreach (var item in UserInfo.BookId)
+                {
+                    usersBooks.Add(await service.GetAsync(item));
+                }
+
+                Intent intent = new Intent(this, typeof(UserBooks));
+                intent.PutExtra("books", JsonConvert.SerializeObject(usersBooks));
+                StartActivity(intent);
+            }
         }
 
         /// <summary>
@@ -142,7 +149,6 @@ namespace Remuse.Activities
         /// <returns></returns>
         public async Task<List<Book>> Get(string booktitle)
         {
-
             HttpClient client = new HttpClient();
             try
             {

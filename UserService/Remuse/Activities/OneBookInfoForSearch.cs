@@ -5,6 +5,7 @@ using Android.OS;
 using Android.Support.V4.Widget;
 using Android.Widget;
 using Newtonsoft.Json;
+using Remuse.Models;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -76,7 +77,25 @@ namespace Remuse.Activities
 
         private void Add_Click(object sender, EventArgs e)
         {
-            //In progress
+            string bookId = selectedBook.Id;
+            if (UserInfo.BookId.Count == 0)
+            {
+                UserInfo.BookId.Add(bookId);
+                Toast.MakeText(this, "The book was added to your list", ToastLength.Long).Show();
+            }
+            else
+            {
+                foreach (var item in UserInfo.BookId)
+                {
+                    if (item == bookId)
+                    {
+                        Toast.MakeText(this, selectedBook.Title + " already exists in your list", ToastLength.Long).Show();
+                        return;
+                    }
+                }
+                UserInfo.BookId.Add(bookId);
+                Toast.MakeText(this, "The book was added to your list", ToastLength.Short).Show();
+            }
         }
 
         /// <summary>

@@ -16,7 +16,7 @@ namespace Remuse.Models
     public static class UserInfo
     {
         public static User User { get; set; }
-        public static Book Book { get; set; }
+        public static List<string> BookId = new List<string>();
         public static string Token { get; set; }
     }
 }

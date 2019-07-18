@@ -27,6 +27,8 @@ namespace ProfileAPI
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddScoped<IProfileRepository, ProfileRepository>();
+
+            services.AddSwaggerDocument();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -37,6 +39,11 @@ namespace ProfileAPI
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
+
+            app.UseAuthentication();
+            app.UseStatusCodePages();
             app.UseMvc();
         }
     }
