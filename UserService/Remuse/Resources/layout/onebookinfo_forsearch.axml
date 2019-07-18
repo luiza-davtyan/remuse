@@ -74,8 +74,14 @@
 				android:id="@+id/button1"
 				android:layout_marginLeft="96.0dp"
 				android:layout_marginRight="94.0dp" />
+			<Button
+				android:text="ADD"
+				android:layout_width="181.0dp"
+				android:layout_height="wrap_content"
+				android:id="@+id/button2"
+				android:layout_marginLeft="104.0dp" />
 		</LinearLayout>
-			</FrameLayout>  
+	</FrameLayout>  
     <ListView  
         android:id="@+id/leftsideview"  
         android:layout_width="240dp"  

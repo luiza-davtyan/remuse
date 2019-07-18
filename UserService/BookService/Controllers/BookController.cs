@@ -30,7 +30,7 @@ namespace BookService.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-       // [Authorize]
+        //[Authorize]
         public ActionResult<List<Book>> Get()
         {
            //return books;
@@ -53,7 +53,6 @@ namespace BookService.Controllers
             }
 
             return book;
-
             //return books.First();
         }
 

@@ -37,7 +37,6 @@ namespace Remuse.Activities
             description = FindViewById<TextView>(Resource.Id.textView6);
             read = FindViewById<Button>(Resource.Id.button1);
 
-
             //Giving info to TextViews
             enteredbook.Text = selectedBook.Title;
             author.Text = author.Text + selectedBook.Author.FirstName + " " + selectedBook.Author.LastName;
@@ -46,7 +45,6 @@ namespace Remuse.Activities
             description.Text = selectedBook.Description;
 
             read.Click += Read_Click;
-
             #region menu
             DrawerLayout mDrawerLayout;
 

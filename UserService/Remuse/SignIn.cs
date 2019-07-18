@@ -86,8 +86,10 @@ namespace Remuse
                 {
                     var handler = new JwtSecurityTokenHandler();
                     check.Text = authServerToken.access_token;
+                    UserInfo.Token = authServerToken.access_token;
 
                     userFromBase = await Get(username);
+                    UserInfo.User = userFromBase;
                     Intent intent = new Intent(this, typeof(General));
                     intent.PutExtra("user", JsonConvert.SerializeObject(userFromBase));
                     StartActivity(intent);

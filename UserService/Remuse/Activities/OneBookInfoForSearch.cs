@@ -4,49 +4,50 @@ using Android.Graphics;
 using Android.OS;
 using Android.Support.V4.Widget;
 using Android.Widget;
-using MyNamespace;
 using Newtonsoft.Json;
-using Remuse.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace Remuse.Activities
 {
-    [Activity(Label = "UserPage")]
-    public class UserPage : Activity
+    [Activity(Label = "OneBookInfoForSearch")]
+    public class OneBookInfoForSearch : Activity
     {
-        ImageView userimage;
-        TextView firstname, lastname, username;
-        Button books;
-        List<Book> usersBooks = new List<Book>();
+        Book selectedBook;
+        TextView enteredbook, author, genre, year, description;
+        ScrollView scroll;
+        Button read, add;
         List<string> mLeftItems = new List<string>();
-        User user;
         LogOutBroadcastReceiver _logOutBroadcastReceiver = new LogOutBroadcastReceiver();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.Userpage);
-            //user = JsonConvert.DeserializeObject<User>(Intent.GetStringExtra("user"));
-            user = UserInfo.User;
+            SetContentView(Resource.Layout.onebookinfo_forsearch);
 
-            userimage = FindViewById<ImageView>(Resource.Id.imageView1);
-            userimage.SetImageResource(Resource.Drawable.icon);
+            selectedBook = JsonConvert.DeserializeObject<Book>(Intent.GetStringExtra("book"));
 
-            firstname = FindViewById<TextView>(Resource.Id.textView1);
-            lastname = FindViewById<TextView>(Resource.Id.textView2);
-            username = FindViewById<TextView>(Resource.Id.textView3);
-            books = FindViewById<Button>(Resource.Id.button1);
-            books.Click += Books_Click;
-
-            firstname.Text = user.Name;
-            lastname.Text = user.Surname;
-            username.Text = user.Username;
+            //Creating TextViews on the page
+            enteredbook = FindViewById<TextView>(Resource.Id.textView1);
+            author = FindViewById<TextView>(Resource.Id.textView2);
+            genre = FindViewById<TextView>(Resource.Id.textView3);
+            year = FindViewById<TextView>(Resource.Id.textView4);
+            scroll = FindViewById<ScrollView>(Resource.Id.scrollView1);
+            description = FindViewById<TextView>(Resource.Id.textView6);
+            read = FindViewById<Button>(Resource.Id.button1);
+            add = FindViewById<Button>(Resource.Id.button2);
 
 
+            //Giving info to TextViews
+            enteredbook.Text = selectedBook.Title;
+            author.Text = author.Text + selectedBook.Author.FirstName + " " + selectedBook.Author.LastName;
+            genre.Text = genre.Text + "Novel";
+            year.Text = year.Text + selectedBook.Year;
+            description.Text = selectedBook.Description;
+
+            read.Click += Read_Click;
+            add.Click += Add_Click;
             #region menu
             DrawerLayout mDrawerLayout;
 
@@ -57,7 +58,7 @@ namespace Remuse.Activities
             ListView mLeftDrawer = FindViewById<ListView>(Resource.Id.leftsideview);
             mLeftDrawer.SetBackgroundColor(Color.White);
 
-            mLeftItems.Add("Home");
+            mLeftItems.Add("My account");
             mLeftItems.Add("Network");
             mLeftItems.Add("Settings");
             mLeftItems.Add("Log out");
@@ -65,17 +66,17 @@ namespace Remuse.Activities
             // Set ArrayAdaper with Items  
             mLeftAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, mLeftItems);
             mLeftDrawer.Adapter = mLeftAdapter;
-
             mLeftDrawer.ItemClick += MLeftDrawer_ItemClick;
             #endregion
-
-            //go to UserServer to get user's date
-            //then go to BookService with token and bring info about user's books
-            //usersBooks = something from book's service
 
             var intentFilter = new IntentFilter();
             intentFilter.AddAction("com.mypackagename.ActionLogOut");
             RegisterReceiver(_logOutBroadcastReceiver, intentFilter);
+        }
+
+        private void Add_Click(object sender, EventArgs e)
+        {
+            //In progress
         }
 
         /// <summary>
@@ -85,13 +86,12 @@ namespace Remuse.Activities
         /// <param name="e"></param>
         private void MLeftDrawer_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            Type type = typeof(General);
+            Type type = typeof(UserPage);
 
             int position = e.Position;
             switch (position)
             {
                 case 0:
-                    type = typeof(General);
                     Intent intent = new Intent(this, type);
                     StartActivity(intent);
                     break;
@@ -112,17 +112,14 @@ namespace Remuse.Activities
         }
 
         /// <summary>
-        /// User clicks Books button
+        /// Event,that works when user clicks Read button
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void Books_Click(object sender, EventArgs e)
+        private void Read_Click(object sender, EventArgs e)
         {
-            var service = new BookClient(new System.Net.Http.HttpClient());
-            usersBooks = (await service.GetAllBooksAsync()).ToList();
-
-            Intent intent = new Intent(this, typeof(UserBooks));
-            intent.PutExtra("books", JsonConvert.SerializeObject(usersBooks));
+            Intent intent = new Intent(this, typeof(BookReader));
+            intent.PutExtra("book", JsonConvert.SerializeObject(selectedBook));
             StartActivity(intent);
         }
 
@@ -135,27 +132,11 @@ namespace Remuse.Activities
             UnregisterReceiver(_logOutBroadcastReceiver);
         }
 
-        /// <summary>
-        /// Gets the books
-        /// </summary>
-        /// <param name="username"></param>
-        /// <returns></returns>
-        public async Task<List<Book>> Get(string booktitle)
+        async Task<Author> GetAuthorByIdAsync(string id)
         {
-
-            HttpClient client = new HttpClient();
-            try
-            {
-                HttpResponseMessage response = await client.GetAsync(HttpUri.BookUri + "api/book/search/" + booktitle);
-                response.EnsureSuccessStatusCode();
-                var responseBody = await response.Content.ReadAsStringAsync();
-                List<Book> book = JsonConvert.DeserializeObject<List<Book>>(responseBody.ToString());
-                return book;
-            }
-            catch (HttpRequestException e)
-            {
-                throw new Exception();
-            }
+            var server = new AuthorClient(new System.Net.Http.HttpClient());
+            Author author = await server.GetAsync(id);
+            return author;
         }
     }
 }

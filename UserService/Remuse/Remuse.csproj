@@ -80,7 +80,8 @@
     <Compile Include="Activities\BookSearchResult.cs" />
     <Compile Include="Activities\General.cs" />
     <Compile Include="Activities\OneBookInfo.cs" />
-    <Compile Include="Activities\BookPage.cs" />
+    <Compile Include="Activities\UserBooks.cs" />
+    <Compile Include="Activities\OneBookInfoForSearch.cs" />
     <Compile Include="Activities\StartGeneral.cs" />
     <Compile Include="Activities\UserPage.cs" />
     <Compile Include="Attributes\EnumMemberAttribute.cs" />
@@ -89,7 +90,9 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Models\AuthServerResponse.cs" />
     <Compile Include="Models\Client.cs" />
+    <Compile Include="Models\Profile.cs" />
     <Compile Include="Models\UserClient.cs" />
+    <Compile Include="Models\UserInfo.cs" />
     <Compile Include="Resources\Music\treamingBackgroundService.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -167,11 +170,6 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\bookpage.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\layout\list_item.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -195,7 +193,7 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\searchResult.axml">
+    <AndroidResource Include="Resources\layout\onebookinfo_forsearch.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

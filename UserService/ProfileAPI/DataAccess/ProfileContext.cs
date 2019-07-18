@@ -17,10 +17,6 @@ namespace ProfileAPI.DataAccess
         }
 
         public DbSet<Profile> Profiles { get; set; }
-<<<<<<< HEAD
         //public DbSet<Music> Music { get; set; }
-=======
-        
->>>>>>> b0a9ab9b1201c6fc41c5f15b905d14d1b858fcd4
     }
 }

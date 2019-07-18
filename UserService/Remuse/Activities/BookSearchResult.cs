@@ -39,7 +39,7 @@ namespace Remuse.Activities
                 authorFromBase = await server.GetAsync(searchBooksResult[args.Position].AuthorId);
                 searchBooksResult[args.Position].Author = authorFromBase;
 
-                Intent intent = new Intent(this, typeof(OneBookInfo));
+                Intent intent = new Intent(this, typeof(OneBookInfoForSearch));
                 intent.PutExtra("book", JsonConvert.SerializeObject(searchBooksResult[args.Position]));
                 StartActivity(intent);
             };

@@ -11,7 +11,7 @@ using Newtonsoft.Json;
 namespace Remuse.Activities
 {
     [Activity(Label = "BookPage")]
-    public class BookPage : ListActivity
+    public class UserBooks : ListActivity
     {
         List<Book> usersbooks; //get this from BooksService or activity...
         LogOutBroadcastReceiver _logOutBroadcastReceiver = new LogOutBroadcastReceiver();

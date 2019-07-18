@@ -11,6 +11,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using MyNamespace;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using Remuse.Models;
 
 namespace Remuse.Activities
 {
@@ -31,7 +34,8 @@ namespace Remuse.Activities
             base.OnCreate(savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.startgeneral);
-            user = JsonConvert.DeserializeObject<User>(Intent.GetStringExtra("user"));
+            //user = JsonConvert.DeserializeObject<User>(Intent.GetStringExtra("user"));
+            user = UserInfo.User;
             #region menu
             DrawerLayout mDrawerLayout;
 
