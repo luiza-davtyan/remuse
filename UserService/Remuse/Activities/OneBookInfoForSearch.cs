@@ -63,7 +63,10 @@ namespace Remuse.Activities
             mLeftItems.Add("Main page");
             mLeftItems.Add("Network");
             mLeftItems.Add("Settings");
-            mLeftItems.Add("Log out");
+            if (UserInfo.User != null)
+            {
+                mLeftItems.Add("Log out");
+            }
 
             // Set ArrayAdaper with Items  
             mLeftAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, mLeftItems);
@@ -116,7 +119,16 @@ namespace Remuse.Activities
         /// <param name="e"></param>
         private void MLeftDrawer_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            Type type = typeof(MainActivity);
+            Type type;
+
+            if (UserInfo.User == null)
+            {
+                type = typeof(MainActivity);
+            }
+            else
+            {
+                type = typeof(General);
+            }
 
             int position = e.Position;
             switch (position)
