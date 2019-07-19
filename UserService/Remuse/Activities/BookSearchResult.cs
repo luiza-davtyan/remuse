@@ -18,7 +18,7 @@ namespace Remuse.Activities
         List<Book> searchBooksResult = new List<Book>();  //get this from BooksService or activity...
         Author authorFromBase;
 
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected override void OnCreate(Bundle savedInstanceState) 
         {
             base.OnCreate(savedInstanceState);
 
@@ -35,13 +35,16 @@ namespace Remuse.Activities
 
             ListView.ItemClick += async delegate (object sender, AdapterView.ItemClickEventArgs args)
             {
-                var server = new AuthorClient(new System.Net.Http.HttpClient());
-                authorFromBase = await server.GetAsync(searchBooksResult[args.Position].AuthorId);
-                searchBooksResult[args.Position].Author = authorFromBase;
+                if (searchBooksResult[args.Position].Title != "There is no book with that name")
+                {
+                    var server = new AuthorClient(new System.Net.Http.HttpClient());
+                    authorFromBase = await server.GetAsync(searchBooksResult[args.Position].AuthorId);
+                    searchBooksResult[args.Position].Author = authorFromBase;
 
-                Intent intent = new Intent(this, typeof(OneBookInfoForSearch));
-                intent.PutExtra("book", JsonConvert.SerializeObject(searchBooksResult[args.Position]));
-                StartActivity(intent);
+                    Intent intent = new Intent(this, typeof(OneBookInfoForSearch));
+                    intent.PutExtra("book", JsonConvert.SerializeObject(searchBooksResult[args.Position]));
+                    StartActivity(intent);
+                }
             };
         }
     }

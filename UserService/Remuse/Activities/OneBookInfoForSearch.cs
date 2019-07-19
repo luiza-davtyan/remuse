@@ -49,6 +49,7 @@ namespace Remuse.Activities
 
             read.Click += Read_Click;
             add.Click += Add_Click;
+
             #region menu
             DrawerLayout mDrawerLayout;
 
@@ -59,7 +60,7 @@ namespace Remuse.Activities
             ListView mLeftDrawer = FindViewById<ListView>(Resource.Id.leftsideview);
             mLeftDrawer.SetBackgroundColor(Color.White);
 
-            mLeftItems.Add("My account");
+            mLeftItems.Add("Main page");
             mLeftItems.Add("Network");
             mLeftItems.Add("Settings");
             mLeftItems.Add("Log out");
@@ -75,8 +76,18 @@ namespace Remuse.Activities
             RegisterReceiver(_logOutBroadcastReceiver, intentFilter);
         }
 
+        /// <summary>
+        /// Event,when user clicks ADD button.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Add_Click(object sender, EventArgs e)
         {
+            if(UserInfo.Token == null)
+            {
+                Toast.MakeText(this, "Please,log in to add books in your list", ToastLength.Long).Show();
+                return;
+            }
             string bookId = selectedBook.Id;
             if (UserInfo.BookId.Count == 0)
             {
@@ -105,7 +116,7 @@ namespace Remuse.Activities
         /// <param name="e"></param>
         private void MLeftDrawer_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            Type type = typeof(UserPage);
+            Type type = typeof(MainActivity);
 
             int position = e.Position;
             switch (position)
@@ -121,6 +132,9 @@ namespace Remuse.Activities
                     Toast.MakeText(this, mLeftItems[e.Position], ToastLength.Long).Show();
                     break;
                 case 3:
+                    UserInfo.User = null;
+                    UserInfo.Token = null;
+                    UserInfo.BookId = null;
                     var broadcastIntent = new Intent();
                     broadcastIntent.SetAction("com.mypackagename.ActionLogOut");
                     SendBroadcast(broadcastIntent);
@@ -137,9 +151,18 @@ namespace Remuse.Activities
         /// <param name="e"></param>
         private void Read_Click(object sender, EventArgs e)
         {
-            Intent intent = new Intent(this, typeof(BookReader));
-            intent.PutExtra("book", JsonConvert.SerializeObject(selectedBook));
-            StartActivity(intent);
+            if (UserInfo.Token == null)
+            {
+                Intent intent1 = new Intent(this, typeof(BookReaderForGuests));
+                intent1.PutExtra("book", JsonConvert.SerializeObject(selectedBook));
+                StartActivity(intent1);
+            }
+            else
+            {
+                Intent intent = new Intent(this, typeof(BookReader));
+                intent.PutExtra("book", JsonConvert.SerializeObject(selectedBook));
+                StartActivity(intent);
+            }
         }
 
         /// <summary>

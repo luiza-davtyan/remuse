@@ -55,7 +55,7 @@ namespace Remuse
 
             #endregion
 
-            #region Page's images...
+            #region Page's images and TextViews
             bookImages[0] = FindViewById<ImageView>(Resource.Id.imageView1);
             bookImages[1] = FindViewById<ImageView>(Resource.Id.imageView2);
             bookImages[2] = FindViewById<ImageView>(Resource.Id.imageView3);
@@ -78,9 +78,10 @@ namespace Remuse
             search = FindViewById<Button>(Resource.Id.button1);
             userInput = FindViewById<AutoCompleteTextView>(Resource.Id.autoCompleteTextView1);
 
+            //Udpating book wall
             UpdateImagesAndTexts();
 
-            ArrayAdapter adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line, complete);
+            ArrayAdapter adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line, complete); //for search panel
             userInput.Adapter = adapter;
             search.Click += Search_Click;
         }
@@ -96,6 +97,11 @@ namespace Remuse
             await GetBookAsync(bookName);
 
             Intent intent = new Intent(this, typeof(BookSearchResult));
+            if (books.Count == 0)
+            {
+                books.Add(new Book() { Title = "There is no book with that name" ,AuthorId = "",Id = ""});
+            }
+
             intent.PutExtra("book", JsonConvert.SerializeObject(books));
             StartActivity(intent);
         }

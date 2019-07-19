@@ -81,14 +81,11 @@ namespace Remuse.Activities
         /// <param name="e"></param>
         private void MLeftDrawer_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            Type type = typeof(General);
-
             int position = e.Position;
             switch (position)
             {
                 case 0:
-                    type = typeof(General);
-                    Intent intent = new Intent(this, type);
+                    Intent intent = new Intent(this, typeof(General));
                     StartActivity(intent);
                     break;
                 case 1:
@@ -98,6 +95,9 @@ namespace Remuse.Activities
                     Toast.MakeText(this, mLeftItems[e.Position], ToastLength.Long).Show();
                     break;
                 case 3:
+                    UserInfo.User = null;
+                    UserInfo.Token = null;
+                    UserInfo.BookId = null;
                     var broadcastIntent = new Intent();
                     broadcastIntent.SetAction("com.mypackagename.ActionLogOut");
                     SendBroadcast(broadcastIntent);

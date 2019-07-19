@@ -5,6 +5,7 @@ using Android.OS;
 using Android.Support.V4.Widget;
 using Android.Widget;
 using Newtonsoft.Json;
+using Remuse.Models;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -94,6 +95,9 @@ namespace Remuse.Activities
                     Toast.MakeText(this, mLeftItems[e.Position], ToastLength.Long).Show();
                     break;
                 case 3:
+                    UserInfo.User = null;
+                    UserInfo.Token = null;
+                    UserInfo.BookId = null;
                     var broadcastIntent = new Intent();
                     broadcastIntent.SetAction("com.mypackagename.ActionLogOut");
                     SendBroadcast(broadcastIntent);

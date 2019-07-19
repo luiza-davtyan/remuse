@@ -1,18 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
 using Android.App;
 using Android.Content;
 using Android.Graphics;
 using Android.OS;
+using Android.Runtime;
 using Android.Support.V4.Widget;
+using Android.Views;
 using Android.Widget;
 using Newtonsoft.Json;
-using Remuse.Models;
 
 namespace Remuse.Activities
 {
-    [Activity(Label = "BookReader")]
-    public class BookReader : Activity
+    [Activity(Label = "BookReaderForGuests")]
+    public class BookReaderForGuests : Activity
     {
         TextView reading;
         ScrollView scrollView;
@@ -39,10 +43,9 @@ namespace Remuse.Activities
             ListView mLeftDrawer = FindViewById<ListView>(Resource.Id.leftsideview);
             mLeftDrawer.SetBackgroundColor(Color.White);
 
-            mLeftItems.Add("Home");
+            mLeftItems.Add("Main page");
             mLeftItems.Add("Network");
             mLeftItems.Add("Settings");
-            mLeftItems.Add("Log out");
 
             // Set ArrayAdaper with Items  
             mLeftAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, mLeftItems);
@@ -83,7 +86,7 @@ namespace Remuse.Activities
             switch (position)
             {
                 case 0:
-                    Intent intent = new Intent(this, typeof(General));
+                    Intent intent = new Intent(this, typeof(MainActivity));
                     StartActivity(intent);
                     break;
                 case 1:
@@ -91,16 +94,6 @@ namespace Remuse.Activities
                     break;
                 case 2:
                     Toast.MakeText(this, mLeftItems[e.Position], ToastLength.Long).Show();
-                    break;
-                case 3:
-                    UserInfo.User = null;
-                    UserInfo.Token = null;
-                    UserInfo.BookId = null;
-                    var broadcastIntent = new Intent();
-                    broadcastIntent.SetAction("com.mypackagename.ActionLogOut");
-                    SendBroadcast(broadcastIntent);
-                    Intent intent1 = new Intent(this, typeof(StartGeneral));
-                    StartActivity(intent1);
                     break;
             }
         }

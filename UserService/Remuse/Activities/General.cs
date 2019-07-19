@@ -103,6 +103,11 @@ namespace Remuse.Activities
             await GetBooksAsync(bookName);
 
             Intent intent = new Intent(this, typeof(BookSearchResult));
+            if (books.Count == 0)
+            {
+                books.Add(new Book() { Title = "There is no book with that name", AuthorId = "", Id = "" });
+            }
+
             intent.PutExtra("book", JsonConvert.SerializeObject(books));
             StartActivity(intent);
         }
@@ -131,6 +136,9 @@ namespace Remuse.Activities
                     Toast.MakeText(this, mLeftItems[e.Position], ToastLength.Long).Show();
                     break;
                 case 3:
+                    UserInfo.User = null;
+                    UserInfo.Token = null;
+                    UserInfo.BookId = null;
                     var broadcastIntent = new Intent();
                     broadcastIntent.SetAction("com.mypackagename.ActionLogOut");
                     SendBroadcast(broadcastIntent);
@@ -139,6 +147,7 @@ namespace Remuse.Activities
                     break;
             }
         }
+
         /// <summary>
         /// Images and texts update methods
         /// </summary>
