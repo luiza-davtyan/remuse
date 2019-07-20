@@ -2,20 +2,19 @@
 using Android.Content;
 using Android.OS;
 using Android.Widget;
+using IdentityModel.Client;
 using MyNamespace;
 using Newtonsoft.Json;
 using Remuse.Activities;
+using Remuse.Models;
 using System;
 using System.Collections.Generic;
-using System.Net.Http;
-using System.Threading.Tasks;
-using IdentityModel.Client;
-using System.Net.Http.Headers;
-using Remuse.Models;
-using System.Text;
-using System.Security.Cryptography;
 using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Remuse
 {
@@ -80,13 +79,13 @@ namespace Remuse
 
                 if (authServerToken.access_token == null)
                 {
-                    warning.Text = "Invalid email or password";
+                    warning.Text = "Invalid username or password";
                 }
                 else
                 {
                     var handler = new JwtSecurityTokenHandler();
                     check.Text = authServerToken.access_token;
-                    UserInfo.Token = authServerToken.access_token;
+                    UserInfo.Token = authServerToken;
 
                     userFromBase = await Get(username);
                     UserInfo.User = userFromBase;
@@ -97,6 +96,11 @@ namespace Remuse
             }
         }
 
+        /// <summary>
+        /// To get user from base
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns></returns>
         public async Task<User> Get(string username)
         {
 
@@ -128,7 +132,7 @@ namespace Remuse
         private static async Task<string> RequestTokenToAuthorizationServer(Uri uriAuthorizationServerUri, string clientId, string scope, string clientSecret, string username, string password)
         {
             HttpResponseMessage responseMessage = new HttpResponseMessage();
-            
+
             using (HttpClient client = new HttpClient())
             {
                 // returns DiscoveryResponse 
@@ -141,7 +145,8 @@ namespace Remuse
                     {
                         new KeyValuePair<string, string>("grant_type", "password"),
                         new KeyValuePair<string, string>("client_id", clientId),
-                        new KeyValuePair<string, string>("scope", scope),
+                        new KeyValuePair<string, string>("scope", "BookService"),
+                        new KeyValuePair<string, string>("scope","UserService"),
                         new KeyValuePair<string, string>("client_secret", clientSecret),
                         new KeyValuePair<string, string>("username", username),
                         new KeyValuePair<string, string>("password", GetHashSha256(password))
@@ -161,7 +166,7 @@ namespace Remuse
         private static async Task<string> SecureWebApiCall(AuthServerResponse authorizationServerToken)
         {
 
-            string uri = "http://localhost:44383/api/books";
+            string uri = HttpUri.BookUri + "api/book";
 
             HttpResponseMessage responseMessage;
             using (HttpClient httpClient = new HttpClient())

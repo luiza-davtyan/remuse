@@ -4,6 +4,9 @@
 #pragma warning disable 1573 // Disable "CS1573 Parameter '...' has no matching param tag in the XML comment for ...
 #pragma warning disable 1591 // Disable "CS1591 Missing XML comment for publicly visible type or member ..."
 
+using Remuse.Models;
+using System.Net.Http.Headers;
+
 namespace Remuse
 {
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.0.4.0 (NJsonSchema v10.0.21.0 (Newtonsoft.Json v11.0.0.0))")]
@@ -514,7 +517,7 @@ namespace Remuse
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/book");
 
             var client_ = _httpClient;
-            //client_.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", UserInfo.Token);
+            //client_.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", UserInfo.Token.access_token);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())

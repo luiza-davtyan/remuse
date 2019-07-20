@@ -5672,3 +5672,555 @@ Error Number:207,State:1,Class:16
 2019-07-20 15:34:41.191 +04:00 [DBG] Getting claims for access token for client: client
 2019-07-20 15:34:41.192 +04:00 [DBG] Getting claims for access token for subject: 14
 2019-07-20 15:34:41.314 +04:00 [DBG] Token request success.
+2019-07-20 15:59:13.545 +04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-07-20 15:59:14.006 +04:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2019-07-20 15:59:14.025 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2019-07-20 15:59:14.025 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2019-07-20 15:59:14.027 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2019-07-20 15:59:14.028 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2019-07-20 15:59:14.028 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2019-07-20 15:59:15.913 +04:00 [DBG] Login Url: /Account/Login
+2019-07-20 15:59:15.917 +04:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-07-20 15:59:15.917 +04:00 [DBG] Logout Url: /Account/Logout
+2019-07-20 15:59:15.917 +04:00 [DBG] ConsentUrl Url: /consent
+2019-07-20 15:59:15.917 +04:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-07-20 15:59:15.917 +04:00 [DBG] Error Url: /home/error
+2019-07-20 15:59:15.918 +04:00 [DBG] Error Id Parameter: errorId
+2019-07-20 15:59:45.822 +04:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-07-20 15:59:45.993 +04:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-07-20 15:59:45.995 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-07-20 15:59:46.012 +04:00 [DBG] Start token request.
+2019-07-20 15:59:46.022 +04:00 [DBG] Start client validation
+2019-07-20 15:59:46.032 +04:00 [DBG] Start parsing Basic Authentication secret
+2019-07-20 15:59:46.039 +04:00 [DBG] Start parsing for secret in post body
+2019-07-20 15:59:46.057 +04:00 [DBG] Parser found secret: PostBodySecretParser
+2019-07-20 15:59:46.058 +04:00 [DBG] Secret id found: client
+2019-07-20 15:59:46.074 +04:00 [DBG] client configuration validation for client client succeeded.
+2019-07-20 15:59:46.085 +04:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-07-20 15:59:46.085 +04:00 [DBG] Client validation success
+2019-07-20 15:59:46.101 +04:00 [DBG] Start token request validation
+2019-07-20 15:59:46.122 +04:00 [DBG] Start resource owner password token request validation
+2019-07-20 15:59:46.910 +04:00 [DBG] Resource owner password token request validation success.
+2019-07-20 15:59:46.931 +04:00 [INF] Token request validation success
+{"ClientId":"client","ClientName":null,"GrantType":"password","Scopes":"UserService","AuthorizationCode":null,"RefreshToken":null,"UserName":"serob","AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"password","client_id":"client","scope":"UserService","client_secret":"***REDACTED***","username":"serob","password":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-07-20 15:59:46.975 +04:00 [DBG] Getting claims for access token for client: client
+2019-07-20 15:59:46.976 +04:00 [DBG] Getting claims for access token for subject: 12
+2019-07-20 15:59:47.130 +04:00 [DBG] Token request success.
+2019-07-20 16:02:02.953 +04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-07-20 16:02:03.054 +04:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2019-07-20 16:02:03.083 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2019-07-20 16:02:03.083 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2019-07-20 16:02:03.083 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2019-07-20 16:02:03.083 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2019-07-20 16:02:03.083 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2019-07-20 16:02:03.988 +04:00 [DBG] Login Url: /Account/Login
+2019-07-20 16:02:03.992 +04:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-07-20 16:02:03.992 +04:00 [DBG] Logout Url: /Account/Logout
+2019-07-20 16:02:03.992 +04:00 [DBG] ConsentUrl Url: /consent
+2019-07-20 16:02:03.992 +04:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-07-20 16:02:03.992 +04:00 [DBG] Error Url: /home/error
+2019-07-20 16:02:03.992 +04:00 [DBG] Error Id Parameter: errorId
+2019-07-20 16:03:07.936 +04:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-07-20 16:03:08.166 +04:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-07-20 16:03:08.167 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-07-20 16:03:08.180 +04:00 [DBG] Start token request.
+2019-07-20 16:03:08.192 +04:00 [DBG] Start client validation
+2019-07-20 16:03:08.199 +04:00 [DBG] Start parsing Basic Authentication secret
+2019-07-20 16:03:08.209 +04:00 [DBG] Start parsing for secret in post body
+2019-07-20 16:03:08.226 +04:00 [DBG] Parser found secret: PostBodySecretParser
+2019-07-20 16:03:08.226 +04:00 [DBG] Secret id found: client
+2019-07-20 16:03:08.242 +04:00 [DBG] client configuration validation for client client succeeded.
+2019-07-20 16:03:08.254 +04:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-07-20 16:03:08.254 +04:00 [DBG] Client validation success
+2019-07-20 16:03:08.268 +04:00 [DBG] Start token request validation
+2019-07-20 16:03:08.288 +04:00 [DBG] Start resource owner password token request validation
+2019-07-20 16:03:08.949 +04:00 [DBG] Resource owner password token request validation success.
+2019-07-20 16:03:08.967 +04:00 [INF] Token request validation success
+{"ClientId":"client","ClientName":null,"GrantType":"password","Scopes":"BookService","AuthorizationCode":null,"RefreshToken":null,"UserName":"serob","AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"password","scope":"BookService","client_id":"client","client_secret":"***REDACTED***","username":"serob","password":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-07-20 16:03:09.016 +04:00 [DBG] Getting claims for access token for client: client
+2019-07-20 16:03:09.017 +04:00 [DBG] Getting claims for access token for subject: 12
+2019-07-20 16:03:09.213 +04:00 [DBG] Token request success.
+2019-07-20 16:03:55.064 +04:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-07-20 16:03:55.065 +04:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-07-20 16:03:55.065 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-07-20 16:03:55.080 +04:00 [DBG] Start discovery request
+2019-07-20 16:03:55.638 +04:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2019-07-20 16:03:55.639 +04:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2019-07-20 16:03:55.639 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-07-20 16:03:55.646 +04:00 [DBG] Start key discovery request
+2019-07-20 16:04:13.016 +04:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-07-20 16:04:13.016 +04:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-07-20 16:04:13.016 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-07-20 16:04:13.016 +04:00 [DBG] Start token request.
+2019-07-20 16:04:13.017 +04:00 [DBG] Start client validation
+2019-07-20 16:04:13.017 +04:00 [DBG] Start parsing Basic Authentication secret
+2019-07-20 16:04:13.017 +04:00 [DBG] Start parsing for secret in post body
+2019-07-20 16:04:13.018 +04:00 [DBG] Parser found secret: PostBodySecretParser
+2019-07-20 16:04:13.018 +04:00 [DBG] Secret id found: client
+2019-07-20 16:04:13.018 +04:00 [DBG] client configuration validation for client client succeeded.
+2019-07-20 16:04:13.018 +04:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-07-20 16:04:13.018 +04:00 [DBG] Client validation success
+2019-07-20 16:04:13.018 +04:00 [DBG] Start token request validation
+2019-07-20 16:04:13.019 +04:00 [DBG] Start resource owner password token request validation
+2019-07-20 16:04:13.040 +04:00 [DBG] Resource owner password token request validation success.
+2019-07-20 16:04:13.040 +04:00 [INF] Token request validation success
+{"ClientId":"client","ClientName":null,"GrantType":"password","Scopes":"UserService","AuthorizationCode":null,"RefreshToken":null,"UserName":"serob","AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"password","client_id":"client","scope":"UserService","client_secret":"***REDACTED***","username":"serob","password":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-07-20 16:04:13.040 +04:00 [DBG] Getting claims for access token for client: client
+2019-07-20 16:04:13.040 +04:00 [DBG] Getting claims for access token for subject: 12
+2019-07-20 16:04:13.058 +04:00 [DBG] Token request success.
+2019-07-20 16:11:57.262 +04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-07-20 16:11:57.556 +04:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2019-07-20 16:11:57.563 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2019-07-20 16:11:57.563 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2019-07-20 16:11:57.563 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2019-07-20 16:11:57.563 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2019-07-20 16:11:57.564 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2019-07-20 16:11:59.045 +04:00 [DBG] Login Url: /Account/Login
+2019-07-20 16:11:59.049 +04:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-07-20 16:11:59.049 +04:00 [DBG] Logout Url: /Account/Logout
+2019-07-20 16:11:59.049 +04:00 [DBG] ConsentUrl Url: /consent
+2019-07-20 16:11:59.049 +04:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-07-20 16:11:59.049 +04:00 [DBG] Error Url: /home/error
+2019-07-20 16:11:59.050 +04:00 [DBG] Error Id Parameter: errorId
+2019-07-20 16:12:30.138 +04:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-07-20 16:12:30.331 +04:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-07-20 16:12:30.331 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-07-20 16:12:30.346 +04:00 [DBG] Start token request.
+2019-07-20 16:12:30.357 +04:00 [DBG] Start client validation
+2019-07-20 16:12:30.365 +04:00 [DBG] Start parsing Basic Authentication secret
+2019-07-20 16:12:30.373 +04:00 [DBG] Start parsing for secret in post body
+2019-07-20 16:12:30.399 +04:00 [DBG] Parser found secret: PostBodySecretParser
+2019-07-20 16:12:30.400 +04:00 [DBG] Secret id found: client
+2019-07-20 16:12:30.431 +04:00 [DBG] client configuration validation for client client succeeded.
+2019-07-20 16:12:30.447 +04:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-07-20 16:12:30.448 +04:00 [DBG] Client validation success
+2019-07-20 16:12:30.463 +04:00 [DBG] Start token request validation
+2019-07-20 16:12:30.479 +04:00 [DBG] Start resource owner password token request validation
+2019-07-20 16:12:31.240 +04:00 [DBG] Resource owner password token request validation success.
+2019-07-20 16:12:31.261 +04:00 [INF] Token request validation success
+{"ClientId":"client","ClientName":null,"GrantType":"password","Scopes":"UserService","AuthorizationCode":null,"RefreshToken":null,"UserName":"serob","AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"password","client_id":"client","scope":"UserService","client_secret":"***REDACTED***","username":"serob","password":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-07-20 16:12:31.316 +04:00 [DBG] Getting claims for access token for client: client
+2019-07-20 16:12:31.316 +04:00 [DBG] Getting claims for access token for subject: 12
+2019-07-20 16:12:31.455 +04:00 [DBG] Token request success.
+2019-07-20 16:12:34.688 +04:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-07-20 16:12:34.690 +04:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-07-20 16:12:34.690 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-07-20 16:12:34.696 +04:00 [DBG] Start discovery request
+2019-07-20 16:12:35.068 +04:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2019-07-20 16:12:35.072 +04:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2019-07-20 16:12:35.072 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-07-20 16:12:35.080 +04:00 [DBG] Start key discovery request
+2019-07-20 16:13:15.225 +04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-07-20 16:13:15.334 +04:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2019-07-20 16:13:15.339 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2019-07-20 16:13:15.340 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2019-07-20 16:13:15.340 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2019-07-20 16:13:15.340 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2019-07-20 16:13:15.340 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2019-07-20 16:13:17.994 +04:00 [DBG] Login Url: /Account/Login
+2019-07-20 16:13:17.998 +04:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-07-20 16:13:17.998 +04:00 [DBG] Logout Url: /Account/Logout
+2019-07-20 16:13:17.998 +04:00 [DBG] ConsentUrl Url: /consent
+2019-07-20 16:13:17.998 +04:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-07-20 16:13:17.998 +04:00 [DBG] Error Url: /home/error
+2019-07-20 16:13:17.998 +04:00 [DBG] Error Id Parameter: errorId
+2019-07-20 16:13:49.501 +04:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-07-20 16:13:49.714 +04:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-07-20 16:13:49.714 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-07-20 16:13:49.733 +04:00 [DBG] Start token request.
+2019-07-20 16:13:49.750 +04:00 [DBG] Start client validation
+2019-07-20 16:13:49.762 +04:00 [DBG] Start parsing Basic Authentication secret
+2019-07-20 16:13:49.769 +04:00 [DBG] Start parsing for secret in post body
+2019-07-20 16:13:49.800 +04:00 [DBG] Parser found secret: PostBodySecretParser
+2019-07-20 16:13:49.801 +04:00 [DBG] Secret id found: client
+2019-07-20 16:13:49.821 +04:00 [DBG] client configuration validation for client client succeeded.
+2019-07-20 16:13:49.837 +04:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-07-20 16:13:49.838 +04:00 [DBG] Client validation success
+2019-07-20 16:13:49.855 +04:00 [DBG] Start token request validation
+2019-07-20 16:13:49.872 +04:00 [DBG] Start resource owner password token request validation
+2019-07-20 16:13:50.727 +04:00 [DBG] Resource owner password token request validation success.
+2019-07-20 16:13:50.747 +04:00 [INF] Token request validation success
+{"ClientId":"client","ClientName":null,"GrantType":"password","Scopes":"UserService","AuthorizationCode":null,"RefreshToken":null,"UserName":"serob","AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"password","client_id":"client","scope":"UserService","client_secret":"***REDACTED***","username":"serob","password":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-07-20 16:13:50.819 +04:00 [DBG] Getting claims for access token for client: client
+2019-07-20 16:13:50.820 +04:00 [DBG] Getting claims for access token for subject: 12
+2019-07-20 16:13:50.995 +04:00 [DBG] Token request success.
+2019-07-20 16:15:52.898 +04:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-07-20 16:15:52.900 +04:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-07-20 16:15:52.901 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-07-20 16:15:52.907 +04:00 [DBG] Start discovery request
+2019-07-20 16:15:53.190 +04:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2019-07-20 16:15:53.191 +04:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2019-07-20 16:15:53.191 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-07-20 16:15:53.195 +04:00 [DBG] Start key discovery request
+2019-07-20 16:16:27.126 +04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-07-20 16:16:27.162 +04:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2019-07-20 16:16:27.166 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2019-07-20 16:16:27.166 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2019-07-20 16:16:27.166 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2019-07-20 16:16:27.166 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2019-07-20 16:16:27.166 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2019-07-20 16:16:27.442 +04:00 [DBG] Login Url: /Account/Login
+2019-07-20 16:16:27.444 +04:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-07-20 16:16:27.444 +04:00 [DBG] Logout Url: /Account/Logout
+2019-07-20 16:16:27.444 +04:00 [DBG] ConsentUrl Url: /consent
+2019-07-20 16:16:27.444 +04:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-07-20 16:16:27.445 +04:00 [DBG] Error Url: /home/error
+2019-07-20 16:16:27.445 +04:00 [DBG] Error Id Parameter: errorId
+2019-07-20 16:16:27.470 +04:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-07-20 16:16:27.528 +04:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-07-20 16:16:27.528 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-07-20 16:16:27.532 +04:00 [DBG] Start discovery request
+2019-07-20 16:16:27.668 +04:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2019-07-20 16:16:27.669 +04:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2019-07-20 16:16:27.669 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-07-20 16:16:27.674 +04:00 [DBG] Start key discovery request
+2019-07-20 16:21:26.842 +04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-07-20 16:21:26.924 +04:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2019-07-20 16:21:26.930 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2019-07-20 16:21:26.930 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2019-07-20 16:21:26.931 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2019-07-20 16:21:26.931 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2019-07-20 16:21:26.931 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2019-07-20 16:21:29.372 +04:00 [DBG] Login Url: /Account/Login
+2019-07-20 16:21:29.376 +04:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-07-20 16:21:29.376 +04:00 [DBG] Logout Url: /Account/Logout
+2019-07-20 16:21:29.376 +04:00 [DBG] ConsentUrl Url: /consent
+2019-07-20 16:21:29.376 +04:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-07-20 16:21:29.376 +04:00 [DBG] Error Url: /home/error
+2019-07-20 16:21:29.376 +04:00 [DBG] Error Id Parameter: errorId
+2019-07-20 16:22:01.543 +04:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-07-20 16:22:01.686 +04:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-07-20 16:22:01.686 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-07-20 16:22:01.696 +04:00 [DBG] Start token request.
+2019-07-20 16:22:01.702 +04:00 [DBG] Start client validation
+2019-07-20 16:22:01.708 +04:00 [DBG] Start parsing Basic Authentication secret
+2019-07-20 16:22:01.713 +04:00 [DBG] Start parsing for secret in post body
+2019-07-20 16:22:01.736 +04:00 [DBG] Parser found secret: PostBodySecretParser
+2019-07-20 16:22:01.737 +04:00 [DBG] Secret id found: client
+2019-07-20 16:22:01.757 +04:00 [DBG] client configuration validation for client client succeeded.
+2019-07-20 16:22:01.767 +04:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-07-20 16:22:01.767 +04:00 [DBG] Client validation success
+2019-07-20 16:22:01.782 +04:00 [DBG] Start token request validation
+2019-07-20 16:22:01.797 +04:00 [DBG] Start resource owner password token request validation
+2019-07-20 16:22:02.587 +04:00 [DBG] Resource owner password token request validation success.
+2019-07-20 16:22:02.606 +04:00 [INF] Token request validation success
+{"ClientId":"client","ClientName":null,"GrantType":"password","Scopes":"UserService","AuthorizationCode":null,"RefreshToken":null,"UserName":"serob","AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"password","client_id":"client","scope":"UserService","client_secret":"***REDACTED***","username":"serob","password":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-07-20 16:22:02.680 +04:00 [DBG] Getting claims for access token for client: client
+2019-07-20 16:22:02.681 +04:00 [DBG] Getting claims for access token for subject: 12
+2019-07-20 16:22:02.866 +04:00 [DBG] Token request success.
+2019-07-20 16:22:45.195 +04:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-07-20 16:22:45.197 +04:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-07-20 16:22:45.197 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-07-20 16:22:45.206 +04:00 [DBG] Start discovery request
+2019-07-20 16:22:45.523 +04:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2019-07-20 16:22:45.524 +04:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2019-07-20 16:22:45.524 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-07-20 16:22:45.530 +04:00 [DBG] Start key discovery request
+2019-07-20 16:24:49.877 +04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-07-20 16:24:50.033 +04:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2019-07-20 16:24:50.039 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2019-07-20 16:24:50.039 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2019-07-20 16:24:50.039 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2019-07-20 16:24:50.039 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2019-07-20 16:24:50.039 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2019-07-20 16:24:51.160 +04:00 [DBG] Login Url: /Account/Login
+2019-07-20 16:24:51.164 +04:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-07-20 16:24:51.164 +04:00 [DBG] Logout Url: /Account/Logout
+2019-07-20 16:24:51.164 +04:00 [DBG] ConsentUrl Url: /consent
+2019-07-20 16:24:51.164 +04:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-07-20 16:24:51.164 +04:00 [DBG] Error Url: /home/error
+2019-07-20 16:24:51.164 +04:00 [DBG] Error Id Parameter: errorId
+2019-07-20 16:25:42.041 +04:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-07-20 16:25:42.163 +04:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-07-20 16:25:42.163 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-07-20 16:25:42.176 +04:00 [DBG] Start token request.
+2019-07-20 16:25:42.188 +04:00 [DBG] Start client validation
+2019-07-20 16:25:42.195 +04:00 [DBG] Start parsing Basic Authentication secret
+2019-07-20 16:25:42.201 +04:00 [DBG] Start parsing for secret in post body
+2019-07-20 16:25:42.225 +04:00 [DBG] Parser found secret: PostBodySecretParser
+2019-07-20 16:25:42.225 +04:00 [DBG] Secret id found: client
+2019-07-20 16:25:42.254 +04:00 [DBG] client configuration validation for client client succeeded.
+2019-07-20 16:25:42.267 +04:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-07-20 16:25:42.267 +04:00 [DBG] Client validation success
+2019-07-20 16:25:42.298 +04:00 [DBG] Start token request validation
+2019-07-20 16:25:42.322 +04:00 [DBG] Start resource owner password token request validation
+2019-07-20 16:25:43.015 +04:00 [DBG] Resource owner password token request validation success.
+2019-07-20 16:25:43.035 +04:00 [INF] Token request validation success
+{"ClientId":"client","ClientName":null,"GrantType":"password","Scopes":"UserService","AuthorizationCode":null,"RefreshToken":null,"UserName":"serob","AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"password","client_id":"client","scope":"UserService","client_secret":"***REDACTED***","username":"serob","password":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-07-20 16:25:43.094 +04:00 [DBG] Getting claims for access token for client: client
+2019-07-20 16:25:43.095 +04:00 [DBG] Getting claims for access token for subject: 12
+2019-07-20 16:25:43.246 +04:00 [DBG] Token request success.
+2019-07-20 16:26:14.565 +04:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-07-20 16:26:14.567 +04:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-07-20 16:26:14.567 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-07-20 16:26:14.574 +04:00 [DBG] Start discovery request
+2019-07-20 16:26:14.794 +04:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2019-07-20 16:26:14.794 +04:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2019-07-20 16:26:14.794 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-07-20 16:26:14.798 +04:00 [DBG] Start key discovery request
+2019-07-20 16:29:53.042 +04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-07-20 16:29:53.227 +04:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2019-07-20 16:29:53.234 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2019-07-20 16:29:53.234 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2019-07-20 16:29:53.234 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2019-07-20 16:29:53.234 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2019-07-20 16:29:53.234 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2019-07-20 16:29:57.775 +04:00 [DBG] Login Url: /Account/Login
+2019-07-20 16:29:57.780 +04:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-07-20 16:29:57.781 +04:00 [DBG] Logout Url: /Account/Logout
+2019-07-20 16:29:57.781 +04:00 [DBG] ConsentUrl Url: /consent
+2019-07-20 16:29:57.781 +04:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-07-20 16:29:57.781 +04:00 [DBG] Error Url: /home/error
+2019-07-20 16:29:57.781 +04:00 [DBG] Error Id Parameter: errorId
+2019-07-20 16:30:33.103 +04:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-07-20 16:30:33.238 +04:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-07-20 16:30:33.238 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-07-20 16:30:33.253 +04:00 [DBG] Start token request.
+2019-07-20 16:30:33.268 +04:00 [DBG] Start client validation
+2019-07-20 16:30:33.275 +04:00 [DBG] Start parsing Basic Authentication secret
+2019-07-20 16:30:33.279 +04:00 [DBG] Start parsing for secret in post body
+2019-07-20 16:30:33.307 +04:00 [DBG] Parser found secret: PostBodySecretParser
+2019-07-20 16:30:33.307 +04:00 [DBG] Secret id found: client
+2019-07-20 16:30:33.324 +04:00 [DBG] client configuration validation for client client succeeded.
+2019-07-20 16:30:33.339 +04:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-07-20 16:30:33.339 +04:00 [DBG] Client validation success
+2019-07-20 16:30:33.349 +04:00 [DBG] Start token request validation
+2019-07-20 16:30:33.362 +04:00 [DBG] Start resource owner password token request validation
+2019-07-20 16:30:34.462 +04:00 [DBG] Resource owner password token request validation success.
+2019-07-20 16:30:34.476 +04:00 [INF] Token request validation success
+{"ClientId":"client","ClientName":null,"GrantType":"password","Scopes":"UserService","AuthorizationCode":null,"RefreshToken":null,"UserName":"serob","AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"password","client_id":"client","scope":"UserService","client_secret":"***REDACTED***","username":"serob","password":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-07-20 16:30:34.517 +04:00 [DBG] Getting claims for access token for client: client
+2019-07-20 16:30:34.518 +04:00 [DBG] Getting claims for access token for subject: 12
+2019-07-20 16:30:34.668 +04:00 [DBG] Token request success.
+2019-07-20 16:30:38.098 +04:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-07-20 16:30:38.099 +04:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-07-20 16:30:38.100 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-07-20 16:30:38.106 +04:00 [DBG] Start discovery request
+2019-07-20 16:30:38.472 +04:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2019-07-20 16:30:38.473 +04:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2019-07-20 16:30:38.473 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-07-20 16:30:38.478 +04:00 [DBG] Start key discovery request
+2019-07-20 16:32:39.368 +04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-07-20 16:32:39.418 +04:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2019-07-20 16:32:39.423 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2019-07-20 16:32:39.423 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2019-07-20 16:32:39.423 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2019-07-20 16:32:39.423 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2019-07-20 16:32:39.423 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2019-07-20 16:32:39.801 +04:00 [DBG] Login Url: /Account/Login
+2019-07-20 16:32:39.804 +04:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-07-20 16:32:39.804 +04:00 [DBG] Logout Url: /Account/Logout
+2019-07-20 16:32:39.804 +04:00 [DBG] ConsentUrl Url: /consent
+2019-07-20 16:32:39.804 +04:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-07-20 16:32:39.804 +04:00 [DBG] Error Url: /home/error
+2019-07-20 16:32:39.804 +04:00 [DBG] Error Id Parameter: errorId
+2019-07-20 16:32:39.841 +04:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-07-20 16:32:39.944 +04:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-07-20 16:32:39.944 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-07-20 16:32:39.950 +04:00 [DBG] Start discovery request
+2019-07-20 16:32:40.151 +04:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2019-07-20 16:32:40.152 +04:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2019-07-20 16:32:40.153 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-07-20 16:32:40.158 +04:00 [DBG] Start key discovery request
+2019-07-20 16:40:09.320 +04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-07-20 16:40:09.396 +04:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2019-07-20 16:40:09.401 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2019-07-20 16:40:09.406 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2019-07-20 16:40:09.406 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2019-07-20 16:40:09.406 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2019-07-20 16:40:09.406 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2019-07-20 16:40:09.855 +04:00 [DBG] Login Url: /Account/Login
+2019-07-20 16:40:09.860 +04:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-07-20 16:40:09.861 +04:00 [DBG] Logout Url: /Account/Logout
+2019-07-20 16:40:09.861 +04:00 [DBG] ConsentUrl Url: /consent
+2019-07-20 16:40:09.861 +04:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-07-20 16:40:09.861 +04:00 [DBG] Error Url: /home/error
+2019-07-20 16:40:09.861 +04:00 [DBG] Error Id Parameter: errorId
+2019-07-20 16:41:11.046 +04:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-07-20 16:41:11.181 +04:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-07-20 16:41:11.181 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-07-20 16:41:11.191 +04:00 [DBG] Start token request.
+2019-07-20 16:41:11.198 +04:00 [DBG] Start client validation
+2019-07-20 16:41:11.204 +04:00 [DBG] Start parsing Basic Authentication secret
+2019-07-20 16:41:11.209 +04:00 [DBG] Start parsing for secret in post body
+2019-07-20 16:41:11.228 +04:00 [DBG] Parser found secret: PostBodySecretParser
+2019-07-20 16:41:11.228 +04:00 [DBG] Secret id found: client
+2019-07-20 16:41:11.243 +04:00 [DBG] client configuration validation for client client succeeded.
+2019-07-20 16:41:11.254 +04:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-07-20 16:41:11.254 +04:00 [DBG] Client validation success
+2019-07-20 16:41:11.268 +04:00 [DBG] Start token request validation
+2019-07-20 16:41:11.287 +04:00 [DBG] Start resource owner password token request validation
+2019-07-20 16:41:11.932 +04:00 [DBG] Resource owner password token request validation success.
+2019-07-20 16:41:11.947 +04:00 [INF] Token request validation success
+{"ClientId":"client","ClientName":null,"GrantType":"password","Scopes":"UserService","AuthorizationCode":null,"RefreshToken":null,"UserName":"serob","AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"password","client_id":"client","scope":"UserService","client_secret":"***REDACTED***","username":"serob","password":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-07-20 16:41:11.985 +04:00 [DBG] Getting claims for access token for client: client
+2019-07-20 16:41:11.985 +04:00 [DBG] Getting claims for access token for subject: 12
+2019-07-20 16:41:12.122 +04:00 [DBG] Token request success.
+2019-07-20 16:41:15.426 +04:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-07-20 16:41:15.427 +04:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-07-20 16:41:15.427 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-07-20 16:41:15.433 +04:00 [DBG] Start discovery request
+2019-07-20 16:41:15.770 +04:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2019-07-20 16:41:15.771 +04:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2019-07-20 16:41:15.771 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-07-20 16:41:15.781 +04:00 [DBG] Start key discovery request
+2019-07-20 16:42:07.993 +04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-07-20 16:42:08.112 +04:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2019-07-20 16:42:08.128 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2019-07-20 16:42:08.128 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2019-07-20 16:42:08.128 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2019-07-20 16:42:08.128 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2019-07-20 16:42:08.129 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2019-07-20 16:42:10.043 +04:00 [DBG] Login Url: /Account/Login
+2019-07-20 16:42:10.047 +04:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-07-20 16:42:10.047 +04:00 [DBG] Logout Url: /Account/Logout
+2019-07-20 16:42:10.047 +04:00 [DBG] ConsentUrl Url: /consent
+2019-07-20 16:42:10.047 +04:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-07-20 16:42:10.047 +04:00 [DBG] Error Url: /home/error
+2019-07-20 16:42:10.047 +04:00 [DBG] Error Id Parameter: errorId
+2019-07-20 16:43:11.332 +04:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-07-20 16:43:11.507 +04:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-07-20 16:43:11.508 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-07-20 16:43:11.526 +04:00 [DBG] Start token request.
+2019-07-20 16:43:11.538 +04:00 [DBG] Start client validation
+2019-07-20 16:43:11.550 +04:00 [DBG] Start parsing Basic Authentication secret
+2019-07-20 16:43:11.557 +04:00 [DBG] Start parsing for secret in post body
+2019-07-20 16:43:11.623 +04:00 [DBG] Parser found secret: PostBodySecretParser
+2019-07-20 16:43:11.623 +04:00 [DBG] Secret id found: client
+2019-07-20 16:43:11.659 +04:00 [DBG] client configuration validation for client client succeeded.
+2019-07-20 16:43:11.675 +04:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-07-20 16:43:11.677 +04:00 [DBG] Client validation success
+2019-07-20 16:43:11.710 +04:00 [DBG] Start token request validation
+2019-07-20 16:43:11.737 +04:00 [DBG] Start resource owner password token request validation
+2019-07-20 16:43:12.636 +04:00 [DBG] Resource owner password token request validation success.
+2019-07-20 16:43:12.657 +04:00 [INF] Token request validation success
+{"ClientId":"client","ClientName":null,"GrantType":"password","Scopes":"UserService","AuthorizationCode":null,"RefreshToken":null,"UserName":"serob","AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"password","client_id":"client","scope":"UserService","client_secret":"***REDACTED***","username":"serob","password":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-07-20 16:43:12.721 +04:00 [DBG] Getting claims for access token for client: client
+2019-07-20 16:43:12.722 +04:00 [DBG] Getting claims for access token for subject: 12
+2019-07-20 16:43:12.862 +04:00 [DBG] Token request success.
+2019-07-20 16:55:03.895 +04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-07-20 16:55:03.994 +04:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2019-07-20 16:55:04.001 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2019-07-20 16:55:04.001 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2019-07-20 16:55:04.002 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2019-07-20 16:55:04.002 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2019-07-20 16:55:04.002 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2019-07-20 16:55:05.004 +04:00 [DBG] Login Url: /Account/Login
+2019-07-20 16:55:05.008 +04:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-07-20 16:55:05.008 +04:00 [DBG] Logout Url: /Account/Logout
+2019-07-20 16:55:05.008 +04:00 [DBG] ConsentUrl Url: /consent
+2019-07-20 16:55:05.008 +04:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-07-20 16:55:05.008 +04:00 [DBG] Error Url: /home/error
+2019-07-20 16:55:05.008 +04:00 [DBG] Error Id Parameter: errorId
+2019-07-20 16:55:36.947 +04:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-07-20 16:55:37.258 +04:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-07-20 16:55:37.258 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-07-20 16:55:37.272 +04:00 [DBG] Start token request.
+2019-07-20 16:55:37.283 +04:00 [DBG] Start client validation
+2019-07-20 16:55:37.297 +04:00 [DBG] Start parsing Basic Authentication secret
+2019-07-20 16:55:37.302 +04:00 [DBG] Start parsing for secret in post body
+2019-07-20 16:55:37.373 +04:00 [DBG] Parser found secret: PostBodySecretParser
+2019-07-20 16:55:37.373 +04:00 [DBG] Secret id found: client
+2019-07-20 16:55:37.402 +04:00 [DBG] client configuration validation for client client succeeded.
+2019-07-20 16:55:37.420 +04:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-07-20 16:55:37.420 +04:00 [DBG] Client validation success
+2019-07-20 16:55:37.440 +04:00 [DBG] Start token request validation
+2019-07-20 16:55:37.463 +04:00 [DBG] Start resource owner password token request validation
+2019-07-20 16:55:38.271 +04:00 [DBG] Resource owner password token request validation success.
+2019-07-20 16:55:38.295 +04:00 [INF] Token request validation success
+{"ClientId":"client","ClientName":null,"GrantType":"password","Scopes":"UserService","AuthorizationCode":null,"RefreshToken":null,"UserName":"serob","AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"password","client_id":"client","scope":"UserService","client_secret":"***REDACTED***","username":"serob","password":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-07-20 16:55:38.367 +04:00 [DBG] Getting claims for access token for client: client
+2019-07-20 16:55:38.368 +04:00 [DBG] Getting claims for access token for subject: 12
+2019-07-20 16:55:38.547 +04:00 [DBG] Token request success.
+2019-07-20 16:56:01.245 +04:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-07-20 16:56:01.248 +04:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-07-20 16:56:01.248 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-07-20 16:56:01.258 +04:00 [DBG] Start discovery request
+2019-07-20 16:56:01.456 +04:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2019-07-20 16:56:01.456 +04:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2019-07-20 16:56:01.456 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-07-20 16:56:01.460 +04:00 [DBG] Start key discovery request
+2019-07-20 17:01:51.199 +04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-07-20 17:01:51.912 +04:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2019-07-20 17:01:51.917 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2019-07-20 17:01:51.917 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2019-07-20 17:01:51.917 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2019-07-20 17:01:51.917 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2019-07-20 17:01:51.917 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2019-07-20 17:01:53.793 +04:00 [DBG] Login Url: /Account/Login
+2019-07-20 17:01:53.798 +04:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-07-20 17:01:53.798 +04:00 [DBG] Logout Url: /Account/Logout
+2019-07-20 17:01:53.798 +04:00 [DBG] ConsentUrl Url: /consent
+2019-07-20 17:01:53.798 +04:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-07-20 17:01:53.798 +04:00 [DBG] Error Url: /home/error
+2019-07-20 17:01:53.798 +04:00 [DBG] Error Id Parameter: errorId
+2019-07-20 17:02:36.570 +04:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-07-20 17:02:36.824 +04:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-07-20 17:02:36.825 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-07-20 17:02:36.836 +04:00 [DBG] Start token request.
+2019-07-20 17:02:36.848 +04:00 [DBG] Start client validation
+2019-07-20 17:02:36.859 +04:00 [DBG] Start parsing Basic Authentication secret
+2019-07-20 17:02:36.868 +04:00 [DBG] Start parsing for secret in post body
+2019-07-20 17:02:36.900 +04:00 [DBG] Parser found secret: PostBodySecretParser
+2019-07-20 17:02:36.900 +04:00 [DBG] Secret id found: client
+2019-07-20 17:02:36.920 +04:00 [DBG] client configuration validation for client client succeeded.
+2019-07-20 17:02:36.932 +04:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-07-20 17:02:36.932 +04:00 [DBG] Client validation success
+2019-07-20 17:02:36.946 +04:00 [DBG] Start token request validation
+2019-07-20 17:02:36.959 +04:00 [DBG] Start resource owner password token request validation
+2019-07-20 17:02:37.688 +04:00 [DBG] Resource owner password token request validation success.
+2019-07-20 17:02:37.722 +04:00 [INF] Token request validation success
+{"ClientId":"client","ClientName":null,"GrantType":"password","Scopes":"BookService","AuthorizationCode":null,"RefreshToken":null,"UserName":"serob","AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"password","client_id":"client","scope":"BookService","client_secret":"***REDACTED***","username":"serob","password":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-07-20 17:02:37.780 +04:00 [DBG] Getting claims for access token for client: client
+2019-07-20 17:02:37.781 +04:00 [DBG] Getting claims for access token for subject: 12
+2019-07-20 17:02:37.964 +04:00 [DBG] Token request success.
+2019-07-20 17:02:48.220 +04:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-07-20 17:02:48.222 +04:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-07-20 17:02:48.222 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-07-20 17:02:48.238 +04:00 [DBG] Start discovery request
+2019-07-20 17:02:48.486 +04:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2019-07-20 17:02:48.486 +04:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2019-07-20 17:02:48.487 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-07-20 17:02:48.494 +04:00 [DBG] Start key discovery request
+2019-07-20 17:05:11.834 +04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-07-20 17:05:12.013 +04:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2019-07-20 17:05:12.018 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2019-07-20 17:05:12.018 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2019-07-20 17:05:12.018 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2019-07-20 17:05:12.019 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2019-07-20 17:05:12.019 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2019-07-20 17:05:13.567 +04:00 [DBG] Login Url: /Account/Login
+2019-07-20 17:05:13.575 +04:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-07-20 17:05:13.575 +04:00 [DBG] Logout Url: /Account/Logout
+2019-07-20 17:05:13.575 +04:00 [DBG] ConsentUrl Url: /consent
+2019-07-20 17:05:13.575 +04:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-07-20 17:05:13.575 +04:00 [DBG] Error Url: /home/error
+2019-07-20 17:05:13.575 +04:00 [DBG] Error Id Parameter: errorId
+2019-07-20 17:05:48.951 +04:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-07-20 17:05:49.548 +04:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-07-20 17:05:49.548 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-07-20 17:05:49.569 +04:00 [DBG] Start token request.
+2019-07-20 17:05:49.582 +04:00 [DBG] Start client validation
+2019-07-20 17:05:49.594 +04:00 [DBG] Start parsing Basic Authentication secret
+2019-07-20 17:05:49.602 +04:00 [DBG] Start parsing for secret in post body
+2019-07-20 17:05:49.632 +04:00 [DBG] Parser found secret: PostBodySecretParser
+2019-07-20 17:05:49.632 +04:00 [DBG] Secret id found: client
+2019-07-20 17:05:49.647 +04:00 [DBG] client configuration validation for client client succeeded.
+2019-07-20 17:05:49.658 +04:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-07-20 17:05:49.658 +04:00 [DBG] Client validation success
+2019-07-20 17:05:49.671 +04:00 [DBG] Start token request validation
+2019-07-20 17:05:49.692 +04:00 [DBG] Start resource owner password token request validation
+2019-07-20 17:05:50.621 +04:00 [DBG] Resource owner password token request validation success.
+2019-07-20 17:05:50.646 +04:00 [INF] Token request validation success
+{"ClientId":"client","ClientName":null,"GrantType":"password","Scopes":"BookService","AuthorizationCode":null,"RefreshToken":null,"UserName":"serob","AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"password","client_id":"client","scope":"BookService","client_secret":"***REDACTED***","username":"serob","password":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-07-20 17:05:50.717 +04:00 [DBG] Getting claims for access token for client: client
+2019-07-20 17:05:50.719 +04:00 [DBG] Getting claims for access token for subject: 12
+2019-07-20 17:05:50.978 +04:00 [DBG] Token request success.
+2019-07-20 17:05:55.115 +04:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-07-20 17:05:55.117 +04:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-07-20 17:05:55.117 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-07-20 17:05:55.123 +04:00 [DBG] Start discovery request
+2019-07-20 17:05:55.605 +04:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2019-07-20 17:05:55.606 +04:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2019-07-20 17:05:55.607 +04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-07-20 17:05:55.615 +04:00 [DBG] Start key discovery request

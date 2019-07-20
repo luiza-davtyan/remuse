@@ -62,6 +62,7 @@ namespace BookService.Controllers
         /// <param name="book"></param>
         /// <returns></returns>
         [HttpPost]
+        [Authorize]
         public ActionResult<Book> Create(Book book)
         {
             _bookRepository.Create(book);
@@ -76,7 +77,7 @@ namespace BookService.Controllers
         /// <param name="bookIn"></param>
         /// <returns></returns>
         [HttpPut("{id:length(24)}")]
-        //[Authorize]
+        [Authorize]
         public IActionResult Update(string id, Book bookIn)
         {
             var book = _bookRepository.Get(id);
@@ -97,7 +98,7 @@ namespace BookService.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpDelete("{id:length(24)}")]
-       // [Authorize]
+        [Authorize]
         public IActionResult Delete(string id)
         {
             var book = _bookRepository.Get(id);

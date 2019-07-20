@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using UserService.Models;
@@ -130,6 +131,7 @@ namespace UserService.Controllers
         /// <returns></returns>
         // DELETE api/values/5
         [HttpDelete("{id}")]
+        [Authorize]
         public IActionResult Delete(int id)
         {
             var user = this.userRepository.GetUserByID(id);
@@ -148,6 +150,7 @@ namespace UserService.Controllers
         /// <param name="user"></param>
         /// <returns></returns>
         [HttpPut("{id}")]
+        [Authorize]
         public IActionResult Update(User user)
         {
             var updateUser = this.userRepository.GetUserByID(user.Id);
@@ -168,6 +171,7 @@ namespace UserService.Controllers
         /// <param name="userId"></param>
         /// <returns></returns>
         [HttpPut("id")]
+        [Authorize]
         public IActionResult ChangePhoto(byte[] pic, int userId)
         {
             var user = this.userRepository.GetUserByID(userId);

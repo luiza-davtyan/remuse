@@ -46,7 +46,7 @@ namespace BookService
             services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
                     .AddIdentityServerAuthentication(options =>
                     {
-                        options.Authority = "http://localhost:5000";
+                        options.Authority = "http://localhost:53084";
                         options.RequireHttpsMetadata = false;
 
                         options.ApiName = "BookService";
