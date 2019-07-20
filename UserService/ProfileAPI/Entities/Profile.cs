@@ -19,7 +19,6 @@ namespace ProfileAPI.Entities
         {
             this.BookId = bookId;
             this.UserId = userId;
-        }
-    
+        } 
     }
 }

@@ -79,7 +79,7 @@ namespace Remuse.Activities
             RegisterReceiver(_logOutBroadcastReceiver, intentFilter);
         }
 
-        /// <summary>
+        /// <summary>..
         /// Event,when user clicks ADD button.
         /// </summary>
         /// <param name="sender"></param>

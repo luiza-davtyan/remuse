@@ -40,6 +40,7 @@ namespace Remuse.Activities
             mLeftDrawer.SetBackgroundColor(Color.White);
 
             mLeftItems.Add("Home");
+            mLeftItems.Add("My account");
             mLeftItems.Add("Network");
             mLeftItems.Add("Settings");
             mLeftItems.Add("Log out");
@@ -87,12 +88,16 @@ namespace Remuse.Activities
                     StartActivity(intent);
                     break;
                 case 1:
-                    Toast.MakeText(this, mLeftItems[e.Position], ToastLength.Long).Show();
+                    Intent intent2 = new Intent(this, typeof(UserPage));
+                    StartActivity(intent2);
                     break;
                 case 2:
                     Toast.MakeText(this, mLeftItems[e.Position], ToastLength.Long).Show();
                     break;
                 case 3:
+                    Toast.MakeText(this, mLeftItems[e.Position], ToastLength.Long).Show();
+                    break;
+                case 4:
                     UserInfo.User = null;
                     UserInfo.Token = null;
                     UserInfo.BookId = null;
