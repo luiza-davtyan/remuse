@@ -85,14 +85,12 @@ namespace Remuse.Activities
             switch (position)
             {
                 case 0:
-                    Intent intent = new Intent(this, type);
-                    StartActivity(intent);
                     break;
                 case 1:
                     Toast.MakeText(this, mLeftItems[e.Position], ToastLength.Long).Show();
-                    break;
+                    return;
                 case 2:
-                    Toast.MakeText(this, mLeftItems[e.Position], ToastLength.Long).Show();
+                    type = typeof(SettingsPage);
                     break;
                 case 3:
                     UserInfo.User = null;
@@ -101,10 +99,11 @@ namespace Remuse.Activities
                     var broadcastIntent = new Intent();
                     broadcastIntent.SetAction("com.mypackagename.ActionLogOut");
                     SendBroadcast(broadcastIntent);
-                    Intent intent1 = new Intent(this, typeof(StartGeneral));
-                    StartActivity(intent1);
+                    type = typeof(StartGeneral);
                     break;
             }
+            Intent intent = new Intent(this, type);
+            StartActivity(intent);
         }
 
         /// <summary>

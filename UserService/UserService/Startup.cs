@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -32,6 +33,16 @@ namespace UserService
 
             // Register the Swagger services
             services.AddSwaggerDocument();
+
+            services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
+                    .AddIdentityServerAuthentication(options =>
+                    {
+                        options.Authority = "http://localhost:53084";
+                        options.RequireHttpsMetadata = false;
+
+                        options.ApiName = "UserService";
+                    }
+                );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +57,8 @@ namespace UserService
             app.UseOpenApi();
             app.UseSwaggerUi3();
 
+            app.UseAuthentication();
+            app.UseStatusCodePages();
             app.UseMvc();
         }
     }

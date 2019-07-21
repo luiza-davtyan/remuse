@@ -19,7 +19,7 @@ namespace Remuse.Activities
     public class UserPage : Activity
     {
         ImageView userimage;
-        TextView firstname, lastname, username;
+        TextView firstname, lastname, username,email;
         Button books;
         List<Book> usersBooks = new List<Book>();
         List<string> mLeftItems = new List<string>();
@@ -92,7 +92,8 @@ namespace Remuse.Activities
                     Toast.MakeText(this, mLeftItems[e.Position], ToastLength.Long).Show();
                     break;
                 case 2:
-                    Toast.MakeText(this, mLeftItems[e.Position], ToastLength.Long).Show();
+                    Intent intent1 = new Intent(this, typeof(SettingsPage));
+                    StartActivity(intent1);
                     break;
                 case 3:
                     UserInfo.User = null;
@@ -101,8 +102,8 @@ namespace Remuse.Activities
                     var broadcastIntent = new Intent();
                     broadcastIntent.SetAction("com.mypackagename.ActionLogOut");
                     SendBroadcast(broadcastIntent);
-                    Intent intent1 = new Intent(this, typeof(StartGeneral));
-                    StartActivity(intent1);
+                    Intent intent3 = new Intent(this, typeof(StartGeneral));
+                    StartActivity(intent3);
                     break;
             }
         }

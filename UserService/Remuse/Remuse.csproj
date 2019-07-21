@@ -81,6 +81,7 @@
     <Compile Include="Activities\BookSearchResult.cs" />
     <Compile Include="Activities\General.cs" />
     <Compile Include="Activities\OneBookInfo.cs" />
+    <Compile Include="Activities\SettingsPage.cs" />
     <Compile Include="Activities\UserBooks.cs" />
     <Compile Include="Activities\OneBookInfoForSearch.cs" />
     <Compile Include="Activities\StartGeneral.cs" />
@@ -201,6 +202,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\book_raedforguests.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\settings_page.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

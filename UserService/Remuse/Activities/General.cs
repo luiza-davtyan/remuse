@@ -133,7 +133,8 @@ namespace Remuse.Activities
                     Toast.MakeText(this, mLeftItems[e.Position], ToastLength.Long).Show();
                     break;
                 case 2:
-                    Toast.MakeText(this, mLeftItems[e.Position], ToastLength.Long).Show();
+                    Intent intent2 = new Intent(this, typeof(SettingsPage));
+                    StartActivity(intent2);
                     break;
                 case 3:
                     UserInfo.User = null;

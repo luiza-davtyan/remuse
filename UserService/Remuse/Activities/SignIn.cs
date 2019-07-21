@@ -146,7 +146,7 @@ namespace Remuse
                         new KeyValuePair<string, string>("grant_type", "password"),
                         new KeyValuePair<string, string>("client_id", clientId),
                         new KeyValuePair<string, string>("scope", "BookService"),
-                        new KeyValuePair<string, string>("scope","UserService"),
+                        new KeyValuePair<string, string>("scope", "UserService"),
                         new KeyValuePair<string, string>("client_secret", clientSecret),
                         new KeyValuePair<string, string>("username", username),
                         new KeyValuePair<string, string>("password", GetHashSha256(password))

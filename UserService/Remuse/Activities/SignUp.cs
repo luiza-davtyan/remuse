@@ -20,7 +20,7 @@ namespace Remuse
         Button confirm;
         EditText name, lastname, email, username, password;
         User RegUser;
-        User forException;
+        
         
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -59,7 +59,6 @@ namespace Remuse
             RegUser.Email = email.Text.ToString();
             RegUser.Username = username.Text.ToString();
             RegUser.Password = password.Text.ToString();
-            //RegUser.DateOfBirth = Convert.ToDateTime(birthday.Text);
 
             //switch if the user exists in database ,if no do this
             var service = new UserClient(new System.Net.Http.HttpClient());

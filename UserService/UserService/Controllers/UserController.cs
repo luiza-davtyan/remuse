@@ -150,7 +150,7 @@ namespace UserService.Controllers
         /// <param name="user"></param>
         /// <returns></returns>
         [HttpPut("{id}")]
-        [Authorize]
+       // [Authorize]
         public IActionResult Update(User user)
         {
             var updateUser = this.userRepository.GetUserByID(user.Id);
@@ -170,9 +170,9 @@ namespace UserService.Controllers
         /// <param name="pic"></param>
         /// <param name="userId"></param>
         /// <returns></returns>
-        [HttpPut("id")]
+        [HttpPut("photo/{userId}")]
         [Authorize]
-        public IActionResult ChangePhoto(byte[] pic, int userId)
+        public IActionResult ChangePhoto([FromBody]byte[] pic, int userId)
         {
             var user = this.userRepository.GetUserByID(userId);
             if (user == null)
