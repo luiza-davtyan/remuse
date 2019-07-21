@@ -310,6 +310,25 @@ namespace MyNamespace
                 throw new Exception();
             }
         }
+
+        /// <summary>
+        /// Delete user async
+        /// </summary>
+        /// <param name="id"></param>
+        public async Task DeleteUserByIdAsync(int id)
+        {
+            HttpClient client = new HttpClient();
+            try
+            {
+                HttpResponseMessage response = await client.DeleteAsync(HttpUri.UserUri + "api/user/" + id.ToString());
+                response.EnsureSuccessStatusCode();
+                var responseBody = await response.Content.ReadAsStringAsync();
+            }
+            catch (HttpRequestException e)
+            {
+                throw new Exception();
+            }
+        }
         public System.Threading.Tasks.Task<FileResponse> DeleteAsync(int id)
         {
             return DeleteAsync(id, System.Threading.CancellationToken.None);

@@ -139,7 +139,7 @@ namespace Remuse.Activities
                 case 3:
                     UserInfo.User = null;
                     UserInfo.Token = null;
-                    UserInfo.BookId = null;
+                    UserInfo.BookId = new List<string>();
                     var broadcastIntent = new Intent();
                     broadcastIntent.SetAction("com.mypackagename.ActionLogOut");
                     SendBroadcast(broadcastIntent);

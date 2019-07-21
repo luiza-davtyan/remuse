@@ -23,16 +23,19 @@ namespace Remuse.Activities
     [Activity(Label = "SettingsPage")]
     public class SettingsPage : Activity
     {
-        Button confirm;
+        Button confirm, delete;
         ImageButton changeImage;
         EditText editName, editlastName, editEmail, editUsername, editPassword;
         List<string> mLeftItems = new List<string>();
+        int id = UserInfo.User.Id;
+        LogOutBroadcastReceiver _logOutBroadcastReceiver = new LogOutBroadcastReceiver();
+        PopupMenu menu;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.settings_page);
-
+            
             editName = FindViewById<EditText>(Resource.Id.textInputEditText1);
             editlastName = FindViewById<EditText>(Resource.Id.textInputEditText2);
             editEmail = FindViewById<EditText>(Resource.Id.editText2);
@@ -40,6 +43,7 @@ namespace Remuse.Activities
             editPassword = FindViewById<EditText>(Resource.Id.editText1);
             changeImage = FindViewById<ImageButton>(Resource.Id.imageButton1);
             confirm = FindViewById<Button>(Resource.Id.button1);
+            delete = FindViewById<Button>(Resource.Id.button2);
 
             editName.Text = UserInfo.User.Name;
             editlastName.Text = UserInfo.User.Surname;
@@ -68,6 +72,56 @@ namespace Remuse.Activities
 
             changeImage.Click += ChangeImage_Click;
             confirm.Click += Confirm_Click;
+            delete.Click += Delete_Click;
+
+            //this block used for clearing data when user log out
+            var intentFilter = new IntentFilter();
+            intentFilter.AddAction("com.mypackagename.ActionLogOut");
+            RegisterReceiver(_logOutBroadcastReceiver, intentFilter);
+        }
+
+        /// <summary>
+        /// Whene user clicks delete button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            menu = new PopupMenu(this, delete);
+            menu.Inflate(Resource.Menu.popup_menu);
+
+            menu.MenuItemClick += Menu_MenuItemClick;
+
+            menu.Show();         
+        }
+
+        /// <summary>
+        /// Confirm,to delete
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void Menu_MenuItemClick(object sender, PopupMenu.MenuItemClickEventArgs e)
+        {
+            if (GetHashSha256(editPassword.Text) == UserInfo.User.Password)
+            {
+                if (e.Item.TitleFormatted.ToString() == "Confirm")
+                {
+                    var server = new UserClient(new HttpClient());
+                    await server.DeleteUserByIdAsync(id);
+                    UserInfo.User = null;
+                    UserInfo.BookId = new List<string>();
+                    UserInfo.Token = null;
+                    var broadcastIntent = new Intent();
+                    broadcastIntent.SetAction("com.mypackagename.ActionLogOut");
+                    SendBroadcast(broadcastIntent);
+                    Intent intent1 = new Intent(this, typeof(StartGeneral));
+                    StartActivity(intent1);
+                }
+                else
+                {
+                    return;
+                }
+            }
         }
 
         /// <summary>
@@ -101,8 +155,7 @@ namespace Remuse.Activities
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private async void Confirm_Click(object sender, EventArgs e)
-        {
-            int id = UserInfo.User.Id;
+        {           
             string response;
             if (GetHashSha256(editPassword.Text) == UserInfo.User.Password)
             {
@@ -159,6 +212,15 @@ namespace Remuse.Activities
                 hashString += String.Format("{0:x2}", x);
             }
             return hashString;
+        }
+
+        /// <summary>
+        /// Destroys activiy
+        /// </summary>
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+            UnregisterReceiver(_logOutBroadcastReceiver);
         }
     }
 }

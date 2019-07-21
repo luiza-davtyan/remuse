@@ -8,15 +8,15 @@
 	android:orientation="vertical"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
-	<TextView
-		android:text="                             Edit profile"
-		android:layout_width="match_parent"
-		android:layout_height="30.0dp"
-		android:minWidth="25px"
-		android:minHeight="25px"
-		android:id="@+id/textView1"
-		android:textSize="20dp"
-		android:textColor="@android:color/background_dark" />
+		<TextView
+			android:text="                             Edit profile"
+			android:layout_width="match_parent"
+			android:layout_height="32.5dp"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:id="@+id/textView1"
+			android:textSize="20dp"
+			android:textColor="@android:color/background_dark" />
 	<android.support.v7.widget.ButtonBarLayout
 		android:minWidth="25px"
 		android:minHeight="25px"
@@ -75,13 +75,20 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/editText1" />
-	<Button
-		android:text="Confirm"
-		android:layout_width="130.5dp"
-		android:layout_height="53.0dp"
-		android:id="@+id/button1"
-		android:layout_marginTop="0.5dp"
-		android:layout_marginLeft="127.5dp" /> 
+		<Button
+			android:text="Confirm"
+			android:layout_width="215.0dp"
+			android:layout_height="47.5dp"
+			android:id="@+id/button1"
+			android:layout_marginTop="18.0dp"
+			android:layout_marginLeft="84.5dp" />
+		<Button
+			android:text="Delete account"
+			android:layout_width="160.0dp"
+			android:layout_height="41.5dp"
+			android:id="@+id/button2"
+			android:layout_marginLeft="114.5dp"
+			android:textColor="#ffd50000" /> 
 </LinearLayout>
     <ListView  
         android:id="@+id/leftsideview"  

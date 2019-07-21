@@ -2630,6 +2630,9 @@ namespace Remuse
 			// aapt resource value: 0x7f080059
 			public const int italic = 2131230809;
 			
+			// aapt resource value: 0x7f0800e3
+			public const int item1 = 2131230947;
+			
 			// aapt resource value: 0x7f080000
 			public const int item_touch_helper_previous_elevation = 2131230720;
 			
@@ -3286,6 +3289,22 @@ namespace Remuse
 			}
 			
 			private Layout()
+			{
+			}
+		}
+		
+		public partial class Menu
+		{
+			
+			// aapt resource value: 0x7f0e0000
+			public const int popup_menu = 2131623936;
+			
+			static Menu()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Menu()
 			{
 			}
 		}

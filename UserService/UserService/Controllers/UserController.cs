@@ -131,7 +131,7 @@ namespace UserService.Controllers
         /// <returns></returns>
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        [Authorize]
+        //[Authorize]
         public IActionResult Delete(int id)
         {
             var user = this.userRepository.GetUserByID(id);
