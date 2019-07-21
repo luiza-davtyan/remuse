@@ -22,7 +22,7 @@ namespace Remuse
     public class SignIn : Activity
     {
         User userFromBase = new User();
-        TextView warning, check;
+        TextView warning;
         EditText username, password;
         Button signin;
         List<User> users = new List<User>();
@@ -37,7 +37,6 @@ namespace Remuse
             //Creating email's and password's fields
             username = FindViewById<EditText>(Resource.Id.editText1);
             password = FindViewById<EditText>(Resource.Id.textInputEditText1);
-            check = FindViewById<TextView>(Resource.Id.textView9);
             signin = FindViewById<Button>(Resource.Id.button1);
             signin.Click += Signin_Click;
         }
@@ -84,7 +83,6 @@ namespace Remuse
                 else
                 {
                     var handler = new JwtSecurityTokenHandler();
-                    check.Text = authServerToken.access_token;
                     UserInfo.Token = authServerToken;
 
                     userFromBase = await Get(username);

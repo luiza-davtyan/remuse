@@ -110,7 +110,15 @@ namespace Remuse.Activities
                 try
                 {
                     var server = new UserClient(new HttpClient());
-                    response = await server.UpdateUserAsync(updateUser);
+                    //var checkValidation = await server.GetUserByUsernameAsync(updateUser.Username);
+
+                    //if (checkValidation != null)
+                    //{
+                    //    Toast.MakeText(this, "That username or email is already busy", ToastLength.Long).Show();
+                    //    return;
+                    //}
+
+                    response = await server.UpdateUserAsync(updateUser,UserInfo.Token.access_token);
 
                     UserInfo.User = await server.GetUserByUsernameAsync(updateUser.Username);
                     Toast.MakeText(this, response, ToastLength.Long).Show();

@@ -150,11 +150,12 @@ namespace UserService.Controllers
         /// <param name="user"></param>
         /// <returns></returns>
         [HttpPut("{id}")]
-       // [Authorize]
+        //[Authorize]
         public IActionResult Update(User user)
         {
             var updateUser = this.userRepository.GetUserByID(user.Id);
-            if (updateUser == null)
+
+            if (updateUser == null) 
             {
                 return NotFound();
             }

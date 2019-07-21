@@ -54,10 +54,5 @@
 		android:layout_marginBottom="27.0dp"
 		android:layout_marginRight="80.5dp"
 		android:layout_marginLeft="80.0dp" />
-	<TextView
-		android:text="Token"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/textView9" />
 
 </LinearLayout>
