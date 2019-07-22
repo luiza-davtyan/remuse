@@ -16,7 +16,7 @@ namespace ProfileAPI.DataAccess
             //Database.Migrate();
         }
 
-        public DbSet<Profile> Profiles { get; set; }
+        public DbSet<Profile> Profile { get; set; }
         //public DbSet<Music> Music { get; set; }
     }
 }

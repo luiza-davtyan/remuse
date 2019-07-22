@@ -18,27 +18,27 @@ namespace ProfileAPI.Services
            
         public IEnumerable<String> GetUserBooks(int userId)
         { 
-            IEnumerable<String> p = (IEnumerable<String>)this.context.Profiles.Where(x => x.UserId == userId);
+            IEnumerable<String> p = (IEnumerable<String>)this.context.Profile.Where(x => x.UserId == userId);
             return p;
         }
 
         public Profile Create(Profile profile)
         {
-            this.context.Profiles.Add(profile);
+            this.context.Profile.Add(profile);
             this.context.SaveChanges();
             return profile;
         }
 
         public Profile Update(Profile profile)
         {
-            this.context.Profiles.Update(profile);
+            this.context.Profile.Update(profile);
             this.context.SaveChanges();
             return profile;
         }
 
         public void Delete (Profile profile)
         {
-            this.context.Profiles.Remove(profile);
+            this.context.Profile.Remove(profile);
             this.context.SaveChanges();
         }
 

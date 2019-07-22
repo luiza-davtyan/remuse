@@ -8305,3 +8305,17 @@ Error Number:207,State:1,Class:16
 2019-07-22 16:37:17.286 +04:00 [DBG] Getting claims for access token for client: client
 2019-07-22 16:37:17.286 +04:00 [DBG] Getting claims for access token for subject: 24
 2019-07-22 16:37:17.291 +04:00 [DBG] Token request success.
+2019-07-22 18:47:57.101 +04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-07-22 18:47:57.149 +04:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2019-07-22 18:47:57.152 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2019-07-22 18:47:57.152 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2019-07-22 18:47:57.152 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2019-07-22 18:47:57.152 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2019-07-22 18:47:57.153 +04:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2019-07-22 18:47:57.384 +04:00 [DBG] Login Url: /Account/Login
+2019-07-22 18:47:57.387 +04:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-07-22 18:47:57.387 +04:00 [DBG] Logout Url: /Account/Logout
+2019-07-22 18:47:57.387 +04:00 [DBG] ConsentUrl Url: /consent
+2019-07-22 18:47:57.387 +04:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-07-22 18:47:57.387 +04:00 [DBG] Error Url: /home/error
+2019-07-22 18:47:57.387 +04:00 [DBG] Error Id Parameter: errorId
