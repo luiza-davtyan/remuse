@@ -37,7 +37,7 @@ namespace UserService
             services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
                     .AddIdentityServerAuthentication(options =>
                     {
-                        options.Authority = "http://localhost:53084";
+                        options.Authority = "http://localhost:51651";
                         options.RequireHttpsMetadata = false;
 
                         options.ApiName = "UserService";
