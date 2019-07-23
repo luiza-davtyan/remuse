@@ -8,11 +8,11 @@ namespace ProfileAPI.Entities
 {
     public class Profile
     {
-        [Required]
+        //[Required]
         public int ID { get; set; }
-        [Required]
+       // [Required]
         public int UserId { get; set; }
-        [Required]
+        //[Required]
         public string BookId { get; set; }
 
         public Profile(int userId , string bookId)

@@ -29,6 +29,12 @@ UserID 		INT			FOREIGN KEY REFERENCES Users(ID),
 RoleID		INT			FOREIGN KEY REFERENCES Roles(ID)
 )
 
+create Table Profile
+(
+ID			INT					PRIMARY KEY IDENTITY(1, 1),
+UserID 		INT					FOREIGN KEY REFERENCES Users(ID),
+BookID		NVARCHAR(150)			NOT NULL UNIQUE
+)
 
 select *
 from Users

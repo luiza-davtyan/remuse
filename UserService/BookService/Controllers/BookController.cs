@@ -62,7 +62,7 @@ namespace BookService.Controllers
         /// <param name="book"></param>
         /// <returns></returns>
         [HttpPost]
-        [Authorize]
+        //[Authorize]
         public ActionResult<Book> Create(Book book)
         {
             _bookRepository.Create(book);

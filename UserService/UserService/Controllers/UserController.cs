@@ -52,8 +52,6 @@ namespace UserService.Controllers
         [HttpGet]
         public IActionResult GetUserById(int id)
         {
-            //return Ok(users.First());
-
             var userById = this.userRepository.GetUserByID(id);
             if (userById == null)
             {

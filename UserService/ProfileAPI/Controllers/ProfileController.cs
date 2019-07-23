@@ -16,8 +16,8 @@ namespace ProfileAPI.Controllers
     public class ProfileController : ControllerBase
     {
         HttpClient httpClient = new HttpClient();
-
         private IProfileRepository profileRepository;
+        private string bookURI = "http://localhost:51654/api/book";
 
         public ProfileController(IProfileRepository profileRepository)
         {
@@ -25,27 +25,36 @@ namespace ProfileAPI.Controllers
         }
 
         // GET profile by id
+        //[Route]
         [HttpGet("{id}")]
-        public async Task<ActionResult<List<BookDTO>>> Get(int userId)
+        public async Task<ActionResult<List<BookDTO>>> Get(int id)
         {
             //var profiles = this.profileRepository.GetUserBooks(userId);
             var books = new List<BookDTO>();
-            IEnumerable<String> booksIds = (IEnumerable<String>) this.profileRepository.GetUserBooks(userId);
+            IEnumerable<String> booksIds = (IEnumerable<String>)this.profileRepository.GetUserBooks(id);
             foreach (var item in booksIds)
             {
-                var response = await httpClient.GetAsync("http://localhost:53085/api/book/" + item);
-                var book = JsonConvert.DeserializeObject<IEnumerable<BookDTO>>(await response.Content.ReadAsStringAsync());
-                books.Add((BookDTO)book);
+                //string str = "http://localhost:51654/api/book/5d36a917e878205980023817";
+                string str1 = $"{bookURI}/{item}";
+                // var response = await httpClient.GetAsync($"{bookURI}/{item}");
+                HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, str1);
+                //var book = JsonConvert.DeserializeObject<IEnumerable<BookDTO>>(await response.Content.ReadAsStringAsync());
+                var response = await httpClient.SendAsync(request);
+                var book = JsonConvert.DeserializeObject<BookDTO>(await response.Content.ReadAsStringAsync());
+                books.Add(book);
             }
 
-            return books;
+            return Ok(books);
         }
+
+
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] Profile profile)
+        public IActionResult Post([FromBody] Profile profile)
         {
-            this.profileRepository.Create(profile);
+            Profile currProfile = this.profileRepository.Create(profile);
+            return Ok(currProfile);
         }
 
         // PUT api/values/5
