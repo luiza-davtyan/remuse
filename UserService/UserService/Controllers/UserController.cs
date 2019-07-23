@@ -37,6 +37,7 @@ namespace UserService.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
+        //[Authorize]
         public IActionResult GetAllUsers()
         {
             var users = this.userRepository.GetUsers();

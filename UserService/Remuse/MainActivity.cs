@@ -33,6 +33,9 @@ namespace Remuse
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.startgeneral);
 
+            search = FindViewById<Button>(Resource.Id.button1);
+            
+
             #region menu
             DrawerLayout mDrawerLayout;
 
@@ -75,7 +78,7 @@ namespace Remuse
             textViews[7] = FindViewById<TextView>(Resource.Id.textView9);
             #endregion
 
-            search = FindViewById<Button>(Resource.Id.button1);
+
             userInput = FindViewById<AutoCompleteTextView>(Resource.Id.autoCompleteTextView1);
 
             //Udpating book wall
@@ -93,6 +96,10 @@ namespace Remuse
         /// <param name="e"></param>
         private async void Search_Click(object sender, EventArgs e)
         {
+            if(userInput.Text == "")
+            {
+                return;
+            }
             string bookName = userInput.Text;
             await GetBookAsync(bookName);
 

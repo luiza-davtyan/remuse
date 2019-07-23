@@ -33,7 +33,6 @@ namespace Remuse.Activities
             scrollView = FindViewById<ScrollView>(Resource.Id.scrollView1);
 
             reading.Text = book.Content;
-
             #region menu
             DrawerLayout mDrawerLayout;
 

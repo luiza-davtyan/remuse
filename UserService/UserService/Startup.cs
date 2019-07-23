@@ -31,8 +31,7 @@ namespace UserService
             services.AddDbContext<UserConnection>(c => c.UseSqlServer(Configuration.GetConnectionString("UserDBConnectionString")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            // Register the Swagger services
-            services.AddSwaggerDocument();
+
 
             services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
                     .AddIdentityServerAuthentication(options =>
@@ -43,6 +42,9 @@ namespace UserService
                         options.ApiName = "UserService";
                     }
                 );
+
+            // Register the Swagger services
+            services.AddSwaggerDocument();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

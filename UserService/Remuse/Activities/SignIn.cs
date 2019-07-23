@@ -37,6 +37,7 @@ namespace Remuse
             //Creating email's and password's fields
             username = FindViewById<EditText>(Resource.Id.editText1);
             password = FindViewById<EditText>(Resource.Id.textInputEditText1);
+            warning = FindViewById<TextView>(Resource.Id.textView8);
             signin = FindViewById<Button>(Resource.Id.button1);
             signin.Click += Signin_Click;
         }
@@ -48,10 +49,11 @@ namespace Remuse
         /// <param name="e"></param>
         private async void Signin_Click(object sender, EventArgs e)
         {
+
             usernameString = username.Text;
             passwordString = password.Text;
 
-            warning = FindViewById<TextView>(Resource.Id.textView8);
+            warning.Text = "";
             if (username.Text == "")
             {
                 warning.Text = "Please,enter username";
