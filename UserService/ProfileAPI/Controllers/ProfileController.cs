@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Models;
 using Newtonsoft.Json;
@@ -16,50 +17,57 @@ namespace ProfileAPI.Controllers
     public class ProfileController : ControllerBase
     {
         HttpClient httpClient = new HttpClient();
-
         private IProfileRepository profileRepository;
+        private string bookURI = "http://localhost:53085/api/book";
 
         public ProfileController(IProfileRepository profileRepository)
         {
             this.profileRepository = profileRepository;
         }
 
-        // GET profile by id
+        /// <summary>
+        /// Get user books by userId
+        /// </summary>
+        /// <param name="UserId"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
-        public async Task<ActionResult<List<BookDTO>>> Get(int userId)
+        //[Authorize]
+        public async Task<ActionResult<List<BookDTO>>> Get(int id)
         {
-            //var profiles = this.profileRepository.GetUserBooks(userId);
             var books = new List<BookDTO>();
-            IEnumerable<String> booksIds = (IEnumerable<String>) this.profileRepository.GetUserBooks(userId);
+            IEnumerable<String> booksIds = (IEnumerable<String>)this.profileRepository.GetUserBooks(id);
             foreach (var item in booksIds)
             {
-                var response = await httpClient.GetAsync("http://localhost:53085/api/book/" + item);
-                var book = JsonConvert.DeserializeObject<IEnumerable<BookDTO>>(await response.Content.ReadAsStringAsync());
-                books.Add((BookDTO)book);
+                HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, $"{bookURI}/{item}");
+                var response = await httpClient.SendAsync(request);
+                var book = JsonConvert.DeserializeObject<BookDTO>(await response.Content.ReadAsStringAsync());
+                books.Add(book);
             }
-
-            return books;
+            return Ok(books);
         }
 
-        // POST api/values
+        //Add profile
         [HttpPost]
-        public void Post([FromBody] Profile profile)
+        public IActionResult Post([FromBody] Profile profile)
         {
-            this.profileRepository.Create(profile);
+            Profile currProfile = this.profileRepository.Create(profile);
+            return Ok(currProfile);
         }
 
-        // PUT api/values/5
+        //PUT profile
         [HttpPut]
-        public void Put([FromBody] Profile profile)
+        public IActionResult Put([FromBody] Profile profile)
         {
             this.profileRepository.Update(profile);
+            return Ok(profile);
         }
 
-        // DELETE api/values/5
+        //DELETE profile
         [HttpDelete]
-        public void Delete(Profile profile)
+        public IActionResult Delete(Profile profile)
         {
             this.profileRepository.Delete(profile);
+            return Ok();
         }
     }
 }

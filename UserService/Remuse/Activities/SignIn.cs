@@ -48,10 +48,13 @@ namespace Remuse
         /// <param name="e"></param>
         private async void Signin_Click(object sender, EventArgs e)
         {
+            warning = FindViewById<TextView>(Resource.Id.textView8);
+            warning.Text = "";
+
             usernameString = username.Text;
             passwordString = password.Text;
 
-            warning = FindViewById<TextView>(Resource.Id.textView8);
+            
             if (username.Text == "")
             {
                 warning.Text = "Please,enter username";
@@ -87,6 +90,8 @@ namespace Remuse
 
                     userFromBase = await Get(username);
                     UserInfo.User = userFromBase;
+                    UserInfo.Books = await GetUserBooksByUserIdAsync(UserInfo.User.Id);
+
                     Intent intent = new Intent(this, typeof(General));
                     intent.PutExtra("user", JsonConvert.SerializeObject(userFromBase));
                     StartActivity(intent);
@@ -196,6 +201,28 @@ namespace Remuse
                 hashString += String.Format("{0:x2}", x);
             }
             return hashString;
+        }
+
+        /// <summary>
+        /// To get user from base
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task<List<Book>> GetUserBooksByUserIdAsync(int id)
+        {
+            HttpClient client = new HttpClient();
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync(HttpUri.ProfileApiUri + "api/profile/" + id);
+                response.EnsureSuccessStatusCode();
+                var responseBody = await response.Content.ReadAsStringAsync();
+                List<Book> books = JsonConvert.DeserializeObject<List<Book>>(responseBody.ToString());
+                return books;
+            }
+            catch
+            {
+                throw new Exception();
+            }
         }
     }
 }

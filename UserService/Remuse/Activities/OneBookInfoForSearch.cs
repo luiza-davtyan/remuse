@@ -4,10 +4,12 @@ using Android.Graphics;
 using Android.OS;
 using Android.Support.V4.Widget;
 using Android.Widget;
+using ProfileNameSpaceOurClient;
 using Newtonsoft.Json;
 using Remuse.Models;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace Remuse.Activities
@@ -30,6 +32,7 @@ namespace Remuse.Activities
             selectedBook = JsonConvert.DeserializeObject<Book>(Intent.GetStringExtra("book"));
 
             //Creating TextViews on the page
+            #region Textviews and buttons
             enteredbook = FindViewById<TextView>(Resource.Id.textView1);
             author = FindViewById<TextView>(Resource.Id.textView2);
             genre = FindViewById<TextView>(Resource.Id.textView3);
@@ -38,7 +41,7 @@ namespace Remuse.Activities
             description = FindViewById<TextView>(Resource.Id.textView6);
             read = FindViewById<Button>(Resource.Id.button1);
             add = FindViewById<Button>(Resource.Id.button2);
-
+            #endregion
 
             //Giving info to TextViews
             enteredbook.Text = selectedBook.Title;
@@ -84,7 +87,7 @@ namespace Remuse.Activities
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Add_Click(object sender, EventArgs e)
+        private async void Add_Click(object sender, EventArgs e)
         {
             if(UserInfo.Token == null)
             {
@@ -92,13 +95,29 @@ namespace Remuse.Activities
                 return;
             }
             string bookId = selectedBook.Id;
-            if (UserInfo.BookId.Count == 0)
+            ProfileNameSpaceOurClient.Profile profile = new ProfileNameSpaceOurClient.Profile();
+
+            profile.UserId = UserInfo.User.Id;
+            profile.BookId = selectedBook.Id;
+            Models.Profile profile1 = new Models.Profile(profile.Id, profile.BookId);
+
+            if (UserInfo.Books.Count == 0)
             {
-                UserInfo.BookId.Add(bookId);
+                var server = new ProfileClient(new HttpClient());
+                await server.PostAsync(profile);
+                UserInfo.profiles.Add(profile1);
+                UserInfo.BookId.Add(selectedBook.Id);
+
                 Toast.MakeText(this, "The book was added to your list", ToastLength.Long).Show();
             }
             else
             {
+                for (int i = 0; i < UserInfo.Books.Count; i++)
+                {
+                    UserInfo.BookId.Add(UserInfo.Books[i].Id);
+                }
+
+
                 foreach (var item in UserInfo.BookId)
                 {
                     if (item == bookId)
@@ -107,7 +126,11 @@ namespace Remuse.Activities
                         return;
                     }
                 }
-                UserInfo.BookId.Add(bookId);
+
+                var server = new ProfileClient(new HttpClient());
+                await server.PostAsync(profile);
+                UserInfo.BookId.Add(selectedBook.Id);
+                UserInfo.Books.Add(selectedBook);
                 Toast.MakeText(this, "The book was added to your list", ToastLength.Short).Show();
             }
         }
@@ -186,6 +209,11 @@ namespace Remuse.Activities
             UnregisterReceiver(_logOutBroadcastReceiver);
         }
 
+        /// <summary>
+        /// Gets author by Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         async Task<Author> GetAuthorByIdAsync(string id)
         {
             var server = new AuthorClient(new System.Net.Http.HttpClient());

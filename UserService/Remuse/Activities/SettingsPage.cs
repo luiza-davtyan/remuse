@@ -1,22 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.Graphics;
 using Android.OS;
-using Android.Runtime;
 using Android.Support.V4.Widget;
-using Android.Views;
 using Android.Widget;
 using MyNamespace;
-using Newtonsoft.Json;
 using Remuse.Models;
+using System;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Remuse.Activities
 {
@@ -35,7 +29,7 @@ namespace Remuse.Activities
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.settings_page);
-            
+
             editName = FindViewById<EditText>(Resource.Id.textInputEditText1);
             editlastName = FindViewById<EditText>(Resource.Id.textInputEditText2);
             editEmail = FindViewById<EditText>(Resource.Id.editText2);
@@ -92,7 +86,7 @@ namespace Remuse.Activities
 
             menu.MenuItemClick += Menu_MenuItemClick;
 
-            menu.Show();         
+            menu.Show();
         }
 
         /// <summary>
@@ -155,7 +149,7 @@ namespace Remuse.Activities
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private async void Confirm_Click(object sender, EventArgs e)
-        {           
+        {
             string response;
             if (GetHashSha256(editPassword.Text) == UserInfo.User.Password)
             {
@@ -171,7 +165,7 @@ namespace Remuse.Activities
                     //    return;
                     //}
 
-                    response = await server.UpdateUserAsync(updateUser,UserInfo.Token.access_token);
+                    response = await server.UpdateUserAsync(updateUser, UserInfo.Token.access_token);
 
                     UserInfo.User = await server.GetUserByUsernameAsync(updateUser.Username);
                     Toast.MakeText(this, response, ToastLength.Long).Show();
@@ -194,7 +188,7 @@ namespace Remuse.Activities
         /// <param name="e"></param>
         private void ChangeImage_Click(object sender, EventArgs e)
         {
-            
+
         }
         /// <summary>
         /// SHA256 Hash of your string.

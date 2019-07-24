@@ -4,16 +4,13 @@ using Android.Graphics;
 using Android.OS;
 using Android.Support.V4.Widget;
 using Android.Widget;
+using MyNamespace;
 using Newtonsoft.Json;
+using Remuse.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
-using MyNamespace;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using Remuse.Models;
 
 namespace Remuse.Activities
 {

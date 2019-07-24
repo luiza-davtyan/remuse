@@ -17,6 +17,8 @@ namespace Remuse.Models
     {
         public static User User { get; set; }
         public static List<string> BookId = new List<string>();
+        public static List<Book> Books = new List<Book>();
         public static AuthServerResponse Token { get; set; }
+        public static List<Profile> profiles = new List<Profile>();
     }
 }

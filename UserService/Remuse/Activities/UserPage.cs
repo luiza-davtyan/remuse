@@ -113,24 +113,41 @@ namespace Remuse.Activities
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void Books_Click(object sender, EventArgs e)
-        {
+        private  void Books_Click(object sender, EventArgs e)
+        {          
             var service = new BookClient(new System.Net.Http.HttpClient());
 
-            if (UserInfo.BookId.Count == 0)
+            if (UserInfo.Books.Count == 0)
             {
                 Toast.MakeText(this, "Your book's list is empty", ToastLength.Long).Show();
             }
             else
             {
-                foreach (var item in UserInfo.BookId)
-                {
-                    usersBooks.Add(await service.GetAsync(item));
-                }
-
                 Intent intent = new Intent(this, typeof(UserBooks));
-                intent.PutExtra("books", JsonConvert.SerializeObject(usersBooks));
+                intent.PutExtra("books", JsonConvert.SerializeObject(UserInfo.Books));
                 StartActivity(intent);
+            }
+        }
+
+        /// <summary>
+        /// To get user from base
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task<List<Book>> GetUserBooksByUserIdAsync(int id)
+        {
+            HttpClient client = new HttpClient();
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync(HttpUri.ProfileApiUri + "api/profile/" + id);
+                response.EnsureSuccessStatusCode();
+                var responseBody = await response.Content.ReadAsStringAsync();
+                List<Book> books = JsonConvert.DeserializeObject<List<Book>>(responseBody.ToString());
+                return books;
+            }
+            catch
+            {
+                throw new Exception();
             }
         }
 
@@ -159,7 +176,7 @@ namespace Remuse.Activities
                 List<Book> book = JsonConvert.DeserializeObject<List<Book>>(responseBody.ToString());
                 return book;
             }
-            catch (HttpRequestException e)
+            catch
             {
                 throw new Exception();
             }

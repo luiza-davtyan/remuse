@@ -23,6 +23,5 @@ namespace Remuse.Models
             this.BookId = bookId;
             this.UserId = userId;
         }
-
     }
 }

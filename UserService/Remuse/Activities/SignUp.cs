@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 using MyNamespace;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Remuse
 {
@@ -20,8 +15,8 @@ namespace Remuse
         Button confirm;
         EditText name, lastname, email, username, password;
         User RegUser;
-        
-        
+
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -45,13 +40,13 @@ namespace Remuse
         /// <param name="e"></param>
         private async void Confirm_Click(object sender, EventArgs e)
         {
-            var namefail = FindViewById<TextView>(Resource.Id.textView8);        
+            var namefail = FindViewById<TextView>(Resource.Id.textView8);
             var lastnamefail = FindViewById<TextView>(Resource.Id.textView9);
             var emailfail = FindViewById<TextView>(Resource.Id.textView10);
             var usernamefail = FindViewById<TextView>(Resource.Id.textView11);
             var passwordfail = FindViewById<TextView>(Resource.Id.textView12);
             var messageFromDB = FindViewById<TextView>(Resource.Id.textView13);
-            
+
             RegUser = new User();
 
             RegUser.Name = name.Text.ToString();
@@ -63,17 +58,17 @@ namespace Remuse
             //switch if the user exists in database ,if no do this
             var service = new UserClient(new System.Net.Http.HttpClient());
             var result = await service.AddUserAsync(RegUser);
-            
+
 
             #region validation
-            List<EditText> inputs = new List<EditText>() { name, lastname, email, username, password};
+            List<EditText> inputs = new List<EditText>() { name, lastname, email, username, password };
             TextView[] outs = new TextView[] { namefail, lastnamefail, emailfail, usernamefail, passwordfail };
 
             for (int i = 0; i < 5; i++)
             {
                 SwitchTextValid(inputs[i], ref outs[i]);
             }
-            if (namefail.Text == "" && lastnamefail.Text == "" && emailfail.Text == "" && usernamefail.Text == "" && passwordfail.Text == ""&& result.Name != "There alread exists user with that username or email")
+            if (namefail.Text == "" && lastnamefail.Text == "" && emailfail.Text == "" && usernamefail.Text == "" && passwordfail.Text == "" && result.Name != "There alread exists user with that username or email")
             {
                 Intent intent = new Intent(this, typeof(SignIn));
                 StartActivity(intent);
@@ -90,9 +85,9 @@ namespace Remuse
         /// </summary>
         /// <param name="input"></param>
         /// <param name="output"></param>
-        public static void SwitchTextValid(EditText input,ref TextView output)
+        public static void SwitchTextValid(EditText input, ref TextView output)
         {
-            if(input.Text == "")
+            if (input.Text == "")
             {
                 output.Text = "*";
             }

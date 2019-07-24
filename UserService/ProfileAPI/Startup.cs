@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -31,6 +32,16 @@ namespace ProfileAPI
             services.AddScoped<IProfileRepository, ProfileRepository>();
 
             services.AddSwaggerDocument();
+
+            services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
+                   .AddIdentityServerAuthentication(options =>
+                   {
+                       options.Authority = "http://localhost:53084";
+                       options.RequireHttpsMetadata = false;
+
+                       options.ApiName = "ProfileAPI";
+                   }
+               );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

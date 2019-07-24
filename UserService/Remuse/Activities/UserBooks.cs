@@ -97,20 +97,6 @@ namespace Remuse.Activities
         }
 
         /// <summary>
-        /// Method ,that gets Book's description
-        /// </summary>
-        /// <returns></returns>
-        public static string Desc()
-        {
-            string description = "Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
-            for (int i = 0; i < 1000; i++)
-            {
-                description = description + "e";
-            }
-            return description;
-        }
-
-        /// <summary>
         /// Destroys activiy
         /// </summary>
         protected override void OnDestroy()

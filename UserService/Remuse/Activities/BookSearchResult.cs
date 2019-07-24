@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace Remuse.Activities
 {
@@ -18,7 +13,7 @@ namespace Remuse.Activities
         List<Book> searchBooksResult = new List<Book>();  //get this from BooksService or activity...
         Author authorFromBase;
 
-        protected override void OnCreate(Bundle savedInstanceState) 
+        protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
