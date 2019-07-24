@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.Graphics;
 using Android.OS;
@@ -8,6 +6,9 @@ using Android.Support.V4.Widget;
 using Android.Widget;
 using Newtonsoft.Json;
 using Remuse.Models;
+using System;
+using System.Collections.Generic;
+using System.IO;
 
 namespace Remuse.Activities
 {
@@ -29,6 +30,18 @@ namespace Remuse.Activities
             scrollView = FindViewById<ScrollView>(Resource.Id.scrollView1);
 
             reading.Text = book.Content;
+            string filePath = @"C:\Users\Serob\Desktop\Front3\UserService\BookService\Pdf\fight_club.pdf";
+            string fileName = "fight_club.pdf";
+
+            var bytes = File.ReadAllBytes(filePath);
+            string externalStorageState = global::Android.OS.Environment.ExternalStorageState;
+            var externalPath = global::Android.OS.Environment.ExternalStorageDirectory.Path + "/" + global::Android.OS.Environment.DirectoryDownloads + "/" + fileName;
+            File.WriteAllBytes(externalPath, bytes);
+
+            var bookreader = File.CreateText(externalPath);
+            Stream stream = bookreader.BaseStream;
+            StreamReader reader = new StreamReader(stream);
+            string text = reader.ReadToEnd();
 
             #region menu
             DrawerLayout mDrawerLayout;

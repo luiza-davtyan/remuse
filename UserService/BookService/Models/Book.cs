@@ -50,4 +50,3 @@ namespace BookService.Models
         public virtual List<ObjectId> GenreIds { get; set; }
     }
 }
-
