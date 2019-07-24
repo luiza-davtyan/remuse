@@ -96,17 +96,20 @@ namespace Remuse.Activities
         /// <param name="e"></param>
         private async void Search_Click(object sender, EventArgs e)
         {
-            string bookName = userInput.Text;
-            await GetBooksAsync(bookName);
-
-            Intent intent = new Intent(this, typeof(BookSearchResult));
-            if (books.Count == 0)
+            if (userInput.Text != "")
             {
-                books.Add(new Book() { Title = "There is no book with that name", AuthorId = "", Id = "" });
-            }
+                string bookName = userInput.Text;
+                await GetBooksAsync(bookName);
 
-            intent.PutExtra("book", JsonConvert.SerializeObject(books));
-            StartActivity(intent);
+                Intent intent = new Intent(this, typeof(BookSearchResult));
+                if (books.Count == 0)
+                {
+                    books.Add(new Book() { Title = "There is no book with that name", AuthorId = "", Id = "" });
+                }
+
+                intent.PutExtra("book", JsonConvert.SerializeObject(books));
+                StartActivity(intent);
+            }
         }
 
         /// <summary>

@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
-using Android.Graphics;
 using Android.OS;
-using Android.Support.V4.Widget;
 using Android.Widget;
 using Newtonsoft.Json;
 using Remuse.Models;
+using System;
+using System.Collections.Generic;
 
 namespace Remuse.Activities
 {
