@@ -61,8 +61,7 @@ namespace AdminApplication.HttpServices
                     foreach (var user in allUsers)
                     {
                         var books = await this.profileService.GetUserBooks(user.Id);
-                        var newBooks = books.Except(books.Where(x => x.Id == bookDTO.Id));
-                        foreach (var book  in newBooks)
+                        foreach (var book  in books.Where(x => x.Id == bookDTO.Id))
                         {
                             await this.profileService.Delete(new ProfileDTO { UserId = user.Id, BookId = book.Id });
                         }
