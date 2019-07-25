@@ -12,10 +12,14 @@ namespace AdminApplication.HttpServices
     {
         HttpClient httpClient = new HttpClient();
         private string bookURI;
+        private UserService userService;
+        private ProfileService profileService;
 
-        public BookServices(string uri)
+        public BookServices(string uri, UserService userService, ProfileService profileService)
         {
-            bookURI = uri;
+            this.bookURI = uri;
+            this.userService = userService;
+            this.profileService = profileService;
         }
 
         public async Task<List<BookDTO>> GetAllBooks()
@@ -49,6 +53,22 @@ namespace AdminApplication.HttpServices
         public async Task Remove(BookDTO bookDTO)
         {
             var response = await httpClient.DeleteAsync($"{bookURI}/{bookDTO.Id}");
+            if (response.IsSuccessStatusCode)
+            {
+                var allUsers = await this.userService.GetAllUsers();
+                if(allUsers != null)
+                {
+                    foreach (var user in allUsers)
+                    {
+                        var books = await this.profileService.GetUserBooks(user.Id);
+                        var newBooks = books.Except(books.Where(x => x.Id == bookDTO.Id));
+                        foreach (var book  in newBooks)
+                        {
+                            await this.profileService.Delete(new ProfileDTO { UserId = user.Id, BookId = book.Id });
+                        }
+                    }
+                }
+            }
         }
     }
 }

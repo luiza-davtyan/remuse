@@ -26,11 +26,11 @@ namespace ProfileAPI.Controllers
 
         // GET profile by id
         [HttpGet("{id}")]
-        public async Task<ActionResult<List<BookDTO>>> Get(int userId)
+        public async Task<ActionResult<List<BookDTO>>> Get(int id)
         {
             //var profiles = this.profileRepository.GetUserBooks(userId);
             var books = new List<BookDTO>();
-            IEnumerable<String> booksIds = (IEnumerable<String>) this.profileRepository.GetUserBooks(userId);
+            IEnumerable<String> booksIds = (IEnumerable<String>) this.profileRepository.GetUserBooks(id);
             foreach (var item in booksIds)
             {
                 var response = await httpClient.GetAsync("http://localhost:51858/api/book/" + item);
@@ -56,10 +56,10 @@ namespace ProfileAPI.Controllers
         }
 
         // DELETE api/values/5
-        [HttpDelete]
-        public void Delete(Profile profile)
+        [HttpDelete("{userId}/{bookId}")]
+        public void Delete(int userId, string bookId)
         {
-            this.profileRepository.Delete(profile);
+            this.profileRepository.Delete(new Profile(userId, bookId));
         }
     }
 }

@@ -28,8 +28,9 @@ namespace RemuseWebApplication
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddSingleton<BookServices>( x=> new BookServices(Configuration.GetValue<string>("BooksURL")));
-            services.AddSingleton<UserService>( x=> new UserService(Configuration.GetValue<string>("UsersURL")));
+            services.AddSingleton<UserService>( x => new UserService(Configuration.GetValue<string>("UsersURL")));
+            services.AddSingleton<ProfileService>( x=> new ProfileService(Configuration.GetValue<string>("ProfileURL")));
+            services.AddSingleton<BookServices>( x => new BookServices(Configuration.GetValue<string>("BooksURL"), x.GetService<UserService>(), x.GetService<ProfileService>()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
