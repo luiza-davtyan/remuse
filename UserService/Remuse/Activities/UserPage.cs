@@ -124,7 +124,6 @@ namespace Remuse.Activities
             else
             {
                 Intent intent = new Intent(this, typeof(UserBooks));
-                intent.PutExtra("books", JsonConvert.SerializeObject(UserInfo.Books));
                 StartActivity(intent);
             }
         }

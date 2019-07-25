@@ -21,7 +21,7 @@ namespace Remuse.Activities
         {
             base.OnCreate(savedInstanceState);
 
-            usersbooks = GetBooks();
+            usersbooks = UserInfo.Books;
             List<string> titles = new List<string>();
 
             foreach (Book book in usersbooks)
@@ -82,16 +82,6 @@ namespace Remuse.Activities
                     StartActivity(intent1);
                     break;
             }
-        }
-
-        /// <summary>
-        /// Gets data from BooksService
-        /// </summary>
-        /// <returns></returns>
-        public List<Book> GetBooks()
-        {
-            List<Book> books = JsonConvert.DeserializeObject<List<Book>>(Intent.GetStringExtra("books"));
-            return books;
         }
 
         /// <summary>

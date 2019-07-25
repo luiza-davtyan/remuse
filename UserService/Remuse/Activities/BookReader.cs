@@ -3,6 +3,7 @@ using Android.Content;
 using Android.Graphics;
 using Android.OS;
 using Android.Support.V4.Widget;
+using Android.Webkit;
 using Android.Widget;
 using Newtonsoft.Json;
 using Remuse.Models;
@@ -15,33 +16,18 @@ namespace Remuse.Activities
     [Activity(Label = "BookReader")]
     public class BookReader : Activity
     {
-        TextView reading;
-        ScrollView scrollView;
         Book book;
         List<string> mLeftItems = new List<string>();
         LogOutBroadcastReceiver _logOutBroadcastReceiver = new LogOutBroadcastReceiver();
+        WebView webView;
+        string bookUri;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.book_read);
+            SetContentView(Resource.Layout.bookreader);
             book = JsonConvert.DeserializeObject<Book>(Intent.GetStringExtra("book"));
-            reading = FindViewById<TextView>(Resource.Id.textView1);
-            scrollView = FindViewById<ScrollView>(Resource.Id.scrollView1);
-
-            reading.Text = book.Content;
-            string filePath = @"C:\Users\Serob\Desktop\Front3\UserService\BookService\Pdf\fight_club.pdf";
-            string fileName = "fight_club.pdf";
-
-            var bytes = File.ReadAllBytes(filePath);
-            string externalStorageState = global::Android.OS.Environment.ExternalStorageState;
-            var externalPath = global::Android.OS.Environment.ExternalStorageDirectory.Path + "/" + global::Android.OS.Environment.DirectoryDownloads + "/" + fileName;
-            File.WriteAllBytes(externalPath, bytes);
-
-            var bookreader = File.CreateText(externalPath);
-            Stream stream = bookreader.BaseStream;
-            StreamReader reader = new StreamReader(stream);
-            string text = reader.ReadToEnd();
+            bookUri = book.Path;
 
             #region menu
             DrawerLayout mDrawerLayout;
@@ -73,6 +59,20 @@ namespace Remuse.Activities
             //play.Click += (sender, args) => SendAudioCommand(StreamingBackgroundService.ActionPlay);
             //pause.Click += (sender, args) => SendAudioCommand(StreamingBackgroundService.ActionPause);
             //stop.Click += (sender, args) => SendAudioCommand(StreamingBackgroundService.ActionStop);
+
+            #endregion
+
+            #region WebView
+            webView = FindViewById<WebView>(Resource.Id.webView);
+
+            //SetWebViewClient with an instance of WebViewClientClass
+            webView.SetWebViewClient(new WebViewClientClass());
+            webView.LoadUrl(bookUri);
+
+            //Enabled Javascript in Websettings
+
+            WebSettings websettings = webView.Settings;
+            websettings.JavaScriptEnabled = true;
 
             #endregion
 
@@ -129,6 +129,22 @@ namespace Remuse.Activities
         {
             base.OnDestroy();
             UnregisterReceiver(_logOutBroadcastReceiver);
+        }
+    }
+
+
+    internal class WebViewClientClass : WebViewClient
+    {
+        /// <summary>
+        /// Give the host application a chance to take over the control when a new url is about to be loaded in the current WebView.
+        /// </summary>
+        /// <param name="view"></param>
+        /// <param name="url"></param>
+        /// <returns></returns>
+        public override bool ShouldOverrideUrlLoading(WebView view, string url)
+        {
+            view.LoadUrl(url);
+            return true;
         }
     }
 }

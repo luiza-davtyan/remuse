@@ -4,8 +4,8 @@ using Android.Graphics;
 using Android.OS;
 using Android.Support.V4.Widget;
 using Android.Widget;
-using ProfileNameSpaceOurClient;
 using Newtonsoft.Json;
+using ProfileNameSpaceOurClient;
 using Remuse.Models;
 using System;
 using System.Collections.Generic;
@@ -53,7 +53,7 @@ namespace Remuse.Activities
             read.Click += Read_Click;
             add.Click += Add_Click;
 
-            #region menu
+            #region Menu
             DrawerLayout mDrawerLayout;
 
             // Array Adaper  
@@ -63,7 +63,11 @@ namespace Remuse.Activities
             ListView mLeftDrawer = FindViewById<ListView>(Resource.Id.leftsideview);
             mLeftDrawer.SetBackgroundColor(Color.White);
 
-            mLeftItems.Add("Main page");
+            if (UserInfo.User != null)
+            {
+                mLeftItems.Add("My account");
+            }
+            mLeftItems.Add("Home page");
             mLeftItems.Add("Network");
             mLeftItems.Add("Settings");
             if (UserInfo.User != null)
@@ -89,7 +93,7 @@ namespace Remuse.Activities
         /// <param name="e"></param>
         private async void Add_Click(object sender, EventArgs e)
         {
-            if(UserInfo.Token == null)
+            if (UserInfo.Token == null)
             {
                 Toast.MakeText(this, "Please,log in to add books in your list", ToastLength.Long).Show();
                 return;
@@ -107,6 +111,7 @@ namespace Remuse.Activities
                 await server.PostAsync(profile);
                 UserInfo.profiles.Add(profile1);
                 UserInfo.BookId.Add(selectedBook.Id);
+                UserInfo.Books.Add(selectedBook);
 
                 Toast.MakeText(this, "The book was added to your list", ToastLength.Long).Show();
             }
@@ -116,7 +121,6 @@ namespace Remuse.Activities
                 {
                     UserInfo.BookId.Add(UserInfo.Books[i].Id);
                 }
-
 
                 foreach (var item in UserInfo.BookId)
                 {
@@ -142,40 +146,54 @@ namespace Remuse.Activities
         /// <param name="e"></param>
         private void MLeftDrawer_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            Type type;
+            Type type = typeof(UserPage);
 
+            int position = e.Position;
             if (UserInfo.User == null)
             {
-                type = typeof(MainActivity);
+                switch (position)
+                {
+                    case 0:
+                        type = typeof(MainActivity);
+                        break;
+                    case 1:
+                        Toast.MakeText(this, mLeftItems[e.Position], ToastLength.Long).Show();
+                        return;
+                    case 2:
+                        Toast.MakeText(this, mLeftItems[e.Position], ToastLength.Long).Show();
+                        return;
+                }
+                Intent intent0 = new Intent(this, type);
+                StartActivity(intent0);
             }
             else
             {
-                type = typeof(General);
-            }
-
-            int position = e.Position;
-            switch (position)
-            {
-                case 0:
-                    Intent intent = new Intent(this, type);
-                    StartActivity(intent);
-                    break;
-                case 1:
-                    Toast.MakeText(this, mLeftItems[e.Position], ToastLength.Long).Show();
-                    break;
-                case 2:
-                    Toast.MakeText(this, mLeftItems[e.Position], ToastLength.Long).Show();
-                    break;
-                case 3:
-                    UserInfo.User = null;
-                    UserInfo.Token = null;
-                    UserInfo.BookId = null;
-                    var broadcastIntent = new Intent();
-                    broadcastIntent.SetAction("com.mypackagename.ActionLogOut");
-                    SendBroadcast(broadcastIntent);
-                    Intent intent1 = new Intent(this, typeof(StartGeneral));
-                    StartActivity(intent1);
-                    break;
+                switch (position)
+                {
+                    case 0:
+                        type = typeof(UserPage);
+                        break;
+                    case 1:
+                        type = typeof(General);
+                        break;
+                    case 2:
+                        Toast.MakeText(this, mLeftItems[e.Position], ToastLength.Long).Show();
+                        return;
+                    case 3:
+                        type = typeof(SettingsPage);
+                        break;
+                    case 4:
+                        UserInfo.User = null;
+                        UserInfo.Token = null;
+                        UserInfo.BookId = null;
+                        var broadcastIntent = new Intent();
+                        broadcastIntent.SetAction("com.mypackagename.ActionLogOut");
+                        SendBroadcast(broadcastIntent);
+                        type = typeof(StartGeneral);
+                        break;
+                }
+                Intent intent = new Intent(this, type);
+                StartActivity(intent);
             }
         }
 

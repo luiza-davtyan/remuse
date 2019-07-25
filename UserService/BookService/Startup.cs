@@ -79,7 +79,7 @@ namespace BookService
             app.UseOpenApi();
             app.UseSwaggerUi3();
 
-            app.UseAuthentication();
+            app.UseAuthentication();   //amenakarevor
             app.UseStatusCodePages();
             app.UseMvc();
         }

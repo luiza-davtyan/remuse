@@ -41,7 +41,7 @@ namespace Remuse.Activities
             //Giving info to TextViews
             enteredbook.Text = selectedBook.Title;
             author.Text = author.Text + selectedBook.Author.FirstName + " " + selectedBook.Author.LastName;
-            genre.Text = genre.Text + "Novel";
+            genre.Text = genre.Text + "Novel";    //To Do...go to BookService and get genre by Id
             year.Text = year.Text + selectedBook.Year;
             description.Text = selectedBook.Description;
 
@@ -57,6 +57,7 @@ namespace Remuse.Activities
             mLeftDrawer.SetBackgroundColor(Color.White);
 
             mLeftItems.Add("My account");
+            mLeftItems.Add("Home page");
             mLeftItems.Add("Network");
             mLeftItems.Add("Settings");
             mLeftItems.Add("Log out");
@@ -87,12 +88,15 @@ namespace Remuse.Activities
                 case 0:
                     break;
                 case 1:
+                    type = typeof(General);
+                    break;
+                case 2:
                     Toast.MakeText(this, mLeftItems[e.Position], ToastLength.Long).Show();
                     return;
-                case 2:
+                case 3:
                     type = typeof(SettingsPage);
                     break;
-                case 3:
+                case 4:
                     UserInfo.User = null;
                     UserInfo.Token = null;
                     UserInfo.BookId = new List<string>();

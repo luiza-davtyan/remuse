@@ -48,6 +48,7 @@ namespace ProfileAPI.Controllers
 
         //Add profile
         [HttpPost]
+        //[Authorize]
         public IActionResult Post([FromBody] Profile profile)
         {
             Profile currProfile = this.profileRepository.Create(profile);

@@ -26,7 +26,7 @@ namespace Remuse.Activities
             reading = FindViewById<TextView>(Resource.Id.textView1);
             scrollView = FindViewById<ScrollView>(Resource.Id.scrollView1);
 
-            reading.Text = book.Content;
+            reading.Text = book.Description;
             #region menu
             DrawerLayout mDrawerLayout;
 
@@ -36,7 +36,7 @@ namespace Remuse.Activities
             ListView mLeftDrawer = FindViewById<ListView>(Resource.Id.leftsideview);
             mLeftDrawer.SetBackgroundColor(Color.White);
 
-            mLeftItems.Add("Main page");
+            mLeftItems.Add("Home page");
             mLeftItems.Add("Network");
             mLeftItems.Add("Settings");
 
