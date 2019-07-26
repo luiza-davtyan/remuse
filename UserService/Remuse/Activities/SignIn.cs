@@ -5,6 +5,7 @@ using Android.Widget;
 using IdentityModel.Client;
 using MyNamespace;
 using Newtonsoft.Json;
+using ProfileNameSpaceOurClient;
 using Remuse.Activities;
 using Remuse.Models;
 using System;
@@ -88,9 +89,17 @@ namespace Remuse
                     var handler = new JwtSecurityTokenHandler();
                     UserInfo.Token = authServerToken;
 
-                    userFromBase = await Get(username);
+                    userFromBase = await GetUserByUsernameAsync(username);
                     UserInfo.User = userFromBase;
                     UserInfo.Books = await GetUserBooksByUserIdAsync(UserInfo.User.Id);
+
+                    var server = new ProfileClient(new HttpClient());
+                    var profiles = await server.GetProfilesByUserId(UserInfo.User.Id);
+                    foreach(var item in profiles)
+                    {
+                        UserInfo.profiles.Add(new Models.Profile() { ID = item.Id, UserId = item.Id, BookId = item.BookId });
+                    }
+                    
 
                     Intent intent = new Intent(this, typeof(General));
                     intent.PutExtra("user", JsonConvert.SerializeObject(userFromBase));
@@ -104,9 +113,8 @@ namespace Remuse
         /// </summary>
         /// <param name="username"></param>
         /// <returns></returns>
-        public async Task<User> Get(string username)
+        public async Task<User> GetUserByUsernameAsync(string username)
         {
-
             HttpClient client = new HttpClient();
             try
             {
@@ -177,10 +185,6 @@ namespace Remuse
                 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", authorizationServerToken.access_token);
                 HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, uri);
                 responseMessage = await httpClient.SendAsync(request);
-
-                ////Equivalent to above three lines (lines 65-67)
-                //httpClient.SetBearerToken(authorizationServerToken.AccessToken);
-                //var response = await httpClient.GetAsync("uri");
             }
             return await responseMessage.Content.ReadAsStringAsync();
         }

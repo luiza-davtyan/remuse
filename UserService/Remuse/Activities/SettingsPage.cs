@@ -85,7 +85,6 @@ namespace Remuse.Activities
             menu.Inflate(Resource.Menu.popup_menu);
 
             menu.MenuItemClick += Menu_MenuItemClick;
-
             menu.Show();
         }
 
@@ -157,14 +156,6 @@ namespace Remuse.Activities
                 try
                 {
                     var server = new UserClient(new HttpClient());
-                    //var checkValidation = await server.GetUserByUsernameAsync(updateUser.Username);
-
-                    //if (checkValidation != null)
-                    //{
-                    //    Toast.MakeText(this, "That username or email is already busy", ToastLength.Long).Show();
-                    //    return;
-                    //}
-
                     response = await server.UpdateUserAsync(updateUser, UserInfo.Token.access_token);
 
                     UserInfo.User = await server.GetUserByUsernameAsync(updateUser.Username);

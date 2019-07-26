@@ -27,7 +27,23 @@ namespace Remuse.Activities
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.bookreader);
             book = JsonConvert.DeserializeObject<Book>(Intent.GetStringExtra("book"));
-            bookUri = book.Path;
+            string id = book.Id;
+
+            switch (book.Title)
+            {
+                case "Pride and Prejudice":
+                    bookUri = "https://drive.google.com/open?id=1rjnUj3F5Wx0QZPpmNZ6rwIM1vZ29YnhJ";
+                    break;
+                case "Fight Club":
+                    bookUri = "https://drive.google.com/open?id=1ca-NugQ3oooT4XaBsjiQDh1C7pOpnIcy";
+                    break;
+                case "The Great Gatsby":
+                    bookUri = "https://drive.google.com/open?id=1A2VhTWMUsYOgoNliJCQYHVd8cSiY22gk";
+                    break;
+                case " Ten Little Niggers":
+                    bookUri = "https://drive.google.com/open?id=1MnJsZxu2AITZI19XU6tuHXv1jvxDMr8F";
+                    break;
+            }
 
             #region menu
             DrawerLayout mDrawerLayout;

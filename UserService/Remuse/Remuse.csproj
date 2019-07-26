@@ -76,6 +76,7 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activities\BookListEditDelete.cs" />
     <Compile Include="Activities\BookReader.cs" />
     <Compile Include="Activities\BookReaderForGuests.cs" />
     <Compile Include="Activities\BookSearchResult.cs" />

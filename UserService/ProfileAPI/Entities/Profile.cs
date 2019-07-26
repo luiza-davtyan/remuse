@@ -18,6 +18,10 @@ namespace ProfileAPI.Entities
         [Required]
         public string BookId { get; set; }
 
+        public Profile()
+        {
+
+        }
         public Profile(int userId , string bookId)
         {
             this.BookId = bookId;

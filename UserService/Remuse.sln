@@ -15,8 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Remuse", "Remuse\Remuse.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RemuseWebApplication", "AdminPanel\RemuseWebApplication.csproj", "{AE305B14-8548-497E-9338-27B49DBA4E2C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminApplication", "AdminPanel\AdminApplication.csproj", "{4F585D39-8D3C-4732-A221-799F1C5889FB}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{31197360-B3B3-42B2-96A0-CE886BC71A82}"
 EndProject
 Global
@@ -51,10 +49,6 @@ Global
 		{AE305B14-8548-497E-9338-27B49DBA4E2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE305B14-8548-497E-9338-27B49DBA4E2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE305B14-8548-497E-9338-27B49DBA4E2C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4F585D39-8D3C-4732-A221-799F1C5889FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4F585D39-8D3C-4732-A221-799F1C5889FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4F585D39-8D3C-4732-A221-799F1C5889FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4F585D39-8D3C-4732-A221-799F1C5889FB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{31197360-B3B3-42B2-96A0-CE886BC71A82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{31197360-B3B3-42B2-96A0-CE886BC71A82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31197360-B3B3-42B2-96A0-CE886BC71A82}.Release|Any CPU.ActiveCfg = Release|Any CPU

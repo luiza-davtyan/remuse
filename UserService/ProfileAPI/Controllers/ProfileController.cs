@@ -46,6 +46,13 @@ namespace ProfileAPI.Controllers
             return Ok(books);
         }
 
+        [HttpGet("get/{userId}")]
+        public ActionResult<List<Profile>> GetProfiles(int userId)
+        {
+            var profiles = profileRepository.GetProfilesByUserId(userId);
+            return Ok(profiles);
+        }
+
         //Add profile
         [HttpPost]
         //[Authorize]
@@ -64,9 +71,10 @@ namespace ProfileAPI.Controllers
         }
 
         //DELETE profile
-        [HttpDelete]
-        public IActionResult Delete(Profile profile)
+        [HttpDelete("delete/{id}")]
+        public IActionResult Delete(int id)
         {
+            Profile profile = this.profileRepository.GetProfileById(id);
             this.profileRepository.Delete(profile);
             return Ok();
         }

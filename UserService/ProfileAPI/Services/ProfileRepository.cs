@@ -34,6 +34,31 @@ namespace ProfileAPI.Services
         }
 
         /// <summary>
+        /// Gets user profiles
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public IEnumerable<Profile> GetProfilesByUserId(int userId)
+        {
+            IEnumerable<Profile> profiles = this.context.Profile.Where(x => x.UserId == userId);
+            return profiles;
+        }
+
+        public Profile GetProfileById(int id)
+        {
+            Profile profile = new Profile();
+            IEnumerable<Profile> profiles = this.context.Profile.Where(x => x.ID == id);
+            if(profiles.Count() != 0)
+            {
+                foreach(var item in profiles)
+                {
+                    profile = item;
+                }
+            }
+            return profile;
+        }
+
+        /// <summary>
         /// Creats user profile
         /// </summary>
         /// <param name="profile"></param>

@@ -18,6 +18,11 @@ namespace Remuse.Models
         public int UserId { get; set; }
         public string BookId { get; set; }
 
+        public Profile()
+        {
+
+        }
+
         public Profile(int userId, string bookId)
         {
             this.BookId = bookId;

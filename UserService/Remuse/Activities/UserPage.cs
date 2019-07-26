@@ -20,7 +20,7 @@ namespace Remuse.Activities
     {
         ImageView userimage;
         TextView firstname, lastname, username,email;
-        Button books;
+        Button books,editProfile,editBookList;
         List<Book> usersBooks = new List<Book>();
         List<string> mLeftItems = new List<string>();
         User user;
@@ -40,12 +40,16 @@ namespace Remuse.Activities
             lastname = FindViewById<TextView>(Resource.Id.textView2);
             username = FindViewById<TextView>(Resource.Id.textView3);
             books = FindViewById<Button>(Resource.Id.button1);
+            editProfile = FindViewById<Button>(Resource.Id.button2);
+            editBookList = FindViewById<Button>(Resource.Id.button3);
+
             books.Click += Books_Click;
+            editProfile.Click += EditProfile_Click;
+            editBookList.Click += EditBookList_Click;
 
             firstname.Text = user.Name;
             lastname.Text = user.Surname;
             username.Text = user.Username;
-
 
             #region menu
             DrawerLayout mDrawerLayout;
@@ -72,6 +76,29 @@ namespace Remuse.Activities
             var intentFilter = new IntentFilter();
             intentFilter.AddAction("com.mypackagename.ActionLogOut");
             RegisterReceiver(_logOutBroadcastReceiver, intentFilter);
+        }
+
+        /// <summary>
+        /// Event for edit book click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void EditBookList_Click(object sender, EventArgs e)
+        {
+            UserInfo.Books = await GetUserBooksByUserIdAsync(UserInfo.User.Id);
+            Intent intent = new Intent(this, typeof(BookListEditDelete));
+            StartActivity(intent);
+        }
+
+        /// <summary>
+        /// Event for edit profile click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void EditProfile_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(SettingsPage));
+            StartActivity(intent);
         }
 
         /// <summary>
@@ -115,8 +142,6 @@ namespace Remuse.Activities
         /// <param name="e"></param>
         private  void Books_Click(object sender, EventArgs e)
         {          
-            var service = new BookClient(new System.Net.Http.HttpClient());
-
             if (UserInfo.Books.Count == 0)
             {
                 Toast.MakeText(this, "Your book's list is empty", ToastLength.Long).Show();

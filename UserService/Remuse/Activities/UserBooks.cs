@@ -6,6 +6,8 @@ using Newtonsoft.Json;
 using Remuse.Models;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace Remuse.Activities
 {
@@ -17,10 +19,10 @@ namespace Remuse.Activities
         List<string> mLeftItems = new List<string>();
         Author authorFromBase;
 
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected override async void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
+            UserInfo.Books = await GetUserBooksByUserIdAsync(UserInfo.User.Id);
             usersbooks = UserInfo.Books;
             List<string> titles = new List<string>();
 
@@ -91,6 +93,28 @@ namespace Remuse.Activities
         {
             base.OnDestroy();
             UnregisterReceiver(_logOutBroadcastReceiver);
+        }
+
+        /// <summary>
+        /// To get user from base
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task<List<Book>> GetUserBooksByUserIdAsync(int id)
+        {
+            HttpClient client = new HttpClient();
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync(HttpUri.ProfileApiUri + "api/profile/" + id);
+                response.EnsureSuccessStatusCode();
+                var responseBody = await response.Content.ReadAsStringAsync();
+                List<Book> books = JsonConvert.DeserializeObject<List<Book>>(responseBody.ToString());
+                return books;
+            }
+            catch
+            {
+                throw new Exception();
+            }
         }
     }
 }

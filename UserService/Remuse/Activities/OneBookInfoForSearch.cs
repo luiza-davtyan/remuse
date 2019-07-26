@@ -135,6 +135,7 @@ namespace Remuse.Activities
                 await server.PostAsync(profile);
                 UserInfo.BookId.Add(selectedBook.Id);
                 UserInfo.Books.Add(selectedBook);
+                UserInfo.profiles.Add(profile1);
                 Toast.MakeText(this, "The book was added to your list", ToastLength.Short).Show();
             }
         }

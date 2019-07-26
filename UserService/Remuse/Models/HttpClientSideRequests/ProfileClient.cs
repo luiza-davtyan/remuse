@@ -10,7 +10,13 @@
 #pragma warning disable 1573 // Disable "CS1573 Parameter '...' has no matching param tag in the XML comment for ...
 #pragma warning disable 1591 // Disable "CS1591 Missing XML comment for publicly visible type or member ..."
 
+using Newtonsoft.Json;
 using Remuse;
+using System;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Threading.Tasks;
 
 namespace ProfileNameSpaceOurClient
 {
@@ -44,6 +50,47 @@ namespace ProfileNameSpaceOurClient
         partial void PrepareRequest(System.Net.Http.HttpClient client, System.Net.Http.HttpRequestMessage request, string url);
         partial void PrepareRequest(System.Net.Http.HttpClient client, System.Net.Http.HttpRequestMessage request, System.Text.StringBuilder urlBuilder);
         partial void ProcessResponse(System.Net.Http.HttpClient client, System.Net.Http.HttpResponseMessage response);
+
+        /// <summary>
+        /// Gets user's profiles from ProfileService
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public async Task<List<Profile>> GetProfilesByUserId(int userId)
+        {
+            HttpClient client = new HttpClient();
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync(HttpUri.ProfileApiUri + "api/profile/get/" + userId);
+                response.EnsureSuccessStatusCode();
+                var responseBody = await response.Content.ReadAsStringAsync();
+                List<Profile> profiles = JsonConvert.DeserializeObject<List<Profile>>(responseBody.ToString());
+                return profiles;
+            }
+            catch (HttpRequestException e)
+            {
+                throw new Exception();
+            }
+        }
+
+        /// <summary>
+        /// Delete profile by id
+        /// </summary>
+        /// <param name="id"></param>
+        public async void DeleteProfileASync(int id)
+        {
+            HttpClient client = new HttpClient();
+            try
+            {
+                HttpResponseMessage response = await client.DeleteAsync(HttpUri.ProfileApiUri + "api/profile/delete/" + id);
+                response.EnsureSuccessStatusCode();
+                var responseBody = await response.Content.ReadAsStringAsync();
+            }
+            catch (HttpRequestException e)
+            {
+                throw new Exception();
+            }
+        }
 
         /// <exception cref="ApiException">A server side error occurred.</exception>
         public System.Threading.Tasks.Task<System.Collections.Generic.ICollection<BookDTO>> GetAsync(int id)
@@ -255,14 +302,14 @@ namespace ProfileNameSpaceOurClient
         }
 
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public System.Threading.Tasks.Task<FileResponse> DeleteAsync(Profile profile)
+        public System.Threading.Tasks.Task<FileResponse> DeleteAsync(Remuse.Models.Profile profile)
         {
             return DeleteAsync(profile, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public async System.Threading.Tasks.Task<FileResponse> DeleteAsync(Profile profile, System.Threading.CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<FileResponse> DeleteAsync(Remuse.Models.Profile profile, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Profile");
