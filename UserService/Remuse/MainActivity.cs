@@ -26,7 +26,7 @@ namespace Remuse
         AutoCompleteTextView userInput;
         List<Book> books = new List<Book>();
 
-        string[] complete = new string[] { "barev", "aca", "this", "Armenia", "Destination" };
+        string[] complete = new string[] { "barev", "aca", "this", "Armenia", "Destination" }; //Get titles from base for autocomplete.
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -79,7 +79,11 @@ namespace Remuse
             userInput = FindViewById<AutoCompleteTextView>(Resource.Id.autoCompleteTextView1);
 
             //Udpating book wall
-            UpdateImagesAndTexts();
+            try
+            {
+                UpdateImagesAndTexts();
+            }
+            catch { }
 
             ArrayAdapter adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line, complete); //for search panel
             userInput.Adapter = adapter;

@@ -1504,7 +1504,7 @@ namespace Remuse
         [Newtonsoft.Json.JsonProperty("year", Required = Newtonsoft.Json.Required.Always)]
         public int Year { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("path", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("path", Required = Newtonsoft.Json.Required.Default/*, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)*/)]
         public string Path { get; set; }
 
         [Newtonsoft.Json.JsonProperty("genreIds", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]

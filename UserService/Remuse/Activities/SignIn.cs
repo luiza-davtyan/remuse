@@ -24,7 +24,7 @@ namespace Remuse
     {
         User userFromBase = new User();
         TextView warning;
-        EditText username, password;
+        EditText editUsername, editPassword;
         Button signin;
         List<User> users = new List<User>();
         string usernameString, passwordString;
@@ -36,8 +36,8 @@ namespace Remuse
             SetContentView(Resource.Layout.SignIn);
 
             //Creating email's and password's fields
-            username = FindViewById<EditText>(Resource.Id.editText1);
-            password = FindViewById<EditText>(Resource.Id.textInputEditText1);
+            editUsername = FindViewById<EditText>(Resource.Id.editText1);
+            editPassword = FindViewById<EditText>(Resource.Id.textInputEditText1);
             signin = FindViewById<Button>(Resource.Id.button1);
             signin.Click += Signin_Click;
         }
@@ -52,15 +52,15 @@ namespace Remuse
             warning = FindViewById<TextView>(Resource.Id.textView8);
             warning.Text = "";
 
-            usernameString = username.Text;
-            passwordString = password.Text;
+            usernameString = editUsername.Text;
+            passwordString = editPassword.Text;
 
             
-            if (username.Text == "")
+            if (editUsername.Text == "")
             {
                 warning.Text = "Please,enter username";
             }
-            else if (password.Text == "")
+            else if (editPassword.Text == "")
             {
                 warning.Text = "Please,enter password";
             }
@@ -74,8 +74,13 @@ namespace Remuse
                 string username = usernameString;
                 string password = passwordString;
 
-                //Get token for the specified clientId, clientSecret, and scope
-                string token = await RequestTokenToAuthorizationServer(authorizationServerTokenIssuerUri, clientId, scope, clientSecret, username, password);
+                string token = null;
+                try
+                {
+                    //Get token for the specified clientId, clientSecret, and scope
+                    token = await RequestTokenToAuthorizationServer(authorizationServerTokenIssuerUri, clientId, scope, clientSecret, username, password);
+                }
+                catch { }
 
                 //Deserialize jwt token
                 AuthServerResponse authServerToken = Newtonsoft.Json.JsonConvert.DeserializeObject<AuthServerResponse>(token);
@@ -100,9 +105,9 @@ namespace Remuse
                         UserInfo.profiles.Add(new Models.Profile() { ID = item.Id, UserId = item.Id, BookId = item.BookId });
                     }
                     
-
                     Intent intent = new Intent(this, typeof(General));
                     intent.PutExtra("user", JsonConvert.SerializeObject(userFromBase));
+                    editPassword.Text = "";
                     StartActivity(intent);
                 }
             }
