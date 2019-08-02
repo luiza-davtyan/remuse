@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<style name="Theme.Custom" parent="@android:style/Theme.DeviceDefault"><item name="android:colorBackground">@color/abc_background_cache_hint_selector_material_light</item><item name="android:windowBackground">?android:attr/colorBackground</item><item name="android:colorPrimary">#ff93eaf9</item><item name="android:textColorPrimary">#ff412b6a</item></style>
+</resources>

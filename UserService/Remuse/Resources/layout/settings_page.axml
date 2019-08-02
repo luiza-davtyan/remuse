@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+    android:id="@+id/drawerLayout1"  
+    android:layout_width="match_parent"  
+    android:layout_height="match_parent">
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+		<TextView
+			android:text="                             Edit profile"
+			android:layout_width="match_parent"
+			android:layout_height="32.5dp"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:id="@+id/textView1"
+			android:textSize="20dp"
+			android:textColor="@android:color/background_dark" />
+	<android.support.v7.widget.ButtonBarLayout
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/buttonBarLayout1" />
+	<ImageButton
+		android:src="@android:drawable/ic_menu_gallery"
+		android:layout_width="81.0dp"
+		android:layout_height="73.0dp"
+		android:id="@+id/imageButton1" />
+	<TextView
+		android:text="  Firstname"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textView2"
+		android:layout_marginTop="6.5dp" />
+	<android.support.design.widget.TextInputEditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textInputEditText1" />
+	<TextView
+		android:text="  Lastname"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textView3" />
+	<android.support.design.widget.TextInputEditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textInputEditText2" />
+	<TextView
+		android:text="  Email"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textView6" />
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/editText2" />
+	<TextView
+		android:text="  Username"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textView4" />
+	<android.support.design.widget.TextInputEditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textInputEditText3" />
+	<TextView
+		android:text="  Password (Required)"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textView5" />
+	<EditText
+		android:inputType="textPassword"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/editText1" />
+		<Button
+			android:text="Confirm"
+			android:layout_width="215.0dp"
+			android:layout_height="47.5dp"
+			android:id="@+id/button1"
+			android:layout_marginTop="18.0dp"
+			android:layout_marginLeft="84.5dp" />
+		<Button
+			android:text="Delete account"
+			android:layout_width="160.0dp"
+			android:layout_height="41.5dp"
+			android:id="@+id/button2"
+			android:layout_marginLeft="114.5dp"
+			android:textColor="#ffd50000" /> 
+</LinearLayout>
+    <ListView  
+        android:id="@+id/leftsideview"  
+        android:layout_width="240dp"  
+        android:layout_height="match_parent"  
+        android:layout_gravity="left"  
+        android:choiceMode="singleChoice"  
+        android:divider="#D2D2D2"  
+        android:dividerHeight="2dp" />     
+</android.support.v4.widget.DrawerLayout>
